@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "udemymod:deepslate_cobalt_ore"
+  },
+  "result": "udemymod:cobalt_ingot",
+  "experience": 10.0,
+  "cookingtime": 150
+}

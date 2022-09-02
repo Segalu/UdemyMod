@@ -1,8 +1,8 @@
 package me.segalu.udemymod.init
 
 import me.segalu.udemymod.UdemyMod
+import me.segalu.udemymod.UdemyMod.UDEMYMOD_TAB
 import net.minecraft.world.item.BlockItem
-import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.state.BlockBehaviour
@@ -21,7 +21,7 @@ object BlockInit {
             ItemInit.ITEMS.registerObject("cobalt_block") {
                 BlockItem(
                     it,
-                    Item.Properties().tab(CreativeModeTab.TAB_MISC)
+                    Item.Properties().tab(UDEMYMOD_TAB)
                 )
             }
         }
@@ -32,7 +32,7 @@ object BlockInit {
             ItemInit.ITEMS.registerObject("cobalt_ore") {
                 BlockItem(
                     it,
-                    Item.Properties().tab(CreativeModeTab.TAB_MISC)
+                    Item.Properties().tab(UDEMYMOD_TAB)
                 )
             }
         }
@@ -43,7 +43,7 @@ object BlockInit {
             ItemInit.ITEMS.registerObject("raw_cobalt_block") {
                 BlockItem(
                     it,
-                    Item.Properties().tab(CreativeModeTab.TAB_MISC)
+                    Item.Properties().tab(UDEMYMOD_TAB)
                 )
             }
         }
@@ -54,7 +54,7 @@ object BlockInit {
             ItemInit.ITEMS.registerObject("deepslate_cobalt_ore") {
                 BlockItem(
                     it,
-                    Item.Properties().tab(CreativeModeTab.TAB_MISC)
+                    Item.Properties().tab(UDEMYMOD_TAB)
                 )
             }
         }

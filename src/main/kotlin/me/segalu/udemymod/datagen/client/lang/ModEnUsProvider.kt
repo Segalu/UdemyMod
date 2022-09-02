@@ -9,6 +9,9 @@ import net.minecraftforge.common.data.LanguageProvider
 class ModEnUsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "en_us") {
 
     override fun addTranslations() {
+        //UI
+        add("itemGroup.udemymod", "UdemyMod Tab")
+
         //Items
         add(ItemInit.COBALT_INGOT, "Cobalt Ingot")
         add(ItemInit.COBALT_NUGGET, "Cobalt Nugget")

@@ -5,5 +5,6 @@
   "block.udemymod.raw_cobalt_block": "Raw Cobalt Block",
   "item.udemymod.cobalt_ingot": "Cobalt Ingot",
   "item.udemymod.cobalt_nugget": "Cobalt Nugget",
-  "item.udemymod.raw_cobalt": "Raw Cobalt"
+  "item.udemymod.raw_cobalt": "Raw Cobalt",
+  "itemGroup.udemymod": "UdemyMod Tab"
 }

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "202",
+    "010",
+    "202"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:diamond"
+    },
+    "1": {
+      "item": "minecraft:lava_bucket"
+    },
+    "2": {
+      "item": "udemymod:cobalt_ingot"
+    }
+  },
+  "result": {
+    "item": "minecraft:nether_star"
+  }
+}
