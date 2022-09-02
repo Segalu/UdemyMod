@@ -1,7 +1,7 @@
 package me.segalu.udemymod
 
-import me.segalu.udemymod.block.ModBlocks
-import me.segalu.udemymod.item.ModItems
+import me.segalu.udemymod.init.BlockInit
+import me.segalu.udemymod.init.ItemInit
 import net.minecraft.client.Minecraft
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
@@ -30,8 +30,8 @@ object UdemyMod {
         LOGGER.log(Level.INFO, "Hello world!")
 
         // Register the KDeferredRegister to the mod-specific event bus
-        ModBlocks.REGISTRY.register(MOD_BUS)
-        ModItems.REGISTRY.register(MOD_BUS)
+        BlockInit.BLOCKS.register(MOD_BUS)
+        ItemInit.ITEMS.register(MOD_BUS)
 
         val obj = runForDist(
             clientTarget = {
