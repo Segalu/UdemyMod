@@ -56,11 +56,11 @@ class ModItemModelProvider(generator: DataGenerator?, helper: ExistingFileHelper
         oneLayerItem(ItemInit.TURNIP)
 
         //Simple blocks
-        simpleBlockItem(BlockInit.COBALT_BLOCK.asItem())
-        simpleBlockItem(BlockInit.COBALT_ORE.asItem())
-        simpleBlockItem(BlockInit.DEEPSLATE_COBALT_ORE.asItem())
-        simpleBlockItem(BlockInit.RAW_COBALT_BLOCK.asItem())
-        simpleBlockItem(BlockInit.SPEEDY_BLOCK.asItem())
+        simpleBlockItem(BlockInit.COBALT_BLOCK.get().asItem())
+        simpleBlockItem(BlockInit.COBALT_ORE.get().asItem())
+        simpleBlockItem(BlockInit.DEEPSLATE_COBALT_ORE.get().asItem())
+        simpleBlockItem(BlockInit.RAW_COBALT_BLOCK.get().asItem())
+        simpleBlockItem(BlockInit.SPEEDY_BLOCK.get().asItem())
     }
 
 }

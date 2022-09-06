@@ -26,10 +26,10 @@ class ModEnUsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(ItemInit.TURNIP, "Turnip")
 
         //Blocks
-        add(BlockInit.COBALT_BLOCK, "Cobalt Block")
-        add(BlockInit.COBALT_ORE, "Cobalt Ore")
-        add(BlockInit.RAW_COBALT_BLOCK, "Raw Cobalt Block")
-        add(BlockInit.DEEPSLATE_COBALT_ORE, "Deeepslate Cobalt Ore")
-        add(BlockInit.SPEEDY_BLOCK, "Speedy Block")
+        add(BlockInit.COBALT_BLOCK.get(), "Cobalt Block")
+        add(BlockInit.COBALT_ORE.get(), "Cobalt Ore")
+        add(BlockInit.RAW_COBALT_BLOCK.get(), "Raw Cobalt Block")
+        add(BlockInit.DEEPSLATE_COBALT_ORE.get(), "Deeepslate Cobalt Ore")
+        add(BlockInit.SPEEDY_BLOCK.get(), "Speedy Block")
     }
 }

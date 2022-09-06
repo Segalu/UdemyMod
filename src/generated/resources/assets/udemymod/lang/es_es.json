@@ -1,7 +1,7 @@
 {
   "block.udemymod.cobalt_block": "Bloque de Cobalto",
   "block.udemymod.cobalt_ore": "Mena de Cobalto",
-  "block.udemymod.deepslate_cobalt_ore": "Deeepslate Cobalt Ore",
+  "block.udemymod.deepslate_cobalt_ore": "Mineral Profundo de Cobalto",
   "block.udemymod.raw_cobalt_block": "Bloque de Cobalto Crudo",
   "block.udemymod.speedy_block": "Block Rapido",
   "item.udemymod.coal_sliver": "Carbon de Bobos",
@@ -11,6 +11,7 @@
   "item.udemymod.dowsing_rod.no_valuables": "No se encontro bloque valioso",
   "item.udemymod.raw_cobalt": "Cobalto Crudo",
   "item.udemymod.turnip": "Turnip",
+  "itemGroup.udemymod": "UdemyMod Tab",
   "tooltip.udemymod.dowsing_rod": "Presiona \u00A7eSHIFT\u00A7r para mas info",
   "tooltip.udemymod.dowsing_rod.shift": "Click derecho para encontrar bloques valiosos",
   "tooltip.udemymod.speedy_block": "Presiona \u00A7eSHIFT\u00A7r para mas info",

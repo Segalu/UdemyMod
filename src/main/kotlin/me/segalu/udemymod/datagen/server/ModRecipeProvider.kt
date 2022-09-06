@@ -37,16 +37,13 @@ class ModRecipeProvider(generator: DataGenerator) : RecipeProvider(generator) {
             )
 
         //Stacks
-        ShapedRecipeBuilder.shaped(BlockInit.COBALT_BLOCK.asItem())
-            .define('#', ItemInit.COBALT_INGOT)
-            .pattern("###")
-            .pattern("###")
-            .pattern("###")
+        ShapelessRecipeBuilder.shapeless(BlockInit.COBALT_BLOCK.get().asItem())
+            .requires(ItemInit.COBALT_INGOT, 9)
             .unlockedBy("has_${ItemInit.COBALT_INGOT.registryName!!.path}", has(ItemInit.COBALT_INGOT))
             .save(
                 consumer, ResourceLocation(
                     UdemyMod.ID,
-                    BlockInit.COBALT_BLOCK.asItem().registryName!!.path
+                    BlockInit.COBALT_BLOCK.get().registryName!!.path
                 )
             )
 
@@ -75,12 +72,12 @@ class ModRecipeProvider(generator: DataGenerator) : RecipeProvider(generator) {
 
         //Ores smelting & blasting
         SimpleCookingRecipeBuilder.smelting(
-            Ingredient.of(BlockInit.COBALT_ORE.asItem()),
+            Ingredient.of(BlockInit.COBALT_ORE.get().asItem()),
             ItemInit.COBALT_INGOT,
             10f,  200
         )
-            .unlockedBy("has_${BlockInit.COBALT_ORE.asItem().registryName!!.path}",
-            has(BlockInit.COBALT_ORE.asItem()))
+            .unlockedBy("has_${BlockInit.COBALT_ORE.get().asItem().registryName!!.path}",
+            has(BlockInit.COBALT_ORE.get().asItem()))
             .save(
                 consumer, ResourceLocation(
                     UdemyMod.ID,
@@ -89,12 +86,12 @@ class ModRecipeProvider(generator: DataGenerator) : RecipeProvider(generator) {
             )
 
         SimpleCookingRecipeBuilder.blasting(
-            Ingredient.of(BlockInit.COBALT_ORE.asItem()),
+            Ingredient.of(BlockInit.COBALT_ORE.get().asItem()),
             ItemInit.COBALT_INGOT,
             1f,  100
         )
-            .unlockedBy("has_${BlockInit.COBALT_ORE.asItem().registryName!!.path}",
-                has(BlockInit.COBALT_ORE.asItem()))
+            .unlockedBy("has_${BlockInit.COBALT_ORE.get().asItem().registryName!!.path}",
+                has(BlockInit.COBALT_ORE.get().asItem()))
             .save(
                 consumer, ResourceLocation(
                     UdemyMod.ID,
@@ -103,12 +100,12 @@ class ModRecipeProvider(generator: DataGenerator) : RecipeProvider(generator) {
             )
 
         SimpleCookingRecipeBuilder.smelting(
-            Ingredient.of(BlockInit.DEEPSLATE_COBALT_ORE.asItem()),
+            Ingredient.of(BlockInit.DEEPSLATE_COBALT_ORE.get().asItem()),
             ItemInit.COBALT_INGOT,
             20f,  300
         )
-            .unlockedBy("has_${BlockInit.DEEPSLATE_COBALT_ORE.asItem().registryName!!.path}",
-                has(BlockInit.DEEPSLATE_COBALT_ORE.asItem()))
+            .unlockedBy("has_${BlockInit.DEEPSLATE_COBALT_ORE.get().asItem().registryName!!.path}",
+                has(BlockInit.DEEPSLATE_COBALT_ORE.get().asItem()))
             .save(
                 consumer, ResourceLocation(
                     UdemyMod.ID,
@@ -117,12 +114,12 @@ class ModRecipeProvider(generator: DataGenerator) : RecipeProvider(generator) {
             )
 
         SimpleCookingRecipeBuilder.blasting(
-            Ingredient.of(BlockInit.DEEPSLATE_COBALT_ORE.asItem()),
+            Ingredient.of(BlockInit.DEEPSLATE_COBALT_ORE.get().asItem()),
             ItemInit.COBALT_INGOT,
             10f, 150
         )
-            .unlockedBy("has_${BlockInit.DEEPSLATE_COBALT_ORE.asItem().registryName!!.path}",
-                has(BlockInit.DEEPSLATE_COBALT_ORE.asItem()))
+            .unlockedBy("has_${BlockInit.DEEPSLATE_COBALT_ORE.get().asItem().registryName!!.path}",
+                has(BlockInit.DEEPSLATE_COBALT_ORE.get().asItem()))
             .save(
                 consumer, ResourceLocation(
                     UdemyMod.ID,

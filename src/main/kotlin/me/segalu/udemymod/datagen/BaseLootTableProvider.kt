@@ -11,6 +11,7 @@ import net.minecraft.data.loot.LootTableProvider
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.enchantment.Enchantments
+import net.minecraft.world.level.ItemLike
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.storage.loot.LootPool
@@ -55,7 +56,7 @@ abstract class BaseLootTableProvider(private val generator: DataGenerator) : Loo
         return LootTable.lootTable().withPool(builder)
     }
 
-    protected fun createSimpleTable(name: String?, block: Block?): LootTable.Builder {
+    protected fun createSimpleTable(name: String?, block: ItemLike?): LootTable.Builder {
         val builder = LootPool.lootPool()
             .name(name)
             .setRolls(ConstantValue.exactly(1f))

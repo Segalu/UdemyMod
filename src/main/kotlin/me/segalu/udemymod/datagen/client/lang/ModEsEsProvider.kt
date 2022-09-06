@@ -11,6 +11,7 @@ class ModEsEsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
 
     override fun addTranslations() {
         //UI
+        add("itemGroup.udemymod", "UdemyMod Tab")
         add("item.udemymod.dowsing_rod.no_valuables", "No se encontro bloque valioso")
         add("tooltip.udemymod.dowsing_rod.shift", "Click derecho para encontrar bloques valiosos")
         add("tooltip.udemymod.dowsing_rod", "Presiona §eSHIFT§r para mas info")
@@ -26,10 +27,10 @@ class ModEsEsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(ItemInit.TURNIP, "Turnip")
 
         //Blocks
-        add(BlockInit.COBALT_BLOCK, "Bloque de Cobalto")
-        add(BlockInit.COBALT_ORE, "Mena de Cobalto")
-        add(BlockInit.RAW_COBALT_BLOCK, "Bloque de Cobalto Crudo")
-        add(BlockInit.DEEPSLATE_COBALT_ORE, "Mineral Profundo de Cobalto")
-        add(BlockInit.SPEEDY_BLOCK, "Block Rapido")
+        add(BlockInit.COBALT_BLOCK.get(), "Bloque de Cobalto")
+        add(BlockInit.COBALT_ORE.get(), "Mena de Cobalto")
+        add(BlockInit.RAW_COBALT_BLOCK.get(), "Bloque de Cobalto Crudo")
+        add(BlockInit.DEEPSLATE_COBALT_ORE.get(), "Mineral Profundo de Cobalto")
+        add(BlockInit.SPEEDY_BLOCK.get(), "Block Rapido")
     }
 }
