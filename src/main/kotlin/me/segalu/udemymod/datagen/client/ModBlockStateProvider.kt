@@ -13,5 +13,6 @@ class ModBlockStateProvider(generator: DataGenerator?, helper: ExistingFileHelpe
         simpleBlock(BlockInit.COBALT_ORE)
         simpleBlock(BlockInit.RAW_COBALT_BLOCK)
         simpleBlock(BlockInit.DEEPSLATE_COBALT_ORE)
+        simpleBlock(BlockInit.SPEEDY_BLOCK)
     }
 }

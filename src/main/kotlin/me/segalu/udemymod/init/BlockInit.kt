@@ -2,14 +2,19 @@ package me.segalu.udemymod.init
 
 import me.segalu.udemymod.UdemyMod
 import me.segalu.udemymod.UdemyMod.UDEMYMOD_TAB
-import net.minecraft.world.item.BlockItem
-import net.minecraft.world.item.Item
+import me.segalu.udemymod.block.SpeedyBlock
+import net.minecraft.client.gui.screens.Screen
+import net.minecraft.network.chat.Component
+import net.minecraft.network.chat.TranslatableComponent
+import net.minecraft.world.item.*
+import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.state.BlockBehaviour
 import net.minecraft.world.level.material.Material
 import net.minecraftforge.registries.DeferredRegister
 import net.minecraftforge.registries.ForgeRegistries
 import thedarkcolour.kotlinforforge.forge.registerObject
+
 
 object BlockInit {
     val BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, UdemyMod.ID)
@@ -56,6 +61,30 @@ object BlockInit {
                     it,
                     Item.Properties().tab(UDEMYMOD_TAB)
                 )
+            }
+        }
+    }
+
+    val SPEEDY_BLOCK by BLOCKS.registerObject("speedy_block") {
+        SpeedyBlock(BlockBehaviour.Properties.of(Material.METAL).strength(4F).requiresCorrectToolForDrops()).also {
+            ItemInit.ITEMS.registerObject("speedy_block") {
+                object : BlockItem(
+                    it,
+                    Item.Properties().tab(UDEMYMOD_TAB)
+                ) {
+                    override fun appendHoverText(
+                        pStack: ItemStack,
+                        pLevel: Level?,
+                        pTooltip: MutableList<Component>,
+                        pFlag: TooltipFlag
+                    ) {
+                        if (Screen.hasShiftDown()) {
+                            pTooltip.add(TranslatableComponent("tooltip.udemymod.speedy_block.shift"))
+                        } else {
+                            pTooltip.add((TranslatableComponent("tooltip.udemymod.speedy_block")))
+                        }
+                    }
+                }
             }
         }
     }

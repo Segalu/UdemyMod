@@ -51,12 +51,16 @@ class ModItemModelProvider(generator: DataGenerator?, helper: ExistingFileHelper
         oneLayerItem(ItemInit.COBALT_INGOT)
         oneLayerItem(ItemInit.COBALT_NUGGET)
         oneLayerItem(ItemInit.RAW_COBALT)
+        oneLayerItem(ItemInit.DOWSING_ROD)
+        oneLayerItem(ItemInit.COAL_SLIVER)
+        oneLayerItem(ItemInit.TURNIP)
 
         //Simple blocks
         simpleBlockItem(BlockInit.COBALT_BLOCK.asItem())
         simpleBlockItem(BlockInit.COBALT_ORE.asItem())
         simpleBlockItem(BlockInit.DEEPSLATE_COBALT_ORE.asItem())
         simpleBlockItem(BlockInit.RAW_COBALT_BLOCK.asItem())
+        simpleBlockItem(BlockInit.SPEEDY_BLOCK.asItem())
     }
 
 }

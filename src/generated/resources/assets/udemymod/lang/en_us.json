@@ -3,8 +3,17 @@
   "block.udemymod.cobalt_ore": "Cobalt Ore",
   "block.udemymod.deepslate_cobalt_ore": "Deeepslate Cobalt Ore",
   "block.udemymod.raw_cobalt_block": "Raw Cobalt Block",
+  "block.udemymod.speedy_block": "Speedy Block",
+  "item.udemymod.coal_sliver": "Coal Sliver",
   "item.udemymod.cobalt_ingot": "Cobalt Ingot",
   "item.udemymod.cobalt_nugget": "Cobalt Nugget",
+  "item.udemymod.dowsing_rod": "Dowsing Rod",
+  "item.udemymod.dowsing_rod.no_valuables": "No valuable block found",
   "item.udemymod.raw_cobalt": "Raw Cobalt",
-  "itemGroup.udemymod": "UdemyMod Tab"
+  "item.udemymod.turnip": "Turnip",
+  "itemGroup.udemymod": "UdemyMod Tab",
+  "tooltip.udemymod.dowsing_rod": "Press \u00A7eSHIFT\u00A7r for info",
+  "tooltip.udemymod.dowsing_rod.shift": "Right click to find valuables",
+  "tooltip.udemymod.speedy_block": "Press \u00A7eSHIFT\u00A7r for info",
+  "tooltip.udemymod.speedy_block.shift": "it gets REALLY speedy!"
 }
