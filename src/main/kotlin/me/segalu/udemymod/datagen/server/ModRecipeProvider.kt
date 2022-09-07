@@ -3,6 +3,7 @@ package me.segalu.udemymod.datagen.server
 import me.segalu.udemymod.UdemyMod
 import me.segalu.udemymod.init.BlockInit
 import me.segalu.udemymod.init.ItemInit
+import me.segalu.udemymod.init.TagInit
 import net.minecraft.data.DataGenerator
 import net.minecraft.data.recipes.FinishedRecipe
 import net.minecraft.data.recipes.RecipeProvider
@@ -24,7 +25,7 @@ class ModRecipeProvider(generator: DataGenerator) : RecipeProvider(generator) {
         ShapedRecipeBuilder.shaped(Items.NETHER_STAR)
             .define('0', Items.DIAMOND)
             .define('1', Items.LAVA_BUCKET)
-            .define('2', ItemInit.COBALT_INGOT)
+            .define('2', TagInit.Items.COBALT_INGOTS)
             .pattern("202")
             .pattern("010")
             .pattern("202")

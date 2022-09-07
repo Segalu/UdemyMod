@@ -51,7 +51,7 @@ object UdemyMod {
     }
 
     @OnlyIn(Dist.CLIENT)
-    val UDEMYMOD_TAB = object : CreativeModeTab("udemymodtab") {
+    val UDEMYMOD_TAB: CreativeModeTab = object : CreativeModeTab("udemymod") {
         override fun makeIcon(): ItemStack {
             return ItemStack(ItemInit.COBALT_INGOT)
         }

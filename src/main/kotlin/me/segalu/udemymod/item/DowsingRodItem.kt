@@ -1,10 +1,12 @@
 package me.segalu.udemymod.item
 
+import me.segalu.udemymod.init.TagInit
 import net.minecraft.client.gui.screens.Screen
 import net.minecraft.core.BlockPos
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.TextComponent
 import net.minecraft.network.chat.TranslatableComponent
+import net.minecraft.tags.Tag
 import net.minecraft.world.InteractionResult
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.Item
@@ -14,6 +16,8 @@ import net.minecraft.world.item.context.UseOnContext
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.Blocks
+import net.minecraftforge.common.Tags
+import net.minecraftforge.registries.ForgeRegistries
 
 class DowsingRodItem(pProperties: Properties) : Item(pProperties) {
     override fun useOn(pContext: UseOnContext): InteractionResult {
@@ -64,6 +68,5 @@ class DowsingRodItem(pProperties: Properties) : Item(pProperties) {
         )
     }
 
-    private fun isValuableBlock(block: Block) =
-        block == Blocks.COAL_ORE || block == Blocks.COPPER_ORE || block == Blocks.DIAMOND_ORE || block == Blocks.IRON_ORE
+    private fun isValuableBlock(block: Block) = ForgeRegistries.BLOCKS.tags()!!.getTag(TagInit.Blocks.DOWSING_ROD_VALUABLES).contains(block)
 }

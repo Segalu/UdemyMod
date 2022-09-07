@@ -13,7 +13,7 @@
       "item": "minecraft:lava_bucket"
     },
     "2": {
-      "item": "udemymod:cobalt_ingot"
+      "tag": "forge:ingots/cobalt"
     }
   },
   "result": {
