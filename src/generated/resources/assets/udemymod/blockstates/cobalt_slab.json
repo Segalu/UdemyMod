@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "udemymod:block/cobalt_slab_top"
+    },
+    "type=bottom": {
+      "model": "udemymod:block/cobalt_slab"
+    },
+    "type=double": {
+      "model": "udemymod:block/cobalt_block"
+    }
+  }
+}

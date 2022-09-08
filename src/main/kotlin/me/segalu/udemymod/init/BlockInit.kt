@@ -7,6 +7,16 @@ import me.segalu.udemymod.item.ShiftTooltipItem
 import me.segalu.udemymod.item.TooltipItem
 import net.minecraft.world.item.*
 import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.block.ButtonBlock
+import net.minecraft.world.level.block.DoorBlock
+import net.minecraft.world.level.block.FenceBlock
+import net.minecraft.world.level.block.FenceGateBlock
+import net.minecraft.world.level.block.PressurePlateBlock
+import net.minecraft.world.level.block.SlabBlock
+import net.minecraft.world.level.block.StairBlock
+import net.minecraft.world.level.block.StoneButtonBlock
+import net.minecraft.world.level.block.TrapDoorBlock
+import net.minecraft.world.level.block.WallBlock
 import net.minecraft.world.level.block.state.BlockBehaviour
 import net.minecraft.world.level.material.Material
 import net.minecraftforge.registries.DeferredRegister
@@ -35,6 +45,42 @@ object BlockInit {
         Block(BlockBehaviour.Properties.of(Material.METAL).strength(4F).requiresCorrectToolForDrops())
     }
 
+    val COBALT_STAIRS = registerItemBlock("cobalt_stairs") {
+        StairBlock( { COBALT_BLOCK.get().defaultBlockState() },BlockBehaviour.Properties.of(Material.METAL).strength(2F).requiresCorrectToolForDrops())
+    }
+
+    val COBALT_SLAB = registerItemBlock("cobalt_slab") {
+        SlabBlock(BlockBehaviour.Properties.of(Material.METAL).strength(4F).requiresCorrectToolForDrops())
+    }
+
+    val COBALT_BUTTON = registerItemBlock("cobalt_button") {
+        StoneButtonBlock(BlockBehaviour.Properties.of(Material.METAL).strength(4F).requiresCorrectToolForDrops().noCollission())
+    }
+
+    val COBALT_PRESSURE_PLATE = registerItemBlock("cobalt_pressure_plate") {
+        PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,BlockBehaviour.Properties.of(Material.METAL).strength(4F).requiresCorrectToolForDrops().noCollission())
+    }
+
+    val COBALT_FENCE = registerItemBlock("cobalt_fence") {
+        FenceBlock(BlockBehaviour.Properties.of(Material.METAL).strength(4F).requiresCorrectToolForDrops())
+    }
+
+    val COBALT_FENCE_GATE = registerItemBlock("cobalt_fence_gate") {
+        FenceGateBlock(BlockBehaviour.Properties.of(Material.METAL).strength(4F).requiresCorrectToolForDrops())
+    }
+
+    val COBALT_WALL = registerItemBlock("cobalt_wall") {
+        WallBlock(BlockBehaviour.Properties.of(Material.METAL).strength(4F).requiresCorrectToolForDrops())
+    }
+
+    val CHERRY_BLOSSOM_DOOR = registerItemBlock("cherry_blossom_door") {
+        DoorBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(4F).requiresCorrectToolForDrops().noOcclusion())
+    }
+
+    val CHERRY_BLOSSOM_TRAPDOOR = registerItemBlock("cherry_blossom_trapdoor") {
+        TrapDoorBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(4F).requiresCorrectToolForDrops().noOcclusion())
+    }
+
     val SPEEDY_BLOCK = registerItemBlock(
         "speedy_block",
         "tooltip.udemymod.speedy_block",
@@ -43,9 +89,9 @@ object BlockInit {
         SpeedyBlock(BlockBehaviour.Properties.of(Material.METAL).strength(4F).requiresCorrectToolForDrops())
     }
 
-    private fun registerItemBlock(
+    private fun <T: Block>registerItemBlock(
         name: String,
-        block: () -> Block
+        block: () -> T
     ) = BLOCKS.register(name, block).also {
         ItemInit.ITEMS.registerObject(name) {
             BlockItem(
@@ -55,10 +101,10 @@ object BlockInit {
         }
     }
 
-    private fun registerItemBlock(
+    private fun <T: Block>registerItemBlock(
         name: String,
         tooltip: String,
-        block: () -> Block
+        block: () -> T
     ) = BLOCKS.register(name, block).also {
         ItemInit.ITEMS.registerObject(name) {
             TooltipItem(
@@ -69,11 +115,11 @@ object BlockInit {
         }
     }
 
-    private fun registerItemBlock(
+    private fun <T: Block>registerItemBlock(
         name: String,
         tooltip: String,
         shiftTooltip: String,
-        block: () -> Block
+        block: () -> T
     ) = BLOCKS.register(name, block).also {
         ItemInit.ITEMS.registerObject(name) {
             ShiftTooltipItem(

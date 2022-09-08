@@ -3,6 +3,8 @@ package me.segalu.udemymod
 import me.segalu.udemymod.init.BlockInit
 import me.segalu.udemymod.init.ItemInit
 import net.minecraft.client.Minecraft
+import net.minecraft.client.renderer.ItemBlockRenderTypes
+import net.minecraft.client.renderer.RenderType
 import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.ItemStack
 import net.minecraftforge.api.distmarker.Dist
@@ -64,6 +66,8 @@ object UdemyMod {
      */
     private fun onClientSetup(event: FMLClientSetupEvent) {
         LOGGER.log(Level.INFO, "Initializing client...")
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.CHERRY_BLOSSOM_DOOR.get(), RenderType.cutout())
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.CHERRY_BLOSSOM_TRAPDOOR.get(), RenderType.cutout())
     }
 
     /**

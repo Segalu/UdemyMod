@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "side": "udemymod:block/cobalt_block",
+    "bottom": "udemymod:block/cobalt_block",
+    "top": "udemymod:block/cobalt_block"
+  }
+}

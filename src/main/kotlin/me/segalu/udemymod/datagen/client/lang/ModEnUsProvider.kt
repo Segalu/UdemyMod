@@ -31,5 +31,14 @@ class ModEnUsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(BlockInit.RAW_COBALT_BLOCK.get(), "Raw Cobalt Block")
         add(BlockInit.DEEPSLATE_COBALT_ORE.get(), "Deeepslate Cobalt Ore")
         add(BlockInit.SPEEDY_BLOCK.get(), "Speedy Block")
+        add(BlockInit.COBALT_STAIRS.get(), "Cobalt Stairs")
+        add(BlockInit.COBALT_SLAB.get(), "Cobalt Slab")
+        add(BlockInit.COBALT_BUTTON.get(), "Cobalt Button")
+        add(BlockInit.COBALT_PRESSURE_PLATE.get(), "Cobalt Pressure Plate")
+        add(BlockInit.COBALT_FENCE.get(), "Cobalt Fence")
+        add(BlockInit.COBALT_FENCE_GATE.get(), "Cobalt Fence Gate")
+        add(BlockInit.COBALT_WALL.get(), "Cobalt Wall")
+        add(BlockInit.CHERRY_BLOSSOM_DOOR.get(), "Cherry Blossom Door")
+        add(BlockInit.CHERRY_BLOSSOM_TRAPDOOR.get(), "Cherry Blossom Trapdoor")
     }
 }

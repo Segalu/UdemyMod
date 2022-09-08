@@ -32,5 +32,14 @@ class ModEsEsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(BlockInit.RAW_COBALT_BLOCK.get(), "Bloque de Cobalto Crudo")
         add(BlockInit.DEEPSLATE_COBALT_ORE.get(), "Mineral Profundo de Cobalto")
         add(BlockInit.SPEEDY_BLOCK.get(), "Block Rapido")
+        add(BlockInit.COBALT_STAIRS.get(), "Escalera de Cobalto")
+        add(BlockInit.COBALT_SLAB.get(), "Escalon de Cobalto")
+        add(BlockInit.COBALT_BUTTON.get(), "Boton de Cobalto")
+        add(BlockInit.COBALT_PRESSURE_PLATE.get(), "Placa de Presion de Cobalto")
+        add(BlockInit.COBALT_FENCE.get(), "Valla de Cobalto")
+        add(BlockInit.COBALT_FENCE_GATE.get(), "Puerta de Valla de Cobalto")
+        add(BlockInit.COBALT_WALL.get(), "Muro de Cobalto")
+        add(BlockInit.CHERRY_BLOSSOM_DOOR.get(), "Puerta de Cerezo")
+        add(BlockInit.CHERRY_BLOSSOM_TRAPDOOR.get(), "Trampilla de Cerezo")
     }
 }
