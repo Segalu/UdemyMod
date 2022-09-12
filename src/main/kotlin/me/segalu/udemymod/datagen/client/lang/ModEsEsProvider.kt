@@ -1,10 +1,10 @@
 package me.segalu.udemymod.datagen.client.lang
 
 import me.segalu.udemymod.UdemyMod
+import me.segalu.udemymod.init.ModEnchantments
 import me.segalu.udemymod.init.BlockInit
 import me.segalu.udemymod.init.ItemInit
 import net.minecraft.data.DataGenerator
-import net.minecraft.world.item.Item
 import net.minecraftforge.common.data.LanguageProvider
 
 class ModEsEsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "es_es") {
@@ -24,7 +24,19 @@ class ModEsEsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(ItemInit.RAW_COBALT, "Cobalto Crudo")
         add(ItemInit.DOWSING_ROD, "Vara Cantramposo")
         add(ItemInit.COAL_SLIVER, "Carbon de Bobos")
-        add(ItemInit.TURNIP, "Turnip")
+        add(ItemInit.TURNIP, "Nabo")
+        add(ItemInit.COBALT_SWORD, "Espada de Cobalto")
+        add(ItemInit.COBALT_PICKAXE, "Pico de CObalto")
+        add(ItemInit.COBALT_AXE, "Hacha de Cobalto")
+        add(ItemInit.COBALT_HOE, "Azada de Cobalto")
+        add(ItemInit.COBALT_SHOVEL, "Pala de Cobalto")
+        add(ItemInit.COBALT_PAXEL, "Pachala de Cobalto")
+        add(ItemInit.COBALT_HELMET, "Casco de Cobalto")
+        add(ItemInit.COBALT_CHESTPLATE, "Pechera de Cobalto")
+        add(ItemInit.COBALT_LEGGINGS, "Pierneras de Cobalto")
+        add(ItemInit.COBALT_BOOTS, "Botas de Cobalto")
+        add(ItemInit.COBALT_HORSE_ARMOR, "Armadura de Caballo de Cobalto")
+
 
         //Blocks
         add(BlockInit.COBALT_BLOCK.get(), "Bloque de Cobalto")
@@ -41,5 +53,8 @@ class ModEsEsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(BlockInit.COBALT_WALL.get(), "Muro de Cobalto")
         add(BlockInit.CHERRY_BLOSSOM_DOOR.get(), "Puerta de Cerezo")
         add(BlockInit.CHERRY_BLOSSOM_TRAPDOOR.get(), "Trampilla de Cerezo")
+
+        //Enchantments
+        add(ModEnchantments.LIGHTNING_STRIKER, "Golpea Truenos")
     }
 }

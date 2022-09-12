@@ -1,5 +1,6 @@
 package me.segalu.udemymod
 
+import me.segalu.udemymod.init.ModEnchantments
 import me.segalu.udemymod.init.BlockInit
 import me.segalu.udemymod.init.ItemInit
 import net.minecraft.client.Minecraft
@@ -38,6 +39,7 @@ object UdemyMod {
         // Register the KDeferredRegister to the mod-specific event bus
         BlockInit.BLOCKS.register(MOD_BUS)
         ItemInit.ITEMS.register(MOD_BUS)
+        ModEnchantments.ENCHANTMENTS.register(MOD_BUS)
 
         val obj = runForDist(
             clientTarget = {

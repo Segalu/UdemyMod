@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "udemymod:cobalt_block",
+    "udemymod:cobalt_ore",
+    "udemymod:raw_cobalt_block",
+    "udemymod:deepslate_cobalt_ore",
+    "udemymod:speedy_block",
+    "udemymod:cobalt_button",
+    "udemymod:cobalt_fence",
+    "udemymod:cobalt_fence_gate",
+    "udemymod:cobalt_wall",
+    "udemymod:cobalt_pressure_plate",
+    "udemymod:cobalt_slab",
+    "udemymod:cobalt_stairs"
+  ]
+}

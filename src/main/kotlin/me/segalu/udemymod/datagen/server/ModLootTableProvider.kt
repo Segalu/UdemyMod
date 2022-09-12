@@ -14,6 +14,13 @@ class ModLootTableProvider(generator: DataGenerator) : BaseLootTableProvider(gen
         dropSelf(BlockInit.RAW_COBALT_BLOCK.get())
         add(BlockInit.COBALT_ORE.get(), createSimpleTable(BlockInit.COBALT_ORE.get().registryName?.path, ItemInit.RAW_COBALT))
         add(BlockInit.DEEPSLATE_COBALT_ORE.get(), createSimpleTable(BlockInit.DEEPSLATE_COBALT_ORE.get().registryName?.path, ItemInit.RAW_COBALT))
+        dropSelf(BlockInit.COBALT_WALL.get())
+        dropSelf(BlockInit.COBALT_FENCE.get())
+        dropSelf(BlockInit.COBALT_FENCE_GATE.get())
+        dropSelf(BlockInit.COBALT_PRESSURE_PLATE.get())
+        dropSelf(BlockInit.COBALT_BUTTON.get())
+        dropSelf(BlockInit.COBALT_SLAB.get())
+        dropSelf(BlockInit.COBALT_STAIRS.get())
     }
 
     private fun silkTouch(block: Block, silk: Item, min: Float, max: Float) {

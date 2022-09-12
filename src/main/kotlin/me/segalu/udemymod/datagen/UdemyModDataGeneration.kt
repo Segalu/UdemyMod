@@ -32,12 +32,15 @@ object UdemyModDataGeneration {
         if (event.includeServer()) {
             val blockTags = ModBlockTagsProvider(generator, helper)
             val forgeBlockTags = ForgeBlockTagsProvider(generator, helper)
+            val minecraftBlockTags = MinecraftBlockTagsProvider(generator, helper)
 
             generator.addProvider(ModRecipeProvider(generator))
             generator.addProvider(blockTags)
             generator.addProvider(forgeBlockTags)
+            generator.addProvider(minecraftBlockTags)
             generator.addProvider(ModItemTagsProvider(generator, blockTags, helper))
             generator.addProvider(ForgeItemTagsProvider(generator, forgeBlockTags, helper))
+            generator.addProvider(MinecraftItemTagsProvider(generator, minecraftBlockTags, helper))
             generator.addProvider(ModLootTableProvider(generator))
         }
 

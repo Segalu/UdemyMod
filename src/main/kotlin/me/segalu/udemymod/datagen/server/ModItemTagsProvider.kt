@@ -29,3 +29,13 @@ class ForgeItemTagsProvider(
         tag(TagInit.Items.COBALT_NUGGETS).add(ItemInit.COBALT_NUGGET)
     }
 }
+
+class MinecraftItemTagsProvider(
+    generator: DataGenerator,
+    blocks: BlockTagsProvider,
+    helper: ExistingFileHelper?
+) : ItemTagsProvider(generator, blocks, "minecraft", helper) {
+
+    override fun addTags() {
+    }
+}

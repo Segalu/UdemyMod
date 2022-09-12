@@ -12,6 +12,7 @@ object TagInit {
         private fun forgeTag(name: String) = BlockTags.create(ResourceLocation("forge", name))
 
         val DOWSING_ROD_VALUABLES = tag("dowsing_rod_valuables")
+        val PAXEL_MINEABLE = tag("mineable/paxel")
     }
     object Items {
         private fun tag(name: String) = ItemTags.create(ResourceLocation(UdemyMod.ID, name))

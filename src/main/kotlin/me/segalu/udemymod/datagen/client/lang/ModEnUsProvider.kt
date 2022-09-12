@@ -1,6 +1,7 @@
 package me.segalu.udemymod.datagen.client.lang
 
 import me.segalu.udemymod.UdemyMod
+import me.segalu.udemymod.init.ModEnchantments
 import me.segalu.udemymod.init.BlockInit
 import me.segalu.udemymod.init.ItemInit
 import net.minecraft.data.DataGenerator
@@ -24,6 +25,17 @@ class ModEnUsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(ItemInit.DOWSING_ROD, "Dowsing Rod")
         add(ItemInit.COAL_SLIVER, "Coal Sliver")
         add(ItemInit.TURNIP, "Turnip")
+        add(ItemInit.COBALT_SWORD, "Cobalt, Sword")
+        add(ItemInit.COBALT_PICKAXE, "Cobalt Pickaxe")
+        add(ItemInit.COBALT_AXE, "Cobalt Axe")
+        add(ItemInit.COBALT_HOE, "Cobalt Hoe")
+        add(ItemInit.COBALT_SHOVEL, "Cobalt Shovel")
+        add(ItemInit.COBALT_PAXEL, "Cobalt Paxel")
+        add(ItemInit.COBALT_HELMET, "Cobalt Helmet")
+        add(ItemInit.COBALT_CHESTPLATE, "Cobalt Chestplate")
+        add(ItemInit.COBALT_LEGGINGS, "Cobalt Leggings")
+        add(ItemInit.COBALT_BOOTS, "Cobalt Boots")
+        add(ItemInit.COBALT_HORSE_ARMOR, "Cobalt Horse Armor")
 
         //Blocks
         add(BlockInit.COBALT_BLOCK.get(), "Cobalt Block")
@@ -40,5 +52,8 @@ class ModEnUsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(BlockInit.COBALT_WALL.get(), "Cobalt Wall")
         add(BlockInit.CHERRY_BLOSSOM_DOOR.get(), "Cherry Blossom Door")
         add(BlockInit.CHERRY_BLOSSOM_TRAPDOOR.get(), "Cherry Blossom Trapdoor")
+
+        //Enchantments
+        add(ModEnchantments.LIGHTNING_STRIKER, "Lightning Striker")
     }
 }

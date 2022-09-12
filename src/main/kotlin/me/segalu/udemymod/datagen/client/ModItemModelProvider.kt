@@ -59,6 +59,11 @@ class ModItemModelProvider(generator: DataGenerator?, helper: ExistingFileHelper
         oneLayerItem(ItemInit.COAL_SLIVER)
         oneLayerItem(ItemInit.TURNIP)
         oneLayerItem(BlockInit.CHERRY_BLOSSOM_DOOR.get().asItem())
+        oneLayerItem(ItemInit.COBALT_HELMET)
+        oneLayerItem(ItemInit.COBALT_CHESTPLATE)
+        oneLayerItem(ItemInit.COBALT_LEGGINGS)
+        oneLayerItem(ItemInit.COBALT_BOOTS)
+        oneLayerItem(ItemInit.COBALT_HORSE_ARMOR)
 
         //Simple blocks
         simpleBlockItem(BlockInit.COBALT_BLOCK.get().asItem())
@@ -75,7 +80,13 @@ class ModItemModelProvider(generator: DataGenerator?, helper: ExistingFileHelper
         buttonInventory(BlockInit.COBALT_BUTTON.get().asItem().registryName.toString(), cobaltResource)
         trapdoorBottom(BlockInit.CHERRY_BLOSSOM_TRAPDOOR.get().asItem().registryName.toString(), ResourceLocation(UdemyMod.ID, "block/${BlockInit.CHERRY_BLOSSOM_TRAPDOOR.get().registryName!!.path}"))
 
-
+        //Hand held
+        handHeldItem(ItemInit.COBALT_SWORD)
+        handHeldItem(ItemInit.COBALT_PICKAXE)
+        handHeldItem(ItemInit.COBALT_AXE)
+        handHeldItem(ItemInit.COBALT_HOE)
+        handHeldItem(ItemInit.COBALT_SHOVEL)
+        handHeldItem(ItemInit.COBALT_PAXEL)
 
     }
 }
