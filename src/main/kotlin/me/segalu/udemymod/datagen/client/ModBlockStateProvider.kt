@@ -1,10 +1,13 @@
 package me.segalu.udemymod.datagen.client
 
 import me.segalu.udemymod.UdemyMod
+import me.segalu.udemymod.block.CobaltLampBlock
 import me.segalu.udemymod.init.BlockInit
 import net.minecraft.data.DataGenerator
 import net.minecraft.resources.ResourceLocation
 import net.minecraftforge.client.model.generators.BlockStateProvider
+import net.minecraftforge.client.model.generators.VariantBlockStateBuilder
+import net.minecraftforge.client.model.generators.VariantBlockStateBuilder.PartialBlockstate
 import net.minecraftforge.common.data.ExistingFileHelper
 
 class ModBlockStateProvider(generator: DataGenerator?, helper: ExistingFileHelper?) :
@@ -18,12 +21,67 @@ class ModBlockStateProvider(generator: DataGenerator?, helper: ExistingFileHelpe
         simpleBlock(BlockInit.SPEEDY_BLOCK.get())
         stairsBlock(BlockInit.COBALT_STAIRS.get(), cobaltResource)
         slabBlock(BlockInit.COBALT_SLAB.get(), cobaltResource, cobaltResource)
+        models().buttonInventory("${BlockInit.COBALT_BUTTON.get().registryName}_inventory", cobaltResource)
         buttonBlock(BlockInit.COBALT_BUTTON.get(), cobaltResource)
         pressurePlateBlock(BlockInit.COBALT_PRESSURE_PLATE.get(), cobaltResource)
+        models().fenceInventory("${BlockInit.COBALT_FENCE.get().registryName}_inventory", cobaltResource)
         fenceBlock(BlockInit.COBALT_FENCE.get(), cobaltResource)
         fenceGateBlock(BlockInit.COBALT_FENCE_GATE.get(), cobaltResource)
+        models().wallInventory("${BlockInit.COBALT_WALL.get().registryName}_inventory", cobaltResource)
         wallBlock(BlockInit.COBALT_WALL.get(), cobaltResource)
-        doorBlock(BlockInit.CHERRY_BLOSSOM_DOOR.get(), ResourceLocation(UdemyMod.ID, "block/${BlockInit.CHERRY_BLOSSOM_DOOR.get().registryName!!.path}_bottom"), ResourceLocation(UdemyMod.ID, "block/${BlockInit.CHERRY_BLOSSOM_DOOR.get().registryName!!.path}_top"))
-        trapdoorBlock(BlockInit.CHERRY_BLOSSOM_TRAPDOOR.get(), ResourceLocation(UdemyMod.ID, "block/${BlockInit.CHERRY_BLOSSOM_TRAPDOOR.get().asItem().registryName!!.path}"), true)
+        doorBlock(
+            BlockInit.CHERRY_BLOSSOM_DOOR.get(),
+            ResourceLocation(UdemyMod.ID, "block/${BlockInit.CHERRY_BLOSSOM_DOOR.get().registryName!!.path}_bottom"),
+            ResourceLocation(UdemyMod.ID, "block/${BlockInit.CHERRY_BLOSSOM_DOOR.get().registryName!!.path}_top")
+        )
+        trapdoorBlock(
+            BlockInit.CHERRY_BLOSSOM_TRAPDOOR.get(),
+            ResourceLocation(
+                UdemyMod.ID,
+                "block/${BlockInit.CHERRY_BLOSSOM_TRAPDOOR.get().asItem().registryName!!.path}"
+            ),
+            true
+        )
+        models().cubeAll(
+            "${BlockInit.COBALT_LAMP.get().registryName}_off", ResourceLocation(
+                UdemyMod.ID,
+                "block/${BlockInit.COBALT_LAMP.get().registryName!!.path}_off"
+            )
+        )
+        models().cubeAll(
+            "${BlockInit.COBALT_LAMP.get().registryName}_on", ResourceLocation(
+                UdemyMod.ID,
+                "block/${BlockInit.COBALT_LAMP.get().registryName!!.path}_on"
+            )
+        )
+        getVariantBuilder(BlockInit.COBALT_LAMP.get())
+            .partialState()
+            .with(CobaltLampBlock.CLICKED, false)
+            .modelForState()
+            .modelFile(
+                models().getExistingFile(
+                    ResourceLocation(
+                        UdemyMod.ID,
+                        "block/${BlockInit.COBALT_LAMP.get().registryName!!.path}_off"
+                    )
+                )
+            )
+            .addModel()
+            .partialState()
+            .with(CobaltLampBlock.CLICKED, true)
+            .modelForState()
+            .modelFile(
+                models().getExistingFile(
+                    ResourceLocation(
+                        UdemyMod.ID,
+                        "block/${BlockInit.COBALT_LAMP.get().registryName!!.path}_on"
+                    )
+                )
+            )
+            .addModel()
+
+
     }
+
+
 }

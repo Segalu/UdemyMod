@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "udemymod:item/data_tablet_off"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "udemymod:on": 1.0
+      },
+      "model": "udemymod:item/data_tablet_on"
+    }
+  ]
+}

@@ -2,6 +2,7 @@ package me.segalu.udemymod.init
 
 import me.segalu.udemymod.UdemyMod
 import me.segalu.udemymod.UdemyMod.UDEMYMOD_TAB
+import me.segalu.udemymod.block.CobaltLampBlock
 import me.segalu.udemymod.block.SpeedyBlock
 import me.segalu.udemymod.item.ShiftTooltipItem
 import me.segalu.udemymod.item.TooltipItem
@@ -87,6 +88,12 @@ object BlockInit {
         "tooltip.udemymod.speedy_block.shift"
     ) {
         SpeedyBlock(BlockBehaviour.Properties.of(Material.METAL).strength(4F).requiresCorrectToolForDrops())
+    }
+
+    val COBALT_LAMP = registerItemBlock("cobalt_lamp") {
+        CobaltLampBlock(BlockBehaviour.Properties.of(Material.METAL).strength(2F).lightLevel{
+            if(it.getValue(CobaltLampBlock.CLICKED)) 15 else 0
+        })
     }
 
     private fun <T: Block>registerItemBlock(

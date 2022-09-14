@@ -1,12 +1,15 @@
 package me.segalu.udemymod.item
 
+import me.segalu.udemymod.init.InventoryUtil.getFirstInventoryIndex
+import me.segalu.udemymod.init.InventoryUtil.hasPlayerStackInInventory
+import me.segalu.udemymod.init.ItemInit
 import me.segalu.udemymod.init.TagInit
 import net.minecraft.client.gui.screens.Screen
 import net.minecraft.core.BlockPos
+import net.minecraft.nbt.CompoundTag
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.TextComponent
 import net.minecraft.network.chat.TranslatableComponent
-import net.minecraft.tags.Tag
 import net.minecraft.world.InteractionResult
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.Item
@@ -15,11 +18,21 @@ import net.minecraft.world.item.TooltipFlag
 import net.minecraft.world.item.context.UseOnContext
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.Block
-import net.minecraft.world.level.block.Blocks
-import net.minecraftforge.common.Tags
 import net.minecraftforge.registries.ForgeRegistries
 
+
 class DowsingRodItem(pProperties: Properties) : Item(pProperties) {
+
+    private fun addNbtToDataTablet(player: Player, pos: BlockPos, blockBelow: Block) {
+        val dataTablet = player.inventory.getItem(getFirstInventoryIndex(player, ItemInit.DATA_TABLET))
+        val nbtData = CompoundTag()
+        nbtData.putString(
+            "udemymod.last_ore",
+            "Found ${blockBelow.asItem().registryName.toString()} at (${pos.x}, ${pos.y}, ${pos.z})"
+        )
+        dataTablet.tag = nbtData
+    }
+
     override fun useOn(pContext: UseOnContext): InteractionResult {
         if (pContext.level.isClientSide) {
             val pos: BlockPos = pContext.clickedPos
@@ -32,6 +45,11 @@ class DowsingRodItem(pProperties: Properties) : Item(pProperties) {
                 if (isValuableBlock(blockBelow)) {
                     outputValuableCoordinates(pos.below(i), player, blockBelow)
                     foundBlock = true
+
+                    if (hasPlayerStackInInventory(player!!, ItemInit.DATA_TABLET)) {
+                        addNbtToDataTablet(player!!, pos.below(i), blockBelow);
+                    }
+
                     break
                 }
             }
@@ -68,5 +86,6 @@ class DowsingRodItem(pProperties: Properties) : Item(pProperties) {
         )
     }
 
-    private fun isValuableBlock(block: Block) = ForgeRegistries.BLOCKS.tags()!!.getTag(TagInit.Blocks.DOWSING_ROD_VALUABLES).contains(block)
+    private fun isValuableBlock(block: Block) =
+        ForgeRegistries.BLOCKS.tags()!!.getTag(TagInit.Blocks.DOWSING_ROD_VALUABLES).contains(block)
 }

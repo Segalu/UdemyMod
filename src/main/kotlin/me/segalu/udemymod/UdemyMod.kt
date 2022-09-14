@@ -3,6 +3,7 @@ package me.segalu.udemymod
 import me.segalu.udemymod.init.ModEnchantments
 import me.segalu.udemymod.init.BlockInit
 import me.segalu.udemymod.init.ItemInit
+import me.segalu.udemymod.init.ItemPropertiesInit
 import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.ItemBlockRenderTypes
 import net.minecraft.client.renderer.RenderType
@@ -70,6 +71,8 @@ object UdemyMod {
         LOGGER.log(Level.INFO, "Initializing client...")
         ItemBlockRenderTypes.setRenderLayer(BlockInit.CHERRY_BLOSSOM_DOOR.get(), RenderType.cutout())
         ItemBlockRenderTypes.setRenderLayer(BlockInit.CHERRY_BLOSSOM_TRAPDOOR.get(), RenderType.cutout())
+
+        ItemPropertiesInit.addCustomItemProperties()
     }
 
     /**

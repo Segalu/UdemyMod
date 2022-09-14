@@ -86,4 +86,8 @@ object ItemInit {
     val COBALT_HORSE_ARMOR by ITEMS.registerObject("cobalt_horse_armor") {
         HorseArmorItem(9, "cobalt", Item.Properties().tab(UDEMYMOD_TAB))
     }
+
+    val DATA_TABLET by ITEMS.registerObject("data_tablet") {
+        DataTabletItem(Item.Properties().stacksTo(1).tab(UDEMYMOD_TAB))
+    }
 }

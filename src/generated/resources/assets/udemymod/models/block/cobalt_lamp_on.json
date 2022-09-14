@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "udemymod:block/cobalt_lamp_on"
+  }
+}

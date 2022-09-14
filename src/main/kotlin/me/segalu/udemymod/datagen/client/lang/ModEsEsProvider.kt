@@ -36,6 +36,7 @@ class ModEsEsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(ItemInit.COBALT_LEGGINGS, "Pierneras de Cobalto")
         add(ItemInit.COBALT_BOOTS, "Botas de Cobalto")
         add(ItemInit.COBALT_HORSE_ARMOR, "Armadura de Caballo de Cobalto")
+        add(ItemInit.DATA_TABLET, "Tableta de Datos")
 
 
         //Blocks
@@ -53,6 +54,7 @@ class ModEsEsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(BlockInit.COBALT_WALL.get(), "Muro de Cobalto")
         add(BlockInit.CHERRY_BLOSSOM_DOOR.get(), "Puerta de Cerezo")
         add(BlockInit.CHERRY_BLOSSOM_TRAPDOOR.get(), "Trampilla de Cerezo")
+        add(BlockInit.COBALT_LAMP.get(), "Lámpara de Cobalto")
 
         //Enchantments
         add(ModEnchantments.LIGHTNING_STRIKER, "Golpea Truenos")
