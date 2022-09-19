@@ -17,8 +17,14 @@ class LevitationSwordItem(
     pAttackSpeedModifier,
     pProperties
 ) {
+
+
     override fun hurtEnemy(pStack: ItemStack, pTarget: LivingEntity, pAttacker: LivingEntity): Boolean {
-        pTarget.addEffect(MobEffectInstance(MobEffects.LEVITATION, 200), pAttacker)
+        if (pTarget.isBaby) {
+            pStack.hurtAndBreak(100,pAttacker) {
+                it.broadcastBreakEvent(it.usedItemHand)
+            }
+        } else pTarget.addEffect(MobEffectInstance(MobEffects.LEVITATION, 200), pAttacker)
         return super.hurtEnemy(pStack, pTarget, pAttacker)
     }
 }

@@ -3,6 +3,7 @@ package me.segalu.udemymod.init
 import me.segalu.udemymod.UdemyMod
 import me.segalu.udemymod.UdemyMod.UDEMYMOD_TAB
 import me.segalu.udemymod.block.CobaltLampBlock
+import me.segalu.udemymod.block.ImpostorBlock
 import me.segalu.udemymod.block.SpeedyBlock
 import me.segalu.udemymod.item.ShiftTooltipItem
 import me.segalu.udemymod.item.TooltipItem
@@ -94,6 +95,10 @@ object BlockInit {
         CobaltLampBlock(BlockBehaviour.Properties.of(Material.METAL).strength(2F).lightLevel{
             if(it.getValue(CobaltLampBlock.CLICKED)) 15 else 0
         })
+    }
+
+    val IMPOSTOR_BLOCK = registerItemBlock("impostor_block") {
+        ImpostorBlock(BlockBehaviour.Properties.of(Material.METAL).strength(2F))
     }
 
     private fun <T: Block>registerItemBlock(

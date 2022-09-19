@@ -2,9 +2,12 @@ package me.segalu.udemymod.datagen.client
 
 import me.segalu.udemymod.UdemyMod
 import me.segalu.udemymod.block.CobaltLampBlock
+import me.segalu.udemymod.block.ImpostorBlock
 import me.segalu.udemymod.init.BlockInit
+import net.minecraft.client.Minecraft
 import net.minecraft.data.DataGenerator
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.world.level.block.Blocks
 import net.minecraftforge.client.model.generators.BlockStateProvider
 import net.minecraftforge.client.model.generators.VariantBlockStateBuilder
 import net.minecraftforge.client.model.generators.VariantBlockStateBuilder.PartialBlockstate
@@ -79,8 +82,55 @@ class ModBlockStateProvider(generator: DataGenerator?, helper: ExistingFileHelpe
                 )
             )
             .addModel()
-
-
+        getVariantBuilder(BlockInit.IMPOSTOR_BLOCK.get())
+            .partialState()
+            .with(ImpostorBlock.SKIN, 1)
+            .modelForState()
+            .modelFile(
+                models().getExistingFile(
+                    ResourceLocation(
+                        "minecraft",
+                        "block/${Blocks.REDSTONE_ORE.registryName!!.path}"
+                    )
+                )
+            )
+            .addModel()
+            .partialState()
+            .with(ImpostorBlock.SKIN, 2)
+            .modelForState()
+            .modelFile(
+                models().getExistingFile(
+                    ResourceLocation(
+                        "minecraft",
+                        "block/${Blocks.LAPIS_ORE.registryName!!.path}"
+                    )
+                )
+            )
+            .addModel()
+            .partialState()
+            .with(ImpostorBlock.SKIN, 3)
+            .modelForState()
+            .modelFile(
+                models().getExistingFile(
+                    ResourceLocation(
+                        "minecraft",
+                        "block/${Blocks.DIAMOND_ORE.registryName!!.path}"
+                    )
+                )
+            )
+            .addModel()
+            .partialState()
+            .with(ImpostorBlock.SKIN, 4)
+            .modelForState()
+            .modelFile(
+                models().getExistingFile(
+                    ResourceLocation(
+                        UdemyMod.ID,
+                        "block/${BlockInit.COBALT_ORE.get().registryName!!.path}"
+                    )
+                )
+            )
+            .addModel()
     }
 
 

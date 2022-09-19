@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "skin=1": {
+      "model": "minecraft:block/redstone_ore"
+    },
+    "skin=2": {
+      "model": "minecraft:block/lapis_ore"
+    },
+    "skin=3": {
+      "model": "minecraft:block/diamond_ore"
+    },
+    "skin=4": {
+      "model": "udemymod:block/cobalt_ore"
+    }
+  }
+}

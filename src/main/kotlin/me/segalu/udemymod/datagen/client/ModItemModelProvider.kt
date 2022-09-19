@@ -7,6 +7,7 @@ import net.minecraft.data.DataGenerator
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.packs.PackType
 import net.minecraft.world.item.Item
+import net.minecraft.world.level.block.Blocks
 import net.minecraftforge.client.model.generators.BlockStateProvider
 import net.minecraftforge.client.model.generators.ItemModelBuilder.OverrideBuilder
 import net.minecraftforge.client.model.generators.ItemModelProvider
@@ -66,12 +67,6 @@ class ModItemModelProvider(generator: DataGenerator?, helper: ExistingFileHelper
         oneLayerItem(ItemInit.COBALT_LEGGINGS)
         oneLayerItem(ItemInit.COBALT_BOOTS)
         oneLayerItem(ItemInit.COBALT_HORSE_ARMOR)
-/*        singleTexture(
-            ItemInit.DATA_TABLET.registryName!!.path, mcLoc("item/generated"), "layer0", ResourceLocation(
-                UdemyMod.ID,
-                "item/${ItemInit.DATA_TABLET.registryName!!.path}_off"
-            )
-        )*/
         getBuilder("${ItemInit.DATA_TABLET.registryName!!.path}_on").parent(getExistingFile(mcLoc("item/generated"))).texture("layer0", ResourceLocation(
             UdemyMod.ID,
             "item/${ItemInit.DATA_TABLET.registryName!!.path}_on"
@@ -102,6 +97,10 @@ class ModItemModelProvider(generator: DataGenerator?, helper: ExistingFileHelper
         withExistingParent(
             BlockInit.COBALT_LAMP.get().asItem().registryName.toString(),
             ResourceLocation(UdemyMod.ID, "block/${BlockInit.COBALT_LAMP.get().registryName!!.path}_off")
+        )
+        withExistingParent(
+            BlockInit.IMPOSTOR_BLOCK.get().asItem().registryName.toString(),
+            ResourceLocation("minecraft", "block/${Blocks.DIAMOND_BLOCK.registryName!!.path}")
         )
 
         //Hand held

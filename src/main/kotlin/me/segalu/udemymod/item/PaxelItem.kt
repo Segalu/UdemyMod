@@ -23,6 +23,8 @@ class PaxelItem(pTier: Tier?, pAttackDamageModifier: Float, pAttackSpeedModifier
     DiggerItem(pAttackDamageModifier, pAttackSpeedModifier, pTier, TagInit.Blocks.PAXEL_MINEABLE, pProperties),
     Vanishable {
 
+
+
     override fun useOn(pContext: UseOnContext): InteractionResult? {
         val level = pContext.level
         val blockpos = pContext.clickedPos

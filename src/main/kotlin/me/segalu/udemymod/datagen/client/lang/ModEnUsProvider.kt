@@ -54,6 +54,7 @@ class ModEnUsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(BlockInit.CHERRY_BLOSSOM_DOOR.get(), "Cherry Blossom Door")
         add(BlockInit.CHERRY_BLOSSOM_TRAPDOOR.get(), "Cherry Blossom Trapdoor")
         add(BlockInit.COBALT_LAMP.get(), "Cobalt Lamp")
+        add(BlockInit.IMPOSTOR_BLOCK.get(), "Impostor Block")
 
         //Enchantments
         add(ModEnchantments.LIGHTNING_STRIKER, "Lightning Striker")
