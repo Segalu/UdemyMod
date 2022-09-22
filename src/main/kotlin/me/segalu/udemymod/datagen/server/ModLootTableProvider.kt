@@ -1,33 +1,34 @@
 package me.segalu.udemymod.datagen.server
 
-import me.segalu.udemymod.datagen.BaseLootTableProvider
-import me.segalu.udemymod.init.BlockInit
-import me.segalu.udemymod.init.ItemInit
+import com.google.common.collect.ImmutableList
+import com.mojang.datafixers.util.Pair
+import me.segalu.udemymod.datagen.server.loot.ModBlockLootTables
 import net.minecraft.data.DataGenerator
-import net.minecraft.world.item.Item
-import net.minecraft.world.level.block.Block
+import net.minecraft.data.loot.LootTableProvider
+import net.minecraft.resources.ResourceLocation
+import net.minecraft.world.level.storage.loot.LootTable
+import net.minecraft.world.level.storage.loot.LootTables
+import net.minecraft.world.level.storage.loot.ValidationContext
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets
+import java.util.function.BiConsumer
+import java.util.function.Consumer
+import java.util.function.Supplier
 
-class ModLootTableProvider(generator: DataGenerator) : BaseLootTableProvider(generator) {
+class ModLootTableProvider(pGenerator: DataGenerator?) : LootTableProvider(pGenerator) {
+    private val loot_tables: List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> =
+        ImmutableList.of(
+            Pair.of(
+                Supplier { ModBlockLootTables() }, LootContextParamSets.BLOCK
+            )
+        )
 
-    override fun addTables() {
-        dropSelf(BlockInit.COBALT_BLOCK.get())
-        dropSelf(BlockInit.RAW_COBALT_BLOCK.get())
-        add(BlockInit.COBALT_ORE.get(), createSimpleTable(BlockInit.COBALT_ORE.get().registryName?.path, ItemInit.RAW_COBALT))
-        add(BlockInit.DEEPSLATE_COBALT_ORE.get(), createSimpleTable(BlockInit.DEEPSLATE_COBALT_ORE.get().registryName?.path, ItemInit.RAW_COBALT))
-        dropSelf(BlockInit.COBALT_WALL.get())
-        dropSelf(BlockInit.COBALT_FENCE.get())
-        dropSelf(BlockInit.COBALT_FENCE_GATE.get())
-        dropSelf(BlockInit.COBALT_PRESSURE_PLATE.get())
-        dropSelf(BlockInit.COBALT_BUTTON.get())
-        dropSelf(BlockInit.COBALT_SLAB.get())
-        dropSelf(BlockInit.COBALT_STAIRS.get())
+
+    override fun getTables(): List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> {
+        return loot_tables
     }
 
-    private fun silkTouch(block: Block, silk: Item, min: Float, max: Float) {
-        add(block, createSilkTouchTable(block.registryName?.path, block, silk, min, max))
+    override fun validate(map: MutableMap<ResourceLocation, LootTable>, validationtracker: ValidationContext) {
+        map.forEach { (id, table) -> LootTables.validate(validationtracker, id, table) }
     }
-    private fun dropSelf(block: Block) {
-        add(block, createSimpleTable(block.registryName?.path, block))
-    }
-
 }

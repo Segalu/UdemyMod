@@ -37,6 +37,7 @@ class ModEnUsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(ItemInit.COBALT_BOOTS, "Cobalt Boots")
         add(ItemInit.COBALT_HORSE_ARMOR, "Cobalt Horse Armor")
         add(ItemInit.DATA_TABLET, "Data Tablet")
+        add(ItemInit.TURNIP_SEEDS, "Turnip Seeds")
 
         //Blocks
         add(BlockInit.COBALT_BLOCK.get(), "Cobalt Block")
@@ -55,6 +56,7 @@ class ModEnUsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(BlockInit.CHERRY_BLOSSOM_TRAPDOOR.get(), "Cherry Blossom Trapdoor")
         add(BlockInit.COBALT_LAMP.get(), "Cobalt Lamp")
         add(BlockInit.IMPOSTOR_BLOCK.get(), "Impostor Block")
+        add(BlockInit.TURNIP_CROP.get(), "Turnip Crop")
 
         //Enchantments
         add(ModEnchantments.LIGHTNING_STRIKER, "Lightning Striker")

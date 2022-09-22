@@ -9,6 +9,7 @@ import net.minecraft.world.item.AxeItem
 import net.minecraft.world.item.HoeItem
 import net.minecraft.world.item.HorseArmorItem
 import net.minecraft.world.item.Item
+import net.minecraft.world.item.ItemNameBlockItem
 import net.minecraft.world.item.PickaxeItem
 import net.minecraft.world.item.ShovelItem
 import net.minecraft.world.item.SwordItem
@@ -89,5 +90,9 @@ object ItemInit {
 
     val DATA_TABLET by ITEMS.registerObject("data_tablet") {
         DataTabletItem(Item.Properties().stacksTo(1).tab(UDEMYMOD_TAB))
+    }
+
+    val TURNIP_SEEDS by ITEMS.registerObject("turnip_seeds") {
+        ItemNameBlockItem(BlockInit.TURNIP_CROP.get(), Item.Properties().tab(UDEMYMOD_TAB))
     }
 }

@@ -6,6 +6,7 @@ import me.segalu.udemymod.datagen.client.lang.ModEnUsProvider
 import me.segalu.udemymod.UdemyMod
 import me.segalu.udemymod.datagen.client.lang.ModEsEsProvider
 import me.segalu.udemymod.datagen.server.*
+import me.segalu.udemymod.datagen.server.loot.ModBlockLootTables
 import net.minecraft.data.DataGenerator
 import net.minecraftforge.common.data.ExistingFileHelper
 import net.minecraftforge.eventbus.api.SubscribeEvent

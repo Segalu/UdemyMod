@@ -8,8 +8,6 @@ import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.packs.PackType
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.block.Blocks
-import net.minecraftforge.client.model.generators.BlockStateProvider
-import net.minecraftforge.client.model.generators.ItemModelBuilder.OverrideBuilder
 import net.minecraftforge.client.model.generators.ItemModelProvider
 import net.minecraftforge.common.data.ExistingFileHelper
 
@@ -67,15 +65,22 @@ class ModItemModelProvider(generator: DataGenerator?, helper: ExistingFileHelper
         oneLayerItem(ItemInit.COBALT_LEGGINGS)
         oneLayerItem(ItemInit.COBALT_BOOTS)
         oneLayerItem(ItemInit.COBALT_HORSE_ARMOR)
-        getBuilder("${ItemInit.DATA_TABLET.registryName!!.path}_on").parent(getExistingFile(mcLoc("item/generated"))).texture("layer0", ResourceLocation(
-            UdemyMod.ID,
-            "item/${ItemInit.DATA_TABLET.registryName!!.path}_on"
-        ))
+        getBuilder("${ItemInit.DATA_TABLET.registryName!!.path}_on").parent(getExistingFile(mcLoc("item/generated")))
+            .texture(
+                "layer0", ResourceLocation(
+                    UdemyMod.ID,
+                    "item/${ItemInit.DATA_TABLET.registryName!!.path}_on"
+                )
+            )
         getBuilder(ItemInit.DATA_TABLET.registryName!!.path).parent(getExistingFile(mcLoc("item/generated")))
-            .texture("layer0", ResourceLocation(
-                UdemyMod.ID,
-                "item/${ItemInit.DATA_TABLET.registryName!!.path}_off"
-            )).override().predicate(ResourceLocation(UdemyMod.ID, "on"), 1F).model(getExistingFile(modLoc("item/${ItemInit.DATA_TABLET.registryName!!.path}_on"))).end()
+            .texture(
+                "layer0", ResourceLocation(
+                    UdemyMod.ID,
+                    "item/${ItemInit.DATA_TABLET.registryName!!.path}_off"
+                )
+            ).override().predicate(ResourceLocation(UdemyMod.ID, "on"), 1F)
+            .model(getExistingFile(modLoc("item/${ItemInit.DATA_TABLET.registryName!!.path}_on"))).end()
+        oneLayerItem(ItemInit.TURNIP_SEEDS)
 
         //Simple blocks
         simpleBlockItem(BlockInit.COBALT_BLOCK.get().asItem())

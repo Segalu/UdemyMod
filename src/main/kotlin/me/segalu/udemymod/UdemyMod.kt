@@ -72,6 +72,8 @@ object UdemyMod {
         ItemBlockRenderTypes.setRenderLayer(BlockInit.CHERRY_BLOSSOM_DOOR.get(), RenderType.cutout())
         ItemBlockRenderTypes.setRenderLayer(BlockInit.CHERRY_BLOSSOM_TRAPDOOR.get(), RenderType.cutout())
 
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.TURNIP_CROP.get(), RenderType.cutout())
+
         ItemPropertiesInit.addCustomItemProperties()
     }
 

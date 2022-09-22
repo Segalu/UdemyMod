@@ -3,7 +3,9 @@ package me.segalu.udemymod.datagen.client
 import me.segalu.udemymod.UdemyMod
 import me.segalu.udemymod.block.CobaltLampBlock
 import me.segalu.udemymod.block.ImpostorBlock
+import me.segalu.udemymod.block.TurnipCropBlock
 import me.segalu.udemymod.init.BlockInit
+import me.segalu.udemymod.init.ItemInit
 import net.minecraft.client.Minecraft
 import net.minecraft.data.DataGenerator
 import net.minecraft.resources.ResourceLocation
@@ -45,25 +47,13 @@ class ModBlockStateProvider(generator: DataGenerator?, helper: ExistingFileHelpe
             ),
             true
         )
-        models().cubeAll(
-            "${BlockInit.COBALT_LAMP.get().registryName}_off", ResourceLocation(
-                UdemyMod.ID,
-                "block/${BlockInit.COBALT_LAMP.get().registryName!!.path}_off"
-            )
-        )
-        models().cubeAll(
-            "${BlockInit.COBALT_LAMP.get().registryName}_on", ResourceLocation(
-                UdemyMod.ID,
-                "block/${BlockInit.COBALT_LAMP.get().registryName!!.path}_on"
-            )
-        )
         getVariantBuilder(BlockInit.COBALT_LAMP.get())
             .partialState()
             .with(CobaltLampBlock.CLICKED, false)
             .modelForState()
             .modelFile(
-                models().getExistingFile(
-                    ResourceLocation(
+                models().cubeAll(
+                    "${BlockInit.COBALT_LAMP.get().registryName}_off", ResourceLocation(
                         UdemyMod.ID,
                         "block/${BlockInit.COBALT_LAMP.get().registryName!!.path}_off"
                     )
@@ -74,8 +64,8 @@ class ModBlockStateProvider(generator: DataGenerator?, helper: ExistingFileHelpe
             .with(CobaltLampBlock.CLICKED, true)
             .modelForState()
             .modelFile(
-                models().getExistingFile(
-                    ResourceLocation(
+                models().cubeAll(
+                    "${BlockInit.COBALT_LAMP.get().registryName}_on", ResourceLocation(
                         UdemyMod.ID,
                         "block/${BlockInit.COBALT_LAMP.get().registryName!!.path}_on"
                     )
@@ -127,6 +117,55 @@ class ModBlockStateProvider(generator: DataGenerator?, helper: ExistingFileHelpe
                     ResourceLocation(
                         UdemyMod.ID,
                         "block/${BlockInit.COBALT_ORE.get().registryName!!.path}"
+                    )
+                )
+            )
+            .addModel()
+        getVariantBuilder(BlockInit.TURNIP_CROP.get())
+            .partialState()
+            .with(BlockInit.TURNIP_CROP.get().ageProperty, 0)
+            .modelForState()
+            .modelFile(
+                models().crop(
+                    "${ItemInit.TURNIP.registryName}_stage0", ResourceLocation(
+                        UdemyMod.ID,
+                        "block/${ItemInit.TURNIP.registryName!!.path}_stage0"
+                    )
+                )
+            )
+            .addModel()
+            .partialState()
+            .with(BlockInit.TURNIP_CROP.get().ageProperty, 1)
+            .modelForState()
+            .modelFile(
+                models().crop(
+                    "${ItemInit.TURNIP.registryName}_stage1", ResourceLocation(
+                        UdemyMod.ID,
+                        "block/${ItemInit.TURNIP.registryName!!.path}_stage1"
+                    )
+                )
+            )
+            .addModel()
+            .partialState()
+            .with(BlockInit.TURNIP_CROP.get().ageProperty, 2)
+            .modelForState()
+            .modelFile(
+                models().crop(
+                    "${ItemInit.TURNIP.registryName}_stage2", ResourceLocation(
+                        UdemyMod.ID,
+                        "block/${ItemInit.TURNIP.registryName!!.path}_stage2"
+                    )
+                )
+            )
+            .addModel()
+            .partialState()
+            .with(BlockInit.TURNIP_CROP.get().ageProperty, 3)
+            .modelForState()
+            .modelFile(
+                models().crop(
+                    "${ItemInit.TURNIP.registryName}_stage3", ResourceLocation(
+                        UdemyMod.ID,
+                        "block/${ItemInit.TURNIP.registryName!!.path}_stage3"
                     )
                 )
             )

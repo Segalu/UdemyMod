@@ -5,10 +5,12 @@ import me.segalu.udemymod.UdemyMod.UDEMYMOD_TAB
 import me.segalu.udemymod.block.CobaltLampBlock
 import me.segalu.udemymod.block.ImpostorBlock
 import me.segalu.udemymod.block.SpeedyBlock
+import me.segalu.udemymod.block.TurnipCropBlock
 import me.segalu.udemymod.item.ShiftTooltipItem
 import me.segalu.udemymod.item.TooltipItem
 import net.minecraft.world.item.*
 import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.ButtonBlock
 import net.minecraft.world.level.block.DoorBlock
 import net.minecraft.world.level.block.FenceBlock
@@ -48,7 +50,10 @@ object BlockInit {
     }
 
     val COBALT_STAIRS = registerItemBlock("cobalt_stairs") {
-        StairBlock( { COBALT_BLOCK.get().defaultBlockState() },BlockBehaviour.Properties.of(Material.METAL).strength(2F).requiresCorrectToolForDrops())
+        StairBlock(
+            { COBALT_BLOCK.get().defaultBlockState() },
+            BlockBehaviour.Properties.of(Material.METAL).strength(2F).requiresCorrectToolForDrops()
+        )
     }
 
     val COBALT_SLAB = registerItemBlock("cobalt_slab") {
@@ -56,11 +61,16 @@ object BlockInit {
     }
 
     val COBALT_BUTTON = registerItemBlock("cobalt_button") {
-        StoneButtonBlock(BlockBehaviour.Properties.of(Material.METAL).strength(4F).requiresCorrectToolForDrops().noCollission())
+        StoneButtonBlock(
+            BlockBehaviour.Properties.of(Material.METAL).strength(4F).requiresCorrectToolForDrops().noCollission()
+        )
     }
 
     val COBALT_PRESSURE_PLATE = registerItemBlock("cobalt_pressure_plate") {
-        PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,BlockBehaviour.Properties.of(Material.METAL).strength(4F).requiresCorrectToolForDrops().noCollission())
+        PressurePlateBlock(
+            PressurePlateBlock.Sensitivity.EVERYTHING,
+            BlockBehaviour.Properties.of(Material.METAL).strength(4F).requiresCorrectToolForDrops().noCollission()
+        )
     }
 
     val COBALT_FENCE = registerItemBlock("cobalt_fence") {
@@ -80,7 +90,9 @@ object BlockInit {
     }
 
     val CHERRY_BLOSSOM_TRAPDOOR = registerItemBlock("cherry_blossom_trapdoor") {
-        TrapDoorBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(4F).requiresCorrectToolForDrops().noOcclusion())
+        TrapDoorBlock(
+            BlockBehaviour.Properties.of(Material.WOOD).strength(4F).requiresCorrectToolForDrops().noOcclusion()
+        )
     }
 
     val SPEEDY_BLOCK = registerItemBlock(
@@ -92,8 +104,8 @@ object BlockInit {
     }
 
     val COBALT_LAMP = registerItemBlock("cobalt_lamp") {
-        CobaltLampBlock(BlockBehaviour.Properties.of(Material.METAL).strength(2F).lightLevel{
-            if(it.getValue(CobaltLampBlock.CLICKED)) 15 else 0
+        CobaltLampBlock(BlockBehaviour.Properties.of(Material.METAL).strength(2F).lightLevel {
+            if (it.getValue(CobaltLampBlock.CLICKED)) 15 else 0
         })
     }
 
@@ -101,7 +113,11 @@ object BlockInit {
         ImpostorBlock(BlockBehaviour.Properties.of(Material.METAL).strength(2F))
     }
 
-    private fun <T: Block>registerItemBlock(
+    val TURNIP_CROP = BLOCKS.register("turnip_crop") {
+        TurnipCropBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS).noCollission().noOcclusion())
+    }
+
+    private fun <T : Block> registerItemBlock(
         name: String,
         block: () -> T
     ) = BLOCKS.register(name, block).also {
@@ -113,7 +129,7 @@ object BlockInit {
         }
     }
 
-    private fun <T: Block>registerItemBlock(
+    private fun <T : Block> registerItemBlock(
         name: String,
         tooltip: String,
         block: () -> T
@@ -127,7 +143,7 @@ object BlockInit {
         }
     }
 
-    private fun <T: Block>registerItemBlock(
+    private fun <T : Block> registerItemBlock(
         name: String,
         tooltip: String,
         shiftTooltip: String,
