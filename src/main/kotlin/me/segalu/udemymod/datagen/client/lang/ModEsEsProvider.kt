@@ -58,6 +58,8 @@ class ModEsEsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(BlockInit.COBALT_LAMP.get(), "Lámpara de Cobalto")
         add(BlockInit.IMPOSTOR_BLOCK.get(), "Bloque Impostor")
         add(BlockInit.TURNIP_CROP.get(), "Cosecha de Nabo")
+        add(BlockInit.PINK_ROSE.get(), "Rosa Rosa")
+        add(BlockInit.POTTED_PINK_ROSE.get(), "Maceta Rosa Rosa")
 
         //Enchantments
         add(ModEnchantments.LIGHTNING_STRIKER, "Golpea Truenos")

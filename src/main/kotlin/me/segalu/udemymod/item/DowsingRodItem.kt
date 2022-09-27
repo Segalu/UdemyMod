@@ -3,6 +3,7 @@ package me.segalu.udemymod.item
 import me.segalu.udemymod.init.InventoryUtil.getFirstInventoryIndex
 import me.segalu.udemymod.init.InventoryUtil.hasPlayerStackInInventory
 import me.segalu.udemymod.init.ItemInit
+import me.segalu.udemymod.init.SoundInit
 import me.segalu.udemymod.init.TagInit
 import net.minecraft.client.gui.screens.Screen
 import net.minecraft.core.BlockPos
@@ -10,6 +11,7 @@ import net.minecraft.nbt.CompoundTag
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.TextComponent
 import net.minecraft.network.chat.TranslatableComponent
+import net.minecraft.sounds.SoundSource
 import net.minecraft.world.InteractionResult
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.Item
@@ -49,6 +51,10 @@ class DowsingRodItem(pProperties: Properties) : Item(pProperties) {
                     if (hasPlayerStackInInventory(player!!, ItemInit.DATA_TABLET)) {
                         addNbtToDataTablet(player!!, pos.below(i), blockBelow);
                     }
+
+//                    player.playSound(SoundInit.DOWSING_ROD_FOUND_ORE.get(), 1f, 1f)
+                    pContext.level.playSound(player, pos, SoundInit.DOWSING_ROD_FOUND_ORE.get()
+                    , SoundSource.BLOCKS, 1F, 1F)
 
                     break
                 }

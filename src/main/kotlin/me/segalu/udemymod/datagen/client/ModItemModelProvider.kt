@@ -8,6 +8,7 @@ import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.packs.PackType
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.block.Blocks
+import net.minecraft.world.level.block.FlowerPotBlock
 import net.minecraftforge.client.model.generators.ItemModelProvider
 import net.minecraftforge.common.data.ExistingFileHelper
 
@@ -107,6 +108,10 @@ class ModItemModelProvider(generator: DataGenerator?, helper: ExistingFileHelper
             BlockInit.IMPOSTOR_BLOCK.get().asItem().registryName.toString(),
             ResourceLocation("minecraft", "block/${Blocks.DIAMOND_BLOCK.registryName!!.path}")
         )
+        getBuilder(BlockInit.PINK_ROSE.get().registryName!!.path).parent(getExistingFile(mcLoc("item/generated")))
+            .texture(
+                "layer0", ResourceLocation(UdemyMod.ID, "block/${BlockInit.PINK_ROSE.get().registryName!!.path}")
+            )
 
         //Hand held
         handHeldItem(ItemInit.COBALT_SWORD)

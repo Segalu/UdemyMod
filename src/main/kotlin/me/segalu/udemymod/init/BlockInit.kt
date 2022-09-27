@@ -8,13 +8,15 @@ import me.segalu.udemymod.block.SpeedyBlock
 import me.segalu.udemymod.block.TurnipCropBlock
 import me.segalu.udemymod.item.ShiftTooltipItem
 import me.segalu.udemymod.item.TooltipItem
+import net.minecraft.world.effect.MobEffects
 import net.minecraft.world.item.*
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.Blocks
-import net.minecraft.world.level.block.ButtonBlock
 import net.minecraft.world.level.block.DoorBlock
 import net.minecraft.world.level.block.FenceBlock
 import net.minecraft.world.level.block.FenceGateBlock
+import net.minecraft.world.level.block.FlowerBlock
+import net.minecraft.world.level.block.FlowerPotBlock
 import net.minecraft.world.level.block.PressurePlateBlock
 import net.minecraft.world.level.block.SlabBlock
 import net.minecraft.world.level.block.StairBlock
@@ -25,7 +27,6 @@ import net.minecraft.world.level.block.state.BlockBehaviour
 import net.minecraft.world.level.material.Material
 import net.minecraftforge.registries.DeferredRegister
 import net.minecraftforge.registries.ForgeRegistries
-import net.minecraftforge.registries.RegistryObject
 import thedarkcolour.kotlinforforge.forge.registerObject
 
 object BlockInit {
@@ -104,9 +105,10 @@ object BlockInit {
     }
 
     val COBALT_LAMP = registerItemBlock("cobalt_lamp") {
-        CobaltLampBlock(BlockBehaviour.Properties.of(Material.METAL).strength(2F).lightLevel {
-            if (it.getValue(CobaltLampBlock.CLICKED)) 15 else 0
-        })
+        CobaltLampBlock(
+            BlockBehaviour.Properties.of(Material.METAL).sound(SoundInit.COBALT_LAMP_SOUNDS).strength(2F).lightLevel {
+                if (it.getValue(CobaltLampBlock.CLICKED)) 15 else 0
+            })
     }
 
     val IMPOSTOR_BLOCK = registerItemBlock("impostor_block") {
@@ -115,6 +117,18 @@ object BlockInit {
 
     val TURNIP_CROP = BLOCKS.register("turnip_crop") {
         TurnipCropBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS).noCollission().noOcclusion())
+    }
+
+    val PINK_ROSE = registerItemBlock("pink_rose") {
+        FlowerBlock(MobEffects.BLINDNESS, 4, BlockBehaviour.Properties.copy(Blocks.DANDELION).noOcclusion())
+    }
+
+    val POTTED_PINK_ROSE = BLOCKS.register("potted_pink_rose") {
+        FlowerPotBlock(
+            { Blocks.FLOWER_POT as FlowerPotBlock },
+            PINK_ROSE,
+            BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()
+        )
     }
 
     private fun <T : Block> registerItemBlock(

@@ -1,0 +1,38 @@
+{
+  "dowsing_rod_found_ore": {
+    "subtitle": "sounds.udemymod.dowsing_rod_found_ore",
+    "sounds": [
+      "udemymod:dowsing_rod_found_ore"
+    ]
+  },
+  "cobalt_lamp_break": {
+    "subtitle": "sounds.udemymod.cobalt_lamp_break",
+    "sounds": [
+      "udemymod:cobalt_lamp_break"
+    ]
+  },
+  "cobalt_lamp_step": {
+    "subtitle": "sounds.udemymod.cobalt_lamp_step",
+    "sounds": [
+      "udemymod:cobalt_lamp_step"
+    ]
+  },
+  "cobalt_lamp_place": {
+    "subtitle": "sounds.udemymod.cobalt_lamp_place",
+    "sounds": [
+      "udemymod:cobalt_lamp_place"
+    ]
+  },
+  "cobalt_lamp_hit": {
+    "subtitle": "sounds.udemymod.cobalt_lamp_hit",
+    "sounds": [
+      "udemymod:cobalt_lamp_hit"
+    ]
+  },
+  "cobalt_lamp_fall": {
+    "subtitle": "sounds.udemymod.cobalt_lamp_fall",
+    "sounds": [
+      "udemymod:cobalt_lamp_fall"
+    ]
+  }
+}

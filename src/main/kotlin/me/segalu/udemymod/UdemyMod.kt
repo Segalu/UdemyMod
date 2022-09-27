@@ -1,24 +1,22 @@
 package me.segalu.udemymod
 
-import me.segalu.udemymod.init.ModEnchantments
-import me.segalu.udemymod.init.BlockInit
-import me.segalu.udemymod.init.ItemInit
-import me.segalu.udemymod.init.ItemPropertiesInit
-import net.minecraft.client.Minecraft
+import me.segalu.udemymod.init.*
 import net.minecraft.client.renderer.ItemBlockRenderTypes
 import net.minecraft.client.renderer.RenderType
 import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.ItemStack
+import net.minecraft.world.level.block.Blocks
+import net.minecraft.world.level.block.ComposterBlock
+import net.minecraft.world.level.block.FlowerPotBlock
 import net.minecraftforge.api.distmarker.Dist
 import net.minecraftforge.api.distmarker.OnlyIn
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
-import net.minecraftforge.fml.event.lifecycle.FMLDedicatedServerSetupEvent
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent
 import org.apache.logging.log4j.Level
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
 import thedarkcolour.kotlinforforge.forge.MOD_BUS
-import thedarkcolour.kotlinforforge.forge.runForDist
 
 /**
  * Main mod class. Should be an `object` declaration annotated with `@Mod`.
@@ -37,22 +35,13 @@ object UdemyMod {
     init {
         LOGGER.log(Level.INFO, "Hello world!")
 
-        // Register the KDeferredRegister to the mod-specific event bus
         BlockInit.BLOCKS.register(MOD_BUS)
         ItemInit.ITEMS.register(MOD_BUS)
+        SoundInit.SOUND_EVENTS.register(MOD_BUS)
         ModEnchantments.ENCHANTMENTS.register(MOD_BUS)
 
-        val obj = runForDist(
-            clientTarget = {
-                MOD_BUS.addListener(UdemyMod::onClientSetup)
-                Minecraft.getInstance()
-            },
-            serverTarget = {
-                MOD_BUS.addListener(UdemyMod::onServerSetup)
-                "test"
-            })
-
-        println(obj)
+        MOD_BUS.addListener(UdemyMod::onClientSetup)
+        MOD_BUS.addListener(UdemyMod::onServerSetup)
     }
 
     @OnlyIn(Dist.CLIENT)
@@ -71,8 +60,9 @@ object UdemyMod {
         LOGGER.log(Level.INFO, "Initializing client...")
         ItemBlockRenderTypes.setRenderLayer(BlockInit.CHERRY_BLOSSOM_DOOR.get(), RenderType.cutout())
         ItemBlockRenderTypes.setRenderLayer(BlockInit.CHERRY_BLOSSOM_TRAPDOOR.get(), RenderType.cutout())
-
         ItemBlockRenderTypes.setRenderLayer(BlockInit.TURNIP_CROP.get(), RenderType.cutout())
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.PINK_ROSE.get(), RenderType.cutout())
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.POTTED_PINK_ROSE.get(), RenderType.cutout())
 
         ItemPropertiesInit.addCustomItemProperties()
     }
@@ -80,7 +70,12 @@ object UdemyMod {
     /**
      * Fired on the global Forge bus.
      */
-    private fun onServerSetup(event: FMLDedicatedServerSetupEvent) {
+    private fun onServerSetup(event: FMLCommonSetupEvent) {
         LOGGER.log(Level.INFO, "Server starting...")
+        event.enqueueWork {
+            (Blocks.FLOWER_POT as FlowerPotBlock).addPlant(BlockInit.PINK_ROSE.id, BlockInit.POTTED_PINK_ROSE)
+            ComposterBlock.COMPOSTABLES.put(ItemInit.TURNIP_SEEDS, 0.3F)
+            ComposterBlock.COMPOSTABLES.put(ItemInit.TURNIP, 0.65F)
+        }
     }
 }

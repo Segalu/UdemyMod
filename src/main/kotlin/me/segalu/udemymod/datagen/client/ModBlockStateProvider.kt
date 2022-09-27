@@ -170,7 +170,8 @@ class ModBlockStateProvider(generator: DataGenerator?, helper: ExistingFileHelpe
                 )
             )
             .addModel()
+        simpleBlock(BlockInit.PINK_ROSE.get(), models().cross(BlockInit.PINK_ROSE.get().registryName!!.path, blockTexture(BlockInit.PINK_ROSE.get())))
+        simpleBlock(BlockInit.POTTED_PINK_ROSE.get(), models().withExistingParent(BlockInit.POTTED_PINK_ROSE.get().registryName!!.path, "flower_pot_cross").texture("plant", ResourceLocation(UdemyMod.ID, "block/${BlockInit.PINK_ROSE.get().registryName!!.path}")))
     }
-
 
 }
