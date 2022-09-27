@@ -82,6 +82,7 @@ class ModItemModelProvider(generator: DataGenerator?, helper: ExistingFileHelper
             ).override().predicate(ResourceLocation(UdemyMod.ID, "on"), 1F)
             .model(getExistingFile(modLoc("item/${ItemInit.DATA_TABLET.registryName!!.path}_on"))).end()
         oneLayerItem(ItemInit.TURNIP_SEEDS)
+        oneLayerItem(ItemInit.BAR_BRAWL_RECORD)
 
         //Simple blocks
         simpleBlockItem(BlockInit.COBALT_BLOCK.get().asItem())

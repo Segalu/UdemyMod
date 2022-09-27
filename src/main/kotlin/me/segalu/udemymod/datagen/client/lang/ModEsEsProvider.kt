@@ -17,6 +17,7 @@ class ModEsEsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add("tooltip.udemymod.dowsing_rod", "Presiona §eSHIFT§r para mas info")
         add("tooltip.udemymod.speedy_block.shift", "se pone REALMENTE rapido!")
         add("tooltip.udemymod.speedy_block", "Presiona §eSHIFT§r para mas info")
+        add(ItemInit.BAR_BRAWL_RECORD.descriptionId + ".desc", "Bryan Tech - Pelea de Bar (CC0)")
 
         //Items
         add(ItemInit.COBALT_INGOT, "Lingote de Cobalto")
@@ -38,6 +39,7 @@ class ModEsEsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(ItemInit.COBALT_HORSE_ARMOR, "Armadura de Caballo de Cobalto")
         add(ItemInit.DATA_TABLET, "Tableta de Datos")
         add(ItemInit.TURNIP_SEEDS, "Semillas de Nabo")
+        add(ItemInit.BAR_BRAWL_RECORD, "Disco Pelea de Bar")
 
 
         //Blocks

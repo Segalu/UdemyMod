@@ -18,6 +18,7 @@ object SoundInit {
     val COBALT_LAMP_PLACE = registerSound("cobalt_lamp_place")
     val COBALT_LAMP_HIT = registerSound("cobalt_lamp_hit")
     val COBALT_LAMP_FALL = registerSound("cobalt_lamp_fall")
+    val BAR_BRAWL = registerSound("bar_brawl")
 
     val COBALT_LAMP_SOUNDS = ForgeSoundType(
         1F,

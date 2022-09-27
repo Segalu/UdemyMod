@@ -34,5 +34,13 @@
     "sounds": [
       "udemymod:cobalt_lamp_fall"
     ]
+  },
+  "bar_brawl": {
+    "sounds": [
+      {
+        "name": "udemymod:bar_brawl",
+        "stream": true
+      }
+    ]
   }
 }

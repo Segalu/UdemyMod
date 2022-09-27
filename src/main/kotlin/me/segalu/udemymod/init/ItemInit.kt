@@ -11,6 +11,7 @@ import net.minecraft.world.item.HorseArmorItem
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemNameBlockItem
 import net.minecraft.world.item.PickaxeItem
+import net.minecraft.world.item.RecordItem
 import net.minecraft.world.item.ShovelItem
 import net.minecraft.world.item.SwordItem
 import net.minecraftforge.registries.DeferredRegister
@@ -94,5 +95,9 @@ object ItemInit {
 
     val TURNIP_SEEDS by ITEMS.registerObject("turnip_seeds") {
         ItemNameBlockItem(BlockInit.TURNIP_CROP.get(), Item.Properties().tab(UDEMYMOD_TAB))
+    }
+
+    val BAR_BRAWL_RECORD by ITEMS.registerObject("bar_brawl_music_disc") {
+        RecordItem(4, SoundInit.BAR_BRAWL, Item.Properties().tab(UDEMYMOD_TAB))
     }
 }
