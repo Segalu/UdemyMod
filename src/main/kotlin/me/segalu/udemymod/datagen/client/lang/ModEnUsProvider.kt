@@ -18,6 +18,7 @@ class ModEnUsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add("tooltip.udemymod.speedy_block.shift", "it gets REALLY speedy!")
         add("tooltip.udemymod.speedy_block", "Press §eSHIFT§r for info")
         add(ItemInit.BAR_BRAWL_RECORD.descriptionId + ".desc", "Bryan Tech - Bar Brawl (CC0)")
+        add("tooltip.udemymod.cobalt_blaster", "My Custom BlockBench Block")
 
         //Items
         add(ItemInit.COBALT_INGOT, "Cobalt Ingot")
@@ -40,6 +41,7 @@ class ModEnUsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(ItemInit.DATA_TABLET, "Data Tablet")
         add(ItemInit.TURNIP_SEEDS, "Turnip Seeds")
         add(ItemInit.BAR_BRAWL_RECORD, "Bar Brawl Music Disc")
+        add(ItemInit.COBALT_STAFF, "Cobalt Staff")
 
         //Blocks
         add(BlockInit.COBALT_BLOCK.get(), "Cobalt Block")
@@ -61,6 +63,7 @@ class ModEnUsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(BlockInit.TURNIP_CROP.get(), "Turnip Crop")
         add(BlockInit.PINK_ROSE.get(), "Pink Rose")
         add(BlockInit.POTTED_PINK_ROSE.get(), "Potted Pink Rose")
+        add(BlockInit.COBALT_BLASTER.get(), "Cobalt Blaster")
 
         //Enchantments
         add(ModEnchantments.LIGHTNING_STRIKER, "Lightning Striker")

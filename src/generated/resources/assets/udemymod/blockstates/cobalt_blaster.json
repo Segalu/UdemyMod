@@ -1,0 +1,57 @@
+{
+  "variants": {
+    "face=floor,facing=north": {
+      "model": "udemymod:block/cobalt_blaster"
+    },
+    "face=wall,facing=north": {
+      "model": "udemymod:block/cobalt_blaster",
+      "x": 90
+    },
+    "face=ceiling,facing=north": {
+      "model": "udemymod:block/cobalt_blaster",
+      "x": 180,
+      "y": 180
+    },
+    "face=floor,facing=south": {
+      "model": "udemymod:block/cobalt_blaster",
+      "y": 180
+    },
+    "face=wall,facing=south": {
+      "model": "udemymod:block/cobalt_blaster",
+      "x": 90,
+      "y": 180
+    },
+    "face=ceiling,facing=south": {
+      "model": "udemymod:block/cobalt_blaster",
+      "x": 180
+    },
+    "face=floor,facing=west": {
+      "model": "udemymod:block/cobalt_blaster",
+      "y": 270
+    },
+    "face=wall,facing=west": {
+      "model": "udemymod:block/cobalt_blaster",
+      "x": 90,
+      "y": 270
+    },
+    "face=ceiling,facing=west": {
+      "model": "udemymod:block/cobalt_blaster",
+      "x": 180,
+      "y": 90
+    },
+    "face=floor,facing=east": {
+      "model": "udemymod:block/cobalt_blaster",
+      "y": 90
+    },
+    "face=wall,facing=east": {
+      "model": "udemymod:block/cobalt_blaster",
+      "x": 90,
+      "y": 90
+    },
+    "face=ceiling,facing=east": {
+      "model": "udemymod:block/cobalt_blaster",
+      "x": 180,
+      "y": 270
+    }
+  }
+}

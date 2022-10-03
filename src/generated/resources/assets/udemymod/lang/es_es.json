@@ -1,6 +1,7 @@
 {
   "block.udemymod.cherry_blossom_door": "Puerta de Cerezo",
   "block.udemymod.cherry_blossom_trapdoor": "Trampilla de Cerezo",
+  "block.udemymod.cobalt_blaster": "Altohorno de Cobalto",
   "block.udemymod.cobalt_block": "Bloque de Cobalto",
   "block.udemymod.cobalt_button": "Boton de Cobalto",
   "block.udemymod.cobalt_fence": "Valla de Cobalto",
@@ -34,6 +35,7 @@
   "item.udemymod.cobalt_paxel": "Pachala de Cobalto",
   "item.udemymod.cobalt_pickaxe": "Pico de CObalto",
   "item.udemymod.cobalt_shovel": "Pala de Cobalto",
+  "item.udemymod.cobalt_staff": "Bast\u00F3n de Cobalto",
   "item.udemymod.cobalt_sword": "Espada de Cobalto",
   "item.udemymod.data_tablet": "Tableta de Datos",
   "item.udemymod.dowsing_rod": "Vara Cantramposo",
@@ -42,6 +44,7 @@
   "item.udemymod.turnip": "Nabo",
   "item.udemymod.turnip_seeds": "Semillas de Nabo",
   "itemGroup.udemymod": "UdemyMod Tab",
+  "tooltip.udemymod.cobalt_blaster": "Mi Bloque Block Bench Personalizado",
   "tooltip.udemymod.dowsing_rod": "Presiona \u00A7eSHIFT\u00A7r para mas info",
   "tooltip.udemymod.dowsing_rod.shift": "Click derecho para encontrar bloques valiosos",
   "tooltip.udemymod.speedy_block": "Presiona \u00A7eSHIFT\u00A7r para mas info",

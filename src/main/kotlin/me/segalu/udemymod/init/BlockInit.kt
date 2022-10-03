@@ -2,10 +2,7 @@ package me.segalu.udemymod.init
 
 import me.segalu.udemymod.UdemyMod
 import me.segalu.udemymod.UdemyMod.UDEMYMOD_TAB
-import me.segalu.udemymod.block.CobaltLampBlock
-import me.segalu.udemymod.block.ImpostorBlock
-import me.segalu.udemymod.block.SpeedyBlock
-import me.segalu.udemymod.block.TurnipCropBlock
+import me.segalu.udemymod.block.*
 import me.segalu.udemymod.item.ShiftTooltipItem
 import me.segalu.udemymod.item.TooltipItem
 import net.minecraft.world.effect.MobEffects
@@ -17,6 +14,7 @@ import net.minecraft.world.level.block.FenceBlock
 import net.minecraft.world.level.block.FenceGateBlock
 import net.minecraft.world.level.block.FlowerBlock
 import net.minecraft.world.level.block.FlowerPotBlock
+import net.minecraft.world.level.block.FurnaceBlock
 import net.minecraft.world.level.block.PressurePlateBlock
 import net.minecraft.world.level.block.SlabBlock
 import net.minecraft.world.level.block.StairBlock
@@ -129,6 +127,10 @@ object BlockInit {
             PINK_ROSE,
             BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()
         )
+    }
+
+    val COBALT_BLASTER = registerItemBlock("cobalt_blaster", "tooltip.udemymod.cobalt_blaster") {
+        CobaltBlasterBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion())
     }
 
     private fun <T : Block> registerItemBlock(

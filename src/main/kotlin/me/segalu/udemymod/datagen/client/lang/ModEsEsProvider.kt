@@ -5,6 +5,7 @@ import me.segalu.udemymod.init.ModEnchantments
 import me.segalu.udemymod.init.BlockInit
 import me.segalu.udemymod.init.ItemInit
 import net.minecraft.data.DataGenerator
+import net.minecraft.world.item.Item
 import net.minecraftforge.common.data.LanguageProvider
 
 class ModEsEsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "es_es") {
@@ -18,6 +19,7 @@ class ModEsEsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add("tooltip.udemymod.speedy_block.shift", "se pone REALMENTE rapido!")
         add("tooltip.udemymod.speedy_block", "Presiona §eSHIFT§r para mas info")
         add(ItemInit.BAR_BRAWL_RECORD.descriptionId + ".desc", "Bryan Tech - Pelea de Bar (CC0)")
+        add("tooltip.udemymod.cobalt_blaster", "Mi Bloque Block Bench Personalizado")
 
         //Items
         add(ItemInit.COBALT_INGOT, "Lingote de Cobalto")
@@ -40,7 +42,7 @@ class ModEsEsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(ItemInit.DATA_TABLET, "Tableta de Datos")
         add(ItemInit.TURNIP_SEEDS, "Semillas de Nabo")
         add(ItemInit.BAR_BRAWL_RECORD, "Disco Pelea de Bar")
-
+        add(ItemInit.COBALT_STAFF, "Bastón de Cobalto")
 
         //Blocks
         add(BlockInit.COBALT_BLOCK.get(), "Bloque de Cobalto")
@@ -62,6 +64,7 @@ class ModEsEsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(BlockInit.TURNIP_CROP.get(), "Cosecha de Nabo")
         add(BlockInit.PINK_ROSE.get(), "Rosa Rosa")
         add(BlockInit.POTTED_PINK_ROSE.get(), "Maceta Rosa Rosa")
+        add(BlockInit.COBALT_BLASTER.get(), "Altohorno de Cobalto")
 
         //Enchantments
         add(ModEnchantments.LIGHTNING_STRIKER, "Golpea Truenos")

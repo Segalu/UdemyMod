@@ -113,6 +113,7 @@ class ModItemModelProvider(generator: DataGenerator?, helper: ExistingFileHelper
             .texture(
                 "layer0", ResourceLocation(UdemyMod.ID, "block/${BlockInit.PINK_ROSE.get().registryName!!.path}")
             )
+        simpleBlockItem(BlockInit.COBALT_BLASTER.get().asItem())
 
         //Hand held
         handHeldItem(ItemInit.COBALT_SWORD)

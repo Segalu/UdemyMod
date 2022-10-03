@@ -7,6 +7,7 @@ import me.segalu.udemymod.block.TurnipCropBlock
 import me.segalu.udemymod.init.BlockInit
 import me.segalu.udemymod.init.ItemInit
 import net.minecraft.client.Minecraft
+import net.minecraft.core.Direction
 import net.minecraft.data.DataGenerator
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.level.block.Blocks
@@ -170,8 +171,32 @@ class ModBlockStateProvider(generator: DataGenerator?, helper: ExistingFileHelpe
                 )
             )
             .addModel()
-        simpleBlock(BlockInit.PINK_ROSE.get(), models().cross(BlockInit.PINK_ROSE.get().registryName!!.path, blockTexture(BlockInit.PINK_ROSE.get())))
-        simpleBlock(BlockInit.POTTED_PINK_ROSE.get(), models().withExistingParent(BlockInit.POTTED_PINK_ROSE.get().registryName!!.path, "flower_pot_cross").texture("plant", ResourceLocation(UdemyMod.ID, "block/${BlockInit.PINK_ROSE.get().registryName!!.path}")))
+        simpleBlock(
+            BlockInit.PINK_ROSE.get(),
+            models().cross(BlockInit.PINK_ROSE.get().registryName!!.path, blockTexture(BlockInit.PINK_ROSE.get()))
+        )
+        simpleBlock(
+            BlockInit.POTTED_PINK_ROSE.get(),
+            models().withExistingParent(BlockInit.POTTED_PINK_ROSE.get().registryName!!.path, "flower_pot_cross")
+                .texture(
+                    "plant",
+                    ResourceLocation(UdemyMod.ID, "block/${BlockInit.PINK_ROSE.get().registryName!!.path}")
+                )
+        )
+//        simpleBlock(BlockInit.COBALT_BLASTER.get(), models().getExistingFile(ResourceLocation(UdemyMod.ID, BlockInit.COBALT_BLASTER.get().registryName!!.path)))
+        horizontalFaceBlock(
+            BlockInit.COBALT_BLASTER.get(),
+            models().getExistingFile(ResourceLocation(UdemyMod.ID, BlockInit.COBALT_BLASTER.get().registryName!!.path))
+        )
+        /*        getVariantBuilder(BlockInit.COBALT_BLASTER.get())
+                    .forAllStates(state ->
+                    Direction dir = state.getValue(BlockStateProperties.FACING);
+                    return ConfiguredModel.builder()
+                        .modelFile(modelFunc.apply(state))
+                        .rotationX(dir == Direction.DOWN ? 180 : dir.getAxis().isHorizontal() ? 90 : 0)
+                    .rotationY(dir.getAxis().isVertical() ? 0 : (((int) dir.toYRot()) + angleOffset) % 360)
+                    .build();
+                )*/
     }
 
 }

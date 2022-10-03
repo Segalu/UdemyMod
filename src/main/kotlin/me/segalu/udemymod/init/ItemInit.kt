@@ -100,4 +100,8 @@ object ItemInit {
     val BAR_BRAWL_RECORD by ITEMS.registerObject("bar_brawl_music_disc") {
         RecordItem(4, SoundInit.BAR_BRAWL, Item.Properties().tab(UDEMYMOD_TAB))
     }
+
+    val COBALT_STAFF by ITEMS.registerObject("cobalt_staff") {
+        Item(Item.Properties().stacksTo(1).tab(UDEMYMOD_TAB))
+    }
 }

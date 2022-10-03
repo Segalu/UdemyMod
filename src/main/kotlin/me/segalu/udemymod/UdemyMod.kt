@@ -63,6 +63,7 @@ object UdemyMod {
         ItemBlockRenderTypes.setRenderLayer(BlockInit.TURNIP_CROP.get(), RenderType.cutout())
         ItemBlockRenderTypes.setRenderLayer(BlockInit.PINK_ROSE.get(), RenderType.cutout())
         ItemBlockRenderTypes.setRenderLayer(BlockInit.POTTED_PINK_ROSE.get(), RenderType.cutout())
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.COBALT_BLASTER.get(), RenderType.cutout())
 
         ItemPropertiesInit.addCustomItemProperties()
     }

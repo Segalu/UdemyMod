@@ -1,6 +1,7 @@
 {
   "block.udemymod.cherry_blossom_door": "Cherry Blossom Door",
   "block.udemymod.cherry_blossom_trapdoor": "Cherry Blossom Trapdoor",
+  "block.udemymod.cobalt_blaster": "Cobalt Blaster",
   "block.udemymod.cobalt_block": "Cobalt Block",
   "block.udemymod.cobalt_button": "Cobalt Button",
   "block.udemymod.cobalt_fence": "Cobalt Fence",
@@ -34,6 +35,7 @@
   "item.udemymod.cobalt_paxel": "Cobalt Paxel",
   "item.udemymod.cobalt_pickaxe": "Cobalt Pickaxe",
   "item.udemymod.cobalt_shovel": "Cobalt Shovel",
+  "item.udemymod.cobalt_staff": "Cobalt Staff",
   "item.udemymod.cobalt_sword": "Cobalt, Sword",
   "item.udemymod.data_tablet": "Data Tablet",
   "item.udemymod.dowsing_rod": "Dowsing Rod",
@@ -42,6 +44,7 @@
   "item.udemymod.turnip": "Turnip",
   "item.udemymod.turnip_seeds": "Turnip Seeds",
   "itemGroup.udemymod": "UdemyMod Tab",
+  "tooltip.udemymod.cobalt_blaster": "My Custom BlockBench Block",
   "tooltip.udemymod.dowsing_rod": "Press \u00A7eSHIFT\u00A7r for info",
   "tooltip.udemymod.dowsing_rod.shift": "Right click to find valuables",
   "tooltip.udemymod.speedy_block": "Press \u00A7eSHIFT\u00A7r for info",
