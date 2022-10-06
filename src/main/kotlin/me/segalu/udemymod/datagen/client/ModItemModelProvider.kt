@@ -3,13 +3,17 @@ package me.segalu.udemymod.datagen.client
 import me.segalu.udemymod.UdemyMod
 import me.segalu.udemymod.init.BlockInit
 import me.segalu.udemymod.init.ItemInit
+import net.minecraft.client.renderer.block.model.ItemTransforms
+import net.minecraft.core.Direction
 import net.minecraft.data.DataGenerator
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.packs.PackType
+import net.minecraft.world.item.BowItem
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.FlowerPotBlock
 import net.minecraftforge.client.model.generators.ItemModelProvider
+import net.minecraftforge.client.model.generators.ModelBuilder.Perspective
 import net.minecraftforge.common.data.ExistingFileHelper
 
 class ModItemModelProvider(generator: DataGenerator?, helper: ExistingFileHelper?) :
@@ -114,7 +118,6 @@ class ModItemModelProvider(generator: DataGenerator?, helper: ExistingFileHelper
                 "layer0", ResourceLocation(UdemyMod.ID, "block/${BlockInit.PINK_ROSE.get().registryName!!.path}")
             )
         simpleBlockItem(BlockInit.COBALT_BLASTER.get().asItem())
-
         //Hand held
         handHeldItem(ItemInit.COBALT_SWORD)
         handHeldItem(ItemInit.COBALT_PICKAXE)
@@ -122,6 +125,44 @@ class ModItemModelProvider(generator: DataGenerator?, helper: ExistingFileHelper
         handHeldItem(ItemInit.COBALT_HOE)
         handHeldItem(ItemInit.COBALT_SHOVEL)
         handHeldItem(ItemInit.COBALT_PAXEL)
+        getBuilder(ItemInit.COBALT_BOW.registryName!!.path).parent(getExistingFile(mcLoc("item/generated")))
+            .texture(
+                "layer0", ResourceLocation(UdemyMod.ID, "item/${ItemInit.COBALT_BOW.registryName!!.path}")
+            ).transforms()
+            .transform(ItemTransforms.TransformType.THIRD_PERSON_RIGHT_HAND).rotation(-80F, 260F, -40F).translation( -1F, -2F, 2.5F ).scale(0.9F, 0.9F, 0.9F).end()
+            .transform(ItemTransforms.TransformType.THIRD_PERSON_LEFT_HAND).rotation(-80F, -280F, 40F).translation( -1F, -2F, 2.5F ).scale(0.9F, 0.9F, 0.9F).end()
+            .transform(ItemTransforms.TransformType.FIRST_PERSON_RIGHT_HAND).rotation(0F, -90F, 25F).translation( 1.13F, 3.2F, 1.13F ).scale(0.68F, 0.68F, 0.68F).end()
+            .transform(ItemTransforms.TransformType.FIRST_PERSON_LEFT_HAND).rotation(0F, 90F, -25F).translation( 1.13F, 3.2F, 1.13F ).scale(0.68F, 0.68F, 0.68F).end()
+            .end()
+            .override().predicate(ResourceLocation("pulling"), 1F)
+            .model(
+                getBuilder("${ItemInit.COBALT_BOW.registryName!!.path}_pulling_0").parent(getExistingFile(modLoc("item/cobalt_bow")))
+                    .texture(
+                        "layer0", ResourceLocation(
+                            UdemyMod.ID,
+                            "item/${ItemInit.COBALT_BOW.registryName!!.path}_pulling_0"
+                        )
+                    )
+            )
+            .end().override().predicate(ResourceLocation("pulling"), 1F).predicate(ResourceLocation("pull"), 0.65F)
+            .model(
+                getBuilder("${ItemInit.COBALT_BOW.registryName!!.path}_pulling_1").parent(getExistingFile(modLoc("item/cobalt_bow")))
+                    .texture(
+                        "layer0", ResourceLocation(
+                            UdemyMod.ID,
+                            "item/${ItemInit.COBALT_BOW.registryName!!.path}_pulling_1"
+                        )
+                    )
+            ).end().override().predicate(ResourceLocation("pulling"), 1F).predicate(ResourceLocation("pull"), 0.9F)
+            .model(
+                getBuilder("${ItemInit.COBALT_BOW.registryName!!.path}_pulling_2").parent(getExistingFile(modLoc("item/cobalt_bow")))
+                    .texture(
+                        "layer0", ResourceLocation(
+                            UdemyMod.ID,
+                            "item/${ItemInit.COBALT_BOW.registryName!!.path}_pulling_2"
+                        )
+                    )
+            ).end()
 
     }
 }

@@ -6,6 +6,7 @@ import me.segalu.udemymod.item.*
 import net.minecraft.world.entity.EquipmentSlot
 import net.minecraft.world.item.ArmorItem
 import net.minecraft.world.item.AxeItem
+import net.minecraft.world.item.BowItem
 import net.minecraft.world.item.HoeItem
 import net.minecraft.world.item.HorseArmorItem
 import net.minecraft.world.item.Item
@@ -103,5 +104,9 @@ object ItemInit {
 
     val COBALT_STAFF by ITEMS.registerObject("cobalt_staff") {
         Item(Item.Properties().stacksTo(1).tab(UDEMYMOD_TAB))
+    }
+
+    val COBALT_BOW by ITEMS.registerObject("cobalt_bow") {
+        BowItem(Item.Properties().durability(500).tab(UDEMYMOD_TAB))
     }
 }

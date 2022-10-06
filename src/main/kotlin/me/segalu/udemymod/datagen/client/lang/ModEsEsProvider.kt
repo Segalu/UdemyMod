@@ -43,6 +43,8 @@ class ModEsEsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(ItemInit.TURNIP_SEEDS, "Semillas de Nabo")
         add(ItemInit.BAR_BRAWL_RECORD, "Disco Pelea de Bar")
         add(ItemInit.COBALT_STAFF, "Bastón de Cobalto")
+        add(ItemInit.COBALT_BOW, "Arco de Cobalto")
+
 
         //Blocks
         add(BlockInit.COBALT_BLOCK.get(), "Bloque de Cobalto")
