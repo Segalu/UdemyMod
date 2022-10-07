@@ -20,6 +20,10 @@ class ModEsEsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add("tooltip.udemymod.speedy_block", "Presiona §eSHIFT§r para mas info")
         add(ItemInit.BAR_BRAWL_RECORD.descriptionId + ".desc", "Bryan Tech - Pelea de Bar (CC0)")
         add("tooltip.udemymod.cobalt_blaster", "Mi Bloque Block Bench Personalizado")
+        add("udemymod.advancements.root.title", "Lingote de Cobalto")
+        add("udemymod.advancements.root.description", "El poder yace en el cobalto!")
+        add("udemymod.advancements.dowsing_rod.title", "Vara Adivinadora")
+        add("udemymod.advancements.dowsing_rod.description", "Si no funciona, no le agradas a la vara")
 
         //Items
         add(ItemInit.COBALT_INGOT, "Lingote de Cobalto")

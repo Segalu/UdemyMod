@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "item": "udemymod:cobalt_ingot"
+    },
+    "title": {
+      "translate": "udemymod.advancements.root.title"
+    },
+    "description": {
+      "translate": "udemymod.advancements.root.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "background": "udemymod:textures/block/cobalt_block.png"
+  },
+  "criteria": {
+    "cobalt_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "udemymod:cobalt_ingot"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "cobalt_ingot"
+    ]
+  ]
+}

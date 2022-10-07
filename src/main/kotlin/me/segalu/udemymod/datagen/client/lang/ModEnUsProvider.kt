@@ -19,6 +19,11 @@ class ModEnUsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add("tooltip.udemymod.speedy_block", "Press §eSHIFT§r for info")
         add(ItemInit.BAR_BRAWL_RECORD.descriptionId + ".desc", "Bryan Tech - Bar Brawl (CC0)")
         add("tooltip.udemymod.cobalt_blaster", "My Custom BlockBench Block")
+        add("udemymod.advancements.root.title", "Cobalt Ingot")
+        add("udemymod.advancements.root.description", "The Power lies in the Cobalt!")
+        add("udemymod.advancements.dowsing_rod.title", "Dowsing Rod")
+        add("udemymod.advancements.dowsing_rod.description", "If it doesn't work, the Rod doesn't like you!")
+
 
         //Items
         add(ItemInit.COBALT_INGOT, "Cobalt Ingot")

@@ -49,5 +49,9 @@
   "tooltip.udemymod.dowsing_rod": "Presiona \u00A7eSHIFT\u00A7r para mas info",
   "tooltip.udemymod.dowsing_rod.shift": "Click derecho para encontrar bloques valiosos",
   "tooltip.udemymod.speedy_block": "Presiona \u00A7eSHIFT\u00A7r para mas info",
-  "tooltip.udemymod.speedy_block.shift": "se pone REALMENTE rapido!"
+  "tooltip.udemymod.speedy_block.shift": "se pone REALMENTE rapido!",
+  "udemymod.advancements.dowsing_rod.description": "Si no funciona, no le agradas a la vara",
+  "udemymod.advancements.dowsing_rod.title": "Vara Adivinadora",
+  "udemymod.advancements.root.description": "El poder yace en el cobalto!",
+  "udemymod.advancements.root.title": "Lingote de Cobalto"
 }

@@ -49,5 +49,9 @@
   "tooltip.udemymod.dowsing_rod": "Press \u00A7eSHIFT\u00A7r for info",
   "tooltip.udemymod.dowsing_rod.shift": "Right click to find valuables",
   "tooltip.udemymod.speedy_block": "Press \u00A7eSHIFT\u00A7r for info",
-  "tooltip.udemymod.speedy_block.shift": "it gets REALLY speedy!"
+  "tooltip.udemymod.speedy_block.shift": "it gets REALLY speedy!",
+  "udemymod.advancements.dowsing_rod.description": "If it doesn't work, the Rod doesn't like you!",
+  "udemymod.advancements.dowsing_rod.title": "Dowsing Rod",
+  "udemymod.advancements.root.description": "The Power lies in the Cobalt!",
+  "udemymod.advancements.root.title": "Cobalt Ingot"
 }
