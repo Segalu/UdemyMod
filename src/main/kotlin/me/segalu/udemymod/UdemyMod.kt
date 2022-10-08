@@ -39,6 +39,7 @@ object UdemyMod {
         ItemInit.ITEMS.register(MOD_BUS)
         SoundInit.SOUND_EVENTS.register(MOD_BUS)
         ModEnchantments.ENCHANTMENTS.register(MOD_BUS)
+        PaintingInit.PAINTING_MOTIVES.register(MOD_BUS)
 
         MOD_BUS.addListener(UdemyMod::onClientSetup)
         MOD_BUS.addListener(UdemyMod::onServerSetup)
