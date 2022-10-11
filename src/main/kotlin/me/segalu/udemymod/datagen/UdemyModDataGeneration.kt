@@ -44,6 +44,7 @@ object UdemyModDataGeneration {
             generator.addProvider(MinecraftItemTagsProvider(generator, minecraftBlockTags, helper))
             generator.addProvider(ModLootTableProvider(generator))
             generator.addProvider(ModAdvancementProvider(generator, helper))
+            generator.addProvider(ModGlobalLootModifierProvider(generator))
         }
 
     }
