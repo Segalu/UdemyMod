@@ -2,10 +2,13 @@ package me.segalu.udemymod.datagen.server
 
 import me.segalu.udemymod.UdemyMod
 import me.segalu.udemymod.init.BlockInit
+import me.segalu.udemymod.init.FluidInit
 import me.segalu.udemymod.init.TagInit
 import net.minecraft.data.DataGenerator
 import net.minecraft.data.tags.BlockTagsProvider
+import net.minecraft.data.tags.FluidTagsProvider
 import net.minecraft.tags.BlockTags
+import net.minecraft.tags.FluidTags
 import net.minecraft.tags.Tag
 import net.minecraft.tags.Tag.TagEntry
 import net.minecraft.world.level.block.Blocks
@@ -35,7 +38,6 @@ class ModBlockTagsProvider(generator: DataGenerator, helper: ExistingFileHelper?
             TagEntry(BlockTags.MINEABLE_WITH_SHOVEL.location),
         )
     }
-
 }
 
 class ForgeBlockTagsProvider(generator: DataGenerator, helper: ExistingFileHelper?) :
@@ -43,7 +45,6 @@ class ForgeBlockTagsProvider(generator: DataGenerator, helper: ExistingFileHelpe
 
     override fun addTags() {
     }
-
 }
 
 class MinecraftBlockTagsProvider(generator: DataGenerator, helper: ExistingFileHelper?) :
@@ -88,5 +89,15 @@ class MinecraftBlockTagsProvider(generator: DataGenerator, helper: ExistingFileH
             BlockInit.COBALT_STAIRS.get()
         )
     }
+}
 
+class MinecraftFluidTagsProvider(generator: DataGenerator, helper: ExistingFileHelper?) :
+    FluidTagsProvider(generator, "minecraft", helper) {
+
+    override fun addTags() {
+        tag(FluidTags.WATER).add(
+            FluidInit.HONEY_FLOWING,
+            FluidInit.HONEY_FLUID
+        )
+    }
 }

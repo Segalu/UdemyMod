@@ -4,17 +4,7 @@ import me.segalu.udemymod.UdemyMod
 import me.segalu.udemymod.UdemyMod.UDEMYMOD_TAB
 import me.segalu.udemymod.item.*
 import net.minecraft.world.entity.EquipmentSlot
-import net.minecraft.world.item.ArmorItem
-import net.minecraft.world.item.AxeItem
-import net.minecraft.world.item.BowItem
-import net.minecraft.world.item.HoeItem
-import net.minecraft.world.item.HorseArmorItem
-import net.minecraft.world.item.Item
-import net.minecraft.world.item.ItemNameBlockItem
-import net.minecraft.world.item.PickaxeItem
-import net.minecraft.world.item.RecordItem
-import net.minecraft.world.item.ShovelItem
-import net.minecraft.world.item.SwordItem
+import net.minecraft.world.item.*
 import net.minecraftforge.registries.DeferredRegister
 import net.minecraftforge.registries.ForgeRegistries
 import thedarkcolour.kotlinforforge.forge.registerObject
@@ -108,5 +98,9 @@ object ItemInit {
 
     val COBALT_BOW by ITEMS.registerObject("cobalt_bow") {
         BowItem(Item.Properties().durability(500).tab(UDEMYMOD_TAB))
+    }
+
+    val HONEY_BUCKET by ITEMS.registerObject("honey_bucket") {
+        BucketItem({ FluidInit.HONEY_FLUID }, Item.Properties().durability(500).tab(UDEMYMOD_TAB))
     }
 }

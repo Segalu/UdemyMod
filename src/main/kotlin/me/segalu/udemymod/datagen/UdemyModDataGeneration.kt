@@ -6,7 +6,6 @@ import me.segalu.udemymod.datagen.client.lang.ModEnUsProvider
 import me.segalu.udemymod.UdemyMod
 import me.segalu.udemymod.datagen.client.lang.ModEsEsProvider
 import me.segalu.udemymod.datagen.server.*
-import me.segalu.udemymod.datagen.server.loot.ModBlockLootTables
 import net.minecraft.data.DataGenerator
 import net.minecraftforge.common.data.ExistingFileHelper
 import net.minecraftforge.eventbus.api.SubscribeEvent
@@ -33,6 +32,7 @@ object UdemyModDataGeneration {
         if (event.includeServer()) {
             val blockTags = ModBlockTagsProvider(generator, helper)
             val forgeBlockTags = ForgeBlockTagsProvider(generator, helper)
+            val minecraftFluidTags = MinecraftFluidTagsProvider(generator, helper)
             val minecraftBlockTags = MinecraftBlockTagsProvider(generator, helper)
 
             generator.addProvider(ModRecipeProvider(generator))
@@ -45,6 +45,7 @@ object UdemyModDataGeneration {
             generator.addProvider(ModLootTableProvider(generator))
             generator.addProvider(ModAdvancementProvider(generator, helper))
             generator.addProvider(ModGlobalLootModifierProvider(generator))
+            generator.addProvider(minecraftFluidTags)
         }
 
     }

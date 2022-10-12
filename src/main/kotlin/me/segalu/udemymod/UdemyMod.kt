@@ -40,6 +40,7 @@ object UdemyMod {
         SoundInit.SOUND_EVENTS.register(MOD_BUS)
         ModEnchantments.ENCHANTMENTS.register(MOD_BUS)
         PaintingInit.PAINTING_MOTIVES.register(MOD_BUS)
+        FluidInit.FLUIDS.register(MOD_BUS)
 
         MOD_BUS.addListener(UdemyMod::onClientSetup)
         MOD_BUS.addListener(UdemyMod::onServerSetup)
@@ -65,6 +66,9 @@ object UdemyMod {
         ItemBlockRenderTypes.setRenderLayer(BlockInit.PINK_ROSE.get(), RenderType.cutout())
         ItemBlockRenderTypes.setRenderLayer(BlockInit.POTTED_PINK_ROSE.get(), RenderType.cutout())
         ItemBlockRenderTypes.setRenderLayer(BlockInit.COBALT_BLASTER.get(), RenderType.cutout())
+        ItemBlockRenderTypes.setRenderLayer(FluidInit.HONEY_FLUID, RenderType.translucent())
+        ItemBlockRenderTypes.setRenderLayer(FluidInit.HONEY_FLOWING, RenderType.translucent())
+        ItemBlockRenderTypes.setRenderLayer(FluidInit.HONEY_BLOCK, RenderType.translucent())
 
         ItemPropertiesInit.addCustomItemProperties()
     }

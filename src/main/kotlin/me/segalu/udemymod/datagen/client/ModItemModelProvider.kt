@@ -163,6 +163,7 @@ class ModItemModelProvider(generator: DataGenerator?, helper: ExistingFileHelper
                         )
                     )
             ).end()
+        oneLayerItem(ItemInit.HONEY_BUCKET)
 
     }
 }
