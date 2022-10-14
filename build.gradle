@@ -20,7 +20,7 @@ apply plugin: 'kotlinx-serialization'
 
 apply from: 'https://raw.githubusercontent.com/thedarkcolour/KotlinForForge/site/thedarkcolour/kotlinforforge/gradle/kff-3.7.1.gradle'
 
-version = '0.0.1-1.18.2'
+version = '0.1.5-1.18.2'
 group = 'me.segalu.udemymod'
 archivesBaseName = 'udemymod'
 
@@ -28,7 +28,7 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 minecraft {
     // Change to your preferred mappings
-    mappings channel: 'parchment', version: '2022.08.21-1.18.2'
+    mappings channel: 'parchment', version: '2022.09.04-1.18.2'
     // Add your AccessTransformer
     // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
