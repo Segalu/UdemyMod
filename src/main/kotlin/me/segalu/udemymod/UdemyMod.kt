@@ -1,6 +1,8 @@
 package me.segalu.udemymod
 
 import me.segalu.udemymod.init.*
+import me.segalu.udemymod.screen.CobaltBlasterScreen
+import net.minecraft.client.gui.screens.MenuScreens
 import net.minecraft.client.renderer.ItemBlockRenderTypes
 import net.minecraft.client.renderer.RenderType
 import net.minecraft.world.item.CreativeModeTab
@@ -41,6 +43,8 @@ object UdemyMod {
         ModEnchantments.ENCHANTMENTS.register(MOD_BUS)
         PaintingInit.PAINTING_MOTIVES.register(MOD_BUS)
         FluidInit.FLUIDS.register(MOD_BUS)
+        BlockEntitiesInit.BLOCK_ENTITIES.register(MOD_BUS)
+        MenuInit.MENUS.register(MOD_BUS)
 
         MOD_BUS.addListener(UdemyMod::onClientSetup)
         MOD_BUS.addListener(UdemyMod::onServerSetup)
@@ -71,6 +75,8 @@ object UdemyMod {
         ItemBlockRenderTypes.setRenderLayer(FluidInit.HONEY_BLOCK, RenderType.translucent())
 
         ItemPropertiesInit.addCustomItemProperties()
+
+        MenuScreens.register(MenuInit.COBALT_BLASTER_MENU.get(), ::CobaltBlasterScreen)
     }
 
     /**
