@@ -1,11 +1,13 @@
 package me.segalu.udemymod.datagen.server
 
 import me.segalu.udemymod.UdemyMod
+import me.segalu.udemymod.init.BlockInit
 import me.segalu.udemymod.init.ItemInit
 import me.segalu.udemymod.init.TagInit
 import net.minecraft.data.DataGenerator
 import net.minecraft.data.tags.BlockTagsProvider
 import net.minecraft.data.tags.ItemTagsProvider
+import net.minecraft.tags.Tag.TagEntry
 import net.minecraftforge.common.data.ExistingFileHelper
 
 class ModItemTagsProvider(
@@ -15,6 +17,12 @@ class ModItemTagsProvider(
 ) : ItemTagsProvider(generator, blocks, UdemyMod.ID, helper) {
 
     override fun addTags() {
+        tag(TagInit.Items.CHERRY_BLOSSOM_LOGS).add(
+            BlockInit.CHERRY_BLOSSOM_LOG.get().asItem(),
+            BlockInit.CHERRY_BLOSSOM_WOOD.get().asItem(),
+            BlockInit.STRIPPED_CHERRY_BLOSSOM_LOG.get().asItem(),
+            BlockInit.STRIPPED_CHERRY_BLOSSOM_WOOD.get().asItem()
+        )
     }
 }
 

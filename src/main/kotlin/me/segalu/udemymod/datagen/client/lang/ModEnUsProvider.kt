@@ -71,6 +71,11 @@ class ModEnUsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(BlockInit.PINK_ROSE.get(), "Pink Rose")
         add(BlockInit.POTTED_PINK_ROSE.get(), "Potted Pink Rose")
         add(BlockInit.COBALT_BLASTER.get(), "Cobalt Blaster")
+        add(BlockInit.CHERRY_BLOSSOM_LOG.get(), "Cherry Blossom Log")
+        add(BlockInit.CHERRY_BLOSSOM_WOOD.get(), "Cherry Blossom Wood")
+        add(BlockInit.STRIPPED_CHERRY_BLOSSOM_LOG.get(), "Stripped Cherry Blossom Log")
+        add(BlockInit.STRIPPED_CHERRY_BLOSSOM_WOOD.get(), "Stripped Cherry Blossom Wood")
+        add(BlockInit.CHERRY_BLOSSOM_PLANKS.get(), "Cherry Blossom Planks")
 
         //Enchantments
         add(ModEnchantments.LIGHTNING_STRIKER, "Lightning Striker")

@@ -5,27 +5,20 @@ import me.segalu.udemymod.UdemyMod.UDEMYMOD_TAB
 import me.segalu.udemymod.block.*
 import me.segalu.udemymod.item.ShiftTooltipItem
 import me.segalu.udemymod.item.TooltipItem
+import net.minecraft.core.BlockPos
+import net.minecraft.core.Direction
 import net.minecraft.world.effect.MobEffects
 import net.minecraft.world.item.*
-import net.minecraft.world.level.block.Block
-import net.minecraft.world.level.block.Blocks
-import net.minecraft.world.level.block.DoorBlock
-import net.minecraft.world.level.block.FenceBlock
-import net.minecraft.world.level.block.FenceGateBlock
-import net.minecraft.world.level.block.FlowerBlock
-import net.minecraft.world.level.block.FlowerPotBlock
-import net.minecraft.world.level.block.FurnaceBlock
-import net.minecraft.world.level.block.PressurePlateBlock
-import net.minecraft.world.level.block.SlabBlock
-import net.minecraft.world.level.block.StairBlock
-import net.minecraft.world.level.block.StoneButtonBlock
-import net.minecraft.world.level.block.TrapDoorBlock
-import net.minecraft.world.level.block.WallBlock
+import net.minecraft.world.level.BlockGetter
+import net.minecraft.world.level.block.*
 import net.minecraft.world.level.block.state.BlockBehaviour
+import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.material.Material
 import net.minecraftforge.registries.DeferredRegister
 import net.minecraftforge.registries.ForgeRegistries
+import net.minecraftforge.registries.RegistryObject
 import thedarkcolour.kotlinforforge.forge.registerObject
+
 
 object BlockInit {
     val BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, UdemyMod.ID)
@@ -131,6 +124,53 @@ object BlockInit {
 
     val COBALT_BLASTER = registerItemBlock("cobalt_blaster", "tooltip.udemymod.cobalt_blaster") {
         CobaltBlasterBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion())
+    }
+
+    val CHERRY_BLOSSOM_WOOD = registerItemBlock("cherry_blossom_wood") {
+        ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD))
+    }
+
+    val CHERRY_BLOSSOM_LOG = registerItemBlock("cherry_blossom_log") {
+        ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG))
+    }
+
+    val STRIPPED_CHERRY_BLOSSOM_LOG = registerItemBlock("stripped_cherry_blossom_log") {
+        ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG))
+    }
+
+    val STRIPPED_CHERRY_BLOSSOM_WOOD = registerItemBlock("stripped_cherry_blossom_wood") {
+        ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD))
+    }
+
+    val CHERRY_BLOSSOM_PLANKS: RegistryObject<Block> = registerItemBlock("cherry_blossom_planks") {
+        object : Block(Properties.copy(Blocks.OAK_PLANKS)) {
+            override fun isFlammable(
+                state: BlockState?,
+                level: BlockGetter?,
+                pos: BlockPos?,
+                direction: Direction?
+            ): Boolean {
+                return true
+            }
+
+            override fun getFlammability(
+                state: BlockState?,
+                level: BlockGetter?,
+                pos: BlockPos?,
+                direction: Direction?
+            ): Int {
+                return 20
+            }
+
+            override fun getFireSpreadSpeed(
+                state: BlockState?,
+                level: BlockGetter?,
+                pos: BlockPos?,
+                direction: Direction?
+            ): Int {
+                return 5
+            }
+        }
     }
 
     private fun <T : Block> registerItemBlock(

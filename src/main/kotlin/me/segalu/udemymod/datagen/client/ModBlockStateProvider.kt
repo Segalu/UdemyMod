@@ -3,17 +3,12 @@ package me.segalu.udemymod.datagen.client
 import me.segalu.udemymod.UdemyMod
 import me.segalu.udemymod.block.CobaltLampBlock
 import me.segalu.udemymod.block.ImpostorBlock
-import me.segalu.udemymod.block.TurnipCropBlock
 import me.segalu.udemymod.init.BlockInit
 import me.segalu.udemymod.init.ItemInit
-import net.minecraft.client.Minecraft
-import net.minecraft.core.Direction
 import net.minecraft.data.DataGenerator
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.level.block.Blocks
 import net.minecraftforge.client.model.generators.BlockStateProvider
-import net.minecraftforge.client.model.generators.VariantBlockStateBuilder
-import net.minecraftforge.client.model.generators.VariantBlockStateBuilder.PartialBlockstate
 import net.minecraftforge.common.data.ExistingFileHelper
 
 class ModBlockStateProvider(generator: DataGenerator?, helper: ExistingFileHelper?) :
@@ -183,20 +178,23 @@ class ModBlockStateProvider(generator: DataGenerator?, helper: ExistingFileHelpe
                     ResourceLocation(UdemyMod.ID, "block/${BlockInit.PINK_ROSE.get().registryName!!.path}")
                 )
         )
-//        simpleBlock(BlockInit.COBALT_BLASTER.get(), models().getExistingFile(ResourceLocation(UdemyMod.ID, BlockInit.COBALT_BLASTER.get().registryName!!.path)))
         horizontalFaceBlock(
             BlockInit.COBALT_BLASTER.get(),
             models().getExistingFile(ResourceLocation(UdemyMod.ID, BlockInit.COBALT_BLASTER.get().registryName!!.path))
         )
-        /*        getVariantBuilder(BlockInit.COBALT_BLASTER.get())
-                    .forAllStates(state ->
-                    Direction dir = state.getValue(BlockStateProperties.FACING);
-                    return ConfiguredModel.builder()
-                        .modelFile(modelFunc.apply(state))
-                        .rotationX(dir == Direction.DOWN ? 180 : dir.getAxis().isHorizontal() ? 90 : 0)
-                    .rotationY(dir.getAxis().isVertical() ? 0 : (((int) dir.toYRot()) + angleOffset) % 360)
-                    .build();
-                )*/
+        logBlock(BlockInit.CHERRY_BLOSSOM_LOG.get())
+        axisBlock(
+            BlockInit.CHERRY_BLOSSOM_WOOD.get(),
+            blockTexture(BlockInit.CHERRY_BLOSSOM_LOG.get()),
+            blockTexture(BlockInit.CHERRY_BLOSSOM_LOG.get())
+        )
+        logBlock(BlockInit.STRIPPED_CHERRY_BLOSSOM_LOG.get())
+        axisBlock(
+            BlockInit.STRIPPED_CHERRY_BLOSSOM_WOOD.get(),
+            blockTexture(BlockInit.STRIPPED_CHERRY_BLOSSOM_LOG.get()),
+            blockTexture(BlockInit.STRIPPED_CHERRY_BLOSSOM_LOG.get())
+        )
+        simpleBlock(BlockInit.CHERRY_BLOSSOM_PLANKS.get())
     }
 
 }

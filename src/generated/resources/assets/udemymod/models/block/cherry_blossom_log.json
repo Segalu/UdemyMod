@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "side": "udemymod:block/cherry_blossom_log",
+    "end": "udemymod:block/cherry_blossom_log_top"
+  }
+}

@@ -1,6 +1,9 @@
 {
   "block.udemymod.cherry_blossom_door": "Puerta de Cerezo",
+  "block.udemymod.cherry_blossom_log": "Tronco de Cerezo",
+  "block.udemymod.cherry_blossom_planks": "Madera de Cerezo",
   "block.udemymod.cherry_blossom_trapdoor": "Trampilla de Cerezo",
+  "block.udemymod.cherry_blossom_wood": "Le\u00F1o de Cerezo",
   "block.udemymod.cobalt_blaster": "Altohorno de Cobalto",
   "block.udemymod.cobalt_block": "Bloque de Cobalto",
   "block.udemymod.cobalt_button": "Boton de Cobalto",
@@ -18,6 +21,8 @@
   "block.udemymod.potted_pink_rose": "Maceta Rosa Rosa",
   "block.udemymod.raw_cobalt_block": "Bloque de Cobalto Crudo",
   "block.udemymod.speedy_block": "Block Rapido",
+  "block.udemymod.stripped_cherry_blossom_log": "Tronco Sin Corteza de Cerezo",
+  "block.udemymod.stripped_cherry_blossom_wood": "Le\u00F1o Sin Corteza de Cerezo",
   "block.udemymod.turnip_crop": "Cosecha de Nabo",
   "enchantment.udemymod.lightning_striker": "Golpea Truenos",
   "item.udemymod.bar_brawl_music_disc": "Disco Pelea de Bar",

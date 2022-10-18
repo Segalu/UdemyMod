@@ -118,6 +118,12 @@ class ModItemModelProvider(generator: DataGenerator?, helper: ExistingFileHelper
                 "layer0", ResourceLocation(UdemyMod.ID, "block/${BlockInit.PINK_ROSE.get().registryName!!.path}")
             )
         simpleBlockItem(BlockInit.COBALT_BLASTER.get().asItem())
+        simpleBlockItem(BlockInit.CHERRY_BLOSSOM_LOG.get().asItem())
+        simpleBlockItem(BlockInit.CHERRY_BLOSSOM_WOOD.get().asItem())
+        simpleBlockItem(BlockInit.STRIPPED_CHERRY_BLOSSOM_LOG.get().asItem())
+        simpleBlockItem(BlockInit.STRIPPED_CHERRY_BLOSSOM_WOOD.get().asItem())
+        simpleBlockItem(BlockInit.CHERRY_BLOSSOM_PLANKS.get().asItem())
+
         //Hand held
         handHeldItem(ItemInit.COBALT_SWORD)
         handHeldItem(ItemInit.COBALT_PICKAXE)

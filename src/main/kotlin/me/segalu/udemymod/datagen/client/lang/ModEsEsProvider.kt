@@ -72,6 +72,11 @@ class ModEsEsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(BlockInit.PINK_ROSE.get(), "Rosa Rosa")
         add(BlockInit.POTTED_PINK_ROSE.get(), "Maceta Rosa Rosa")
         add(BlockInit.COBALT_BLASTER.get(), "Altohorno de Cobalto")
+        add(BlockInit.CHERRY_BLOSSOM_LOG.get(), "Tronco de Cerezo")
+        add(BlockInit.CHERRY_BLOSSOM_WOOD.get(), "Leño de Cerezo")
+        add(BlockInit.STRIPPED_CHERRY_BLOSSOM_LOG.get(), "Tronco Sin Corteza de Cerezo")
+        add(BlockInit.STRIPPED_CHERRY_BLOSSOM_WOOD.get(), "Leño Sin Corteza de Cerezo")
+        add(BlockInit.CHERRY_BLOSSOM_PLANKS.get(), "Madera de Cerezo")
 
         //Enchantments
         add(ModEnchantments.LIGHTNING_STRIKER, "Golpea Truenos")

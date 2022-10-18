@@ -1,6 +1,9 @@
 {
   "block.udemymod.cherry_blossom_door": "Cherry Blossom Door",
+  "block.udemymod.cherry_blossom_log": "Cherry Blossom Log",
+  "block.udemymod.cherry_blossom_planks": "Cherry Blossom Planks",
   "block.udemymod.cherry_blossom_trapdoor": "Cherry Blossom Trapdoor",
+  "block.udemymod.cherry_blossom_wood": "Cherry Blossom Wood",
   "block.udemymod.cobalt_blaster": "Cobalt Blaster",
   "block.udemymod.cobalt_block": "Cobalt Block",
   "block.udemymod.cobalt_button": "Cobalt Button",
@@ -18,6 +21,8 @@
   "block.udemymod.potted_pink_rose": "Potted Pink Rose",
   "block.udemymod.raw_cobalt_block": "Raw Cobalt Block",
   "block.udemymod.speedy_block": "Speedy Block",
+  "block.udemymod.stripped_cherry_blossom_log": "Stripped Cherry Blossom Log",
+  "block.udemymod.stripped_cherry_blossom_wood": "Stripped Cherry Blossom Wood",
   "block.udemymod.turnip_crop": "Turnip Crop",
   "enchantment.udemymod.lightning_striker": "Lightning Striker",
   "item.udemymod.bar_brawl_music_disc": "Bar Brawl Music Disc",

@@ -37,6 +37,12 @@ class ModBlockTagsProvider(generator: DataGenerator, helper: ExistingFileHelper?
         tag(TagInit.Blocks.PAXEL_MINEABLE).add(
             TagEntry(BlockTags.MINEABLE_WITH_SHOVEL.location),
         )
+        tag(TagInit.Blocks.CHERRY_BLOSSOM_LOGS).add(
+            BlockInit.CHERRY_BLOSSOM_LOG.get(),
+            BlockInit.CHERRY_BLOSSOM_WOOD.get(),
+            BlockInit.STRIPPED_CHERRY_BLOSSOM_LOG.get(),
+            BlockInit.STRIPPED_CHERRY_BLOSSOM_WOOD.get()
+        )
     }
 }
 
@@ -87,6 +93,14 @@ class MinecraftBlockTagsProvider(generator: DataGenerator, helper: ExistingFileH
             BlockInit.COBALT_PRESSURE_PLATE.get(),
             BlockInit.COBALT_SLAB.get(),
             BlockInit.COBALT_STAIRS.get()
+        )
+
+        tag(BlockTags.LOGS).add(
+            TagEntry(TagInit.Blocks.CHERRY_BLOSSOM_LOGS.location)
+        )
+
+        tag(BlockTags.LOGS_THAT_BURN).add(
+            TagEntry(TagInit.Blocks.CHERRY_BLOSSOM_LOGS.location)
         )
     }
 }

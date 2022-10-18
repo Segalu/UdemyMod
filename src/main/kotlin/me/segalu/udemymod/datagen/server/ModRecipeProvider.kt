@@ -150,5 +150,14 @@ class ModRecipeProvider(generator: DataGenerator) : RecipeProvider(generator) {
                 "has_cobalt_ingot",
                 inventoryTrigger(ItemPredicate.Builder.item().of(ItemInit.COBALT_INGOT).build())
             ).save(consumer)
+
+        //Blocks
+        planksFromLogs(consumer, BlockInit.CHERRY_BLOSSOM_PLANKS.get().asItem(), TagInit.Items.CHERRY_BLOSSOM_LOGS)
+        woodFromLogs(consumer, BlockInit.CHERRY_BLOSSOM_WOOD.get(), BlockInit.CHERRY_BLOSSOM_LOG.get())
+        woodFromLogs(
+            consumer,
+            BlockInit.STRIPPED_CHERRY_BLOSSOM_WOOD.get(),
+            BlockInit.STRIPPED_CHERRY_BLOSSOM_LOG.get()
+        )
     }
 }

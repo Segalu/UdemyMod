@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "udemymod:cherry_blossom_logs"
+    }
+  ],
+  "result": {
+    "item": "udemymod:cherry_blossom_planks",
+    "count": 4
+  }
+}
