@@ -9,7 +9,9 @@ import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.inventory.AbstractContainerMenu
+import net.minecraft.world.inventory.ContainerData
 import net.minecraft.world.inventory.ContainerLevelAccess
+import net.minecraft.world.inventory.SimpleContainerData
 import net.minecraft.world.inventory.Slot
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.Level
@@ -17,20 +19,24 @@ import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraftforge.items.CapabilityItemHandler
 import net.minecraftforge.items.IItemHandler
 import net.minecraftforge.items.SlotItemHandler
+import kotlin.math.roundToInt
 
 
-class CobaltBlasterMenu(windowId: Int, inv: Inventory, entity: BlockEntity?) :
+class CobaltBlasterMenu(windowId: Int, inv: Inventory, entity: BlockEntity?, data: ContainerData) :
     AbstractContainerMenu(MenuInit.COBALT_BLASTER_MENU.get(), windowId) {
     private val blockEntity: CobaltBlasterBlockEntity?
     private val level: Level
+    private val data: ContainerData
 
     constructor(windowId: Int, inv: Inventory, extraData: FriendlyByteBuf) : this(
         windowId,
         inv,
-        inv.player.level.getBlockEntity(extraData.readBlockPos())
+        inv.player.level.getBlockEntity(extraData.readBlockPos()),
+        SimpleContainerData(4)
     )
 
     init {
+        this.data = data
         checkContainerSize(inv, 4)
         blockEntity = entity as CobaltBlasterBlockEntity?
         level = inv.player.level
@@ -42,6 +48,28 @@ class CobaltBlasterMenu(windowId: Int, inv: Inventory, entity: BlockEntity?) :
             addSlot(SlotItemHandler(handler, 2, 66, 50))
             addSlot(ModResultSlot(handler, 3, 114, 33))
         }
+
+        addDataSlots(data)
+    }
+
+    fun isCrafting() = data[0] > 0
+
+    fun hasFuel() = data[2] > 0
+
+    fun getScaledProgress(): Int {
+        val progress = data[0]
+        val maxProgress = data[1]
+        val progressArrowSize = 26
+
+        return if (maxProgress != 0 && progress != 0) progress * progressArrowSize / maxProgress else 0
+    }
+
+    fun getScaledFuelProgress(): Int {
+        val fuelProgress = data[2]
+        val maxFuelProgress = data[3]
+        val fuelProgressSize = 14
+
+        return if (maxFuelProgress != 0) ((fuelProgress.toFloat() / maxFuelProgress.toFloat()) * fuelProgressSize).roundToInt() else 0
     }
 
     override fun quickMoveStack(playerIn: Player, index: Int): ItemStack {

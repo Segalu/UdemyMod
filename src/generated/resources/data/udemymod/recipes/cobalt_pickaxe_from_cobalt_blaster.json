@@ -1,0 +1,14 @@
+{
+  "type": "udemymod:cobalt_blasting",
+  "ingredients": [
+    {
+      "item": "minecraft:golden_pickaxe"
+    },
+    {
+      "item": "udemymod:cobalt_ingot"
+    }
+  ],
+  "output": {
+    "item": "udemymod:cobalt_pickaxe"
+  }
+}

@@ -45,6 +45,7 @@ object UdemyMod {
         FluidInit.FLUIDS.register(MOD_BUS)
         BlockEntitiesInit.BLOCK_ENTITIES.register(MOD_BUS)
         MenuInit.MENUS.register(MOD_BUS)
+        RecipeInit.SERIALIZERS.register(MOD_BUS)
 
         MOD_BUS.addListener(UdemyMod::onClientSetup)
         MOD_BUS.addListener(UdemyMod::onServerSetup)
