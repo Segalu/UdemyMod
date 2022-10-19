@@ -3,6 +3,7 @@ package me.segalu.udemymod.init
 import me.segalu.udemymod.UdemyMod
 import me.segalu.udemymod.UdemyMod.UDEMYMOD_TAB
 import me.segalu.udemymod.item.*
+import net.minecraft.client.renderer.item.ItemProperties
 import net.minecraft.world.entity.EquipmentSlot
 import net.minecraft.world.item.*
 import net.minecraftforge.registries.DeferredRegister
@@ -102,5 +103,13 @@ object ItemInit {
 
     val HONEY_BUCKET by ITEMS.registerObject("honey_bucket") {
         BucketItem({ FluidInit.HONEY_FLUID }, Item.Properties().durability(500).tab(UDEMYMOD_TAB))
+    }
+
+    val CHERRY_BLOSSOM_SIGN_ITEM by ITEMS.registerObject("cherry_blossom_sign_item") {
+        SignItem(
+            Item.Properties().stacksTo(16).tab(UDEMYMOD_TAB),
+            BlockInit.CHERRY_BLOSSOM_SIGN.get(),
+            BlockInit.CHERRY_BLOSSOM_WALL_SIGN.get()
+        )
     }
 }

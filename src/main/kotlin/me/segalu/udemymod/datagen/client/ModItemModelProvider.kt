@@ -87,6 +87,7 @@ class ModItemModelProvider(generator: DataGenerator?, helper: ExistingFileHelper
             .model(getExistingFile(modLoc("item/${ItemInit.DATA_TABLET.registryName!!.path}_on"))).end()
         oneLayerItem(ItemInit.TURNIP_SEEDS)
         oneLayerItem(ItemInit.BAR_BRAWL_RECORD)
+        oneLayerItem(ItemInit.CHERRY_BLOSSOM_SIGN_ITEM)
 
         //Simple blocks
         simpleBlockItem(BlockInit.COBALT_BLOCK.get().asItem())

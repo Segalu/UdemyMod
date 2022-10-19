@@ -49,6 +49,7 @@ class ModEnUsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(ItemInit.COBALT_STAFF, "Cobalt Staff")
         add(ItemInit.COBALT_BOW, "Cobalt Bow")
         add(ItemInit.HONEY_BUCKET, "Honey Bucket")
+        add(ItemInit.CHERRY_BLOSSOM_SIGN_ITEM, "Cherry Blossom Sign")
 
         //Blocks
         add(BlockInit.COBALT_BLOCK.get(), "Cobalt Block")

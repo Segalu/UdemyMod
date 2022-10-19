@@ -1,15 +1,21 @@
 package me.segalu.udemymod
 
+import me.segalu.udemymod.block.ModWoodTypes
 import me.segalu.udemymod.init.*
 import me.segalu.udemymod.screen.CobaltBlasterScreen
 import net.minecraft.client.gui.screens.MenuScreens
 import net.minecraft.client.renderer.ItemBlockRenderTypes
 import net.minecraft.client.renderer.RenderType
+import net.minecraft.client.renderer.Sheets
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderer
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers
+import net.minecraft.client.renderer.blockentity.SignRenderer
 import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.ComposterBlock
 import net.minecraft.world.level.block.FlowerPotBlock
+import net.minecraft.world.level.block.state.properties.WoodType
 import net.minecraftforge.api.distmarker.Dist
 import net.minecraftforge.api.distmarker.OnlyIn
 import net.minecraftforge.fml.common.Mod
@@ -78,6 +84,8 @@ object UdemyMod {
         ItemPropertiesInit.addCustomItemProperties()
 
         MenuScreens.register(MenuInit.COBALT_BLASTER_MENU.get(), ::CobaltBlasterScreen)
+
+        WoodType.register(ModWoodTypes.CHERRY_BLOSSOM)
     }
 
     /**
@@ -89,6 +97,9 @@ object UdemyMod {
             (Blocks.FLOWER_POT as FlowerPotBlock).addPlant(BlockInit.PINK_ROSE.id, BlockInit.POTTED_PINK_ROSE)
             ComposterBlock.COMPOSTABLES.put(ItemInit.TURNIP_SEEDS, 0.3F)
             ComposterBlock.COMPOSTABLES.put(ItemInit.TURNIP, 0.65F)
+
+            BlockEntityRenderers.register(BlockEntitiesInit.SIGN_BLOCK_ENTITIES, ::SignRenderer)
+            Sheets.addWoodType(ModWoodTypes.CHERRY_BLOSSOM)
         }
     }
 }

@@ -173,6 +173,14 @@ object BlockInit {
         }
     }
 
+    val CHERRY_BLOSSOM_SIGN = BLOCKS.register("cherry_blossom_sign") {
+        ModStandingSignBlock(BlockBehaviour.Properties.of(Material.WOOD), ModWoodTypes.CHERRY_BLOSSOM)
+    }
+
+    val CHERRY_BLOSSOM_WALL_SIGN = BLOCKS.register("cherry_blossom_wall_sign") {
+        ModWallSignBlock(BlockBehaviour.Properties.of(Material.WOOD), ModWoodTypes.CHERRY_BLOSSOM)
+    }
+
     private fun <T : Block> registerItemBlock(
         name: String,
         block: () -> T

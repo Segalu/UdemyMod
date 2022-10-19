@@ -195,6 +195,7 @@ class ModBlockStateProvider(generator: DataGenerator?, helper: ExistingFileHelpe
             blockTexture(BlockInit.STRIPPED_CHERRY_BLOSSOM_LOG.get())
         )
         simpleBlock(BlockInit.CHERRY_BLOSSOM_PLANKS.get())
+        signBlock(BlockInit.CHERRY_BLOSSOM_SIGN.get(), BlockInit.CHERRY_BLOSSOM_WALL_SIGN.get(), blockTexture(BlockInit.CHERRY_BLOSSOM_PLANKS.get()))
     }
 
 }

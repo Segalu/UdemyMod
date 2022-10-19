@@ -49,6 +49,7 @@ class ModEsEsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(ItemInit.COBALT_STAFF, "Bastón de Cobalto")
         add(ItemInit.COBALT_BOW, "Arco de Cobalto")
         add(ItemInit.HONEY_BUCKET, "Cubeta de Miel")
+        add(ItemInit.CHERRY_BLOSSOM_SIGN_ITEM, "Letrero de Cerezo")
 
 
         //Blocks
