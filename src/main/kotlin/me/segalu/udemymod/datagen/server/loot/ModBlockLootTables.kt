@@ -47,6 +47,8 @@ class ModBlockLootTables : BlockLoot() {
         dropSelf(BlockInit.CHERRY_BLOSSOM_PLANKS.get())
         dropOther(BlockInit.CHERRY_BLOSSOM_SIGN.get(), ItemInit.CHERRY_BLOSSOM_SIGN_ITEM)
         dropOther(BlockInit.CHERRY_BLOSSOM_WALL_SIGN.get(), ItemInit.CHERRY_BLOSSOM_SIGN_ITEM)
+        dropSelf(BlockInit.CHERRY_BLOSSOM_SAPLING.get())
+        dropWhenSilkTouch(BlockInit.CHERRY_BLOSSOM_LEAVES.get())
     }
 
     override fun getKnownBlocks(): Iterable<Block> {

@@ -5,12 +5,14 @@ import me.segalu.udemymod.UdemyMod.UDEMYMOD_TAB
 import me.segalu.udemymod.block.*
 import me.segalu.udemymod.item.ShiftTooltipItem
 import me.segalu.udemymod.item.TooltipItem
+import me.segalu.udemymod.world.feature.tree.CherryBlossomTreeGrower
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.world.effect.MobEffects
 import net.minecraft.world.item.*
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.block.*
+import net.minecraft.world.level.block.grower.AbstractTreeGrower
 import net.minecraft.world.level.block.state.BlockBehaviour
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.material.Material
@@ -179,6 +181,41 @@ object BlockInit {
 
     val CHERRY_BLOSSOM_WALL_SIGN = BLOCKS.register("cherry_blossom_wall_sign") {
         ModWallSignBlock(BlockBehaviour.Properties.of(Material.WOOD), ModWoodTypes.CHERRY_BLOSSOM)
+    }
+
+    val CHERRY_BLOSSOM_LEAVES: RegistryObject<Block> = registerItemBlock("cherry_blossom_leaves") {
+        object : LeavesBlock(Properties.copy(Blocks.OAK_LEAVES)) {
+            override fun isFlammable(
+                state: BlockState?,
+                level: BlockGetter?,
+                pos: BlockPos?,
+                direction: Direction?
+            ): Boolean {
+                return true
+            }
+
+            override fun getFlammability(
+                state: BlockState?,
+                level: BlockGetter?,
+                pos: BlockPos?,
+                direction: Direction?
+            ): Int {
+                return 60
+            }
+
+            override fun getFireSpreadSpeed(
+                state: BlockState?,
+                level: BlockGetter?,
+                pos: BlockPos?,
+                direction: Direction?
+            ): Int {
+                return 30
+            }
+        }
+    }
+
+    val CHERRY_BLOSSOM_SAPLING = registerItemBlock("cherry_blossom_sapling") {
+        SaplingBlock(CherryBlossomTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING))
     }
 
     private fun <T : Block> registerItemBlock(

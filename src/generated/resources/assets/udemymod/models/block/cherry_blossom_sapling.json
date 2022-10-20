@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "udemymod:block/cherry_blossom_sapling"
+  }
+}

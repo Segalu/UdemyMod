@@ -78,6 +78,8 @@ class ModEsEsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(BlockInit.STRIPPED_CHERRY_BLOSSOM_LOG.get(), "Tronco Sin Corteza de Cerezo")
         add(BlockInit.STRIPPED_CHERRY_BLOSSOM_WOOD.get(), "Leño Sin Corteza de Cerezo")
         add(BlockInit.CHERRY_BLOSSOM_PLANKS.get(), "Madera de Cerezo")
+        add(BlockInit.CHERRY_BLOSSOM_SAPLING.get(), "Retoño de Cerezo")
+        add(BlockInit.CHERRY_BLOSSOM_LEAVES.get(), "Hojas de Cerezo")
 
         //Enchantments
         add(ModEnchantments.LIGHTNING_STRIKER, "Golpea Truenos")

@@ -77,6 +77,8 @@ object UdemyMod {
         ItemBlockRenderTypes.setRenderLayer(BlockInit.PINK_ROSE.get(), RenderType.cutout())
         ItemBlockRenderTypes.setRenderLayer(BlockInit.POTTED_PINK_ROSE.get(), RenderType.cutout())
         ItemBlockRenderTypes.setRenderLayer(BlockInit.COBALT_BLASTER.get(), RenderType.cutout())
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.CHERRY_BLOSSOM_SAPLING.get(), RenderType.cutout())
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.CHERRY_BLOSSOM_LEAVES.get(), RenderType.cutout())
         ItemBlockRenderTypes.setRenderLayer(FluidInit.HONEY_FLUID, RenderType.translucent())
         ItemBlockRenderTypes.setRenderLayer(FluidInit.HONEY_FLOWING, RenderType.translucent())
         ItemBlockRenderTypes.setRenderLayer(FluidInit.HONEY_BLOCK, RenderType.translucent())

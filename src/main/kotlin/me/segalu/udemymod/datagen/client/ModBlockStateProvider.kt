@@ -195,7 +195,19 @@ class ModBlockStateProvider(generator: DataGenerator?, helper: ExistingFileHelpe
             blockTexture(BlockInit.STRIPPED_CHERRY_BLOSSOM_LOG.get())
         )
         simpleBlock(BlockInit.CHERRY_BLOSSOM_PLANKS.get())
-        signBlock(BlockInit.CHERRY_BLOSSOM_SIGN.get(), BlockInit.CHERRY_BLOSSOM_WALL_SIGN.get(), blockTexture(BlockInit.CHERRY_BLOSSOM_PLANKS.get()))
+        signBlock(
+            BlockInit.CHERRY_BLOSSOM_SIGN.get(),
+            BlockInit.CHERRY_BLOSSOM_WALL_SIGN.get(),
+            blockTexture(BlockInit.CHERRY_BLOSSOM_PLANKS.get())
+        )
+        simpleBlock(BlockInit.CHERRY_BLOSSOM_LEAVES.get())
+        simpleBlock(
+            BlockInit.CHERRY_BLOSSOM_SAPLING.get(),
+            models().cross(
+                BlockInit.CHERRY_BLOSSOM_SAPLING.get().registryName!!.path,
+                blockTexture(BlockInit.CHERRY_BLOSSOM_SAPLING.get())
+            )
+        )
     }
 
 }
