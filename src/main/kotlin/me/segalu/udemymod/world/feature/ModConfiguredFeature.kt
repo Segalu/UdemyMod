@@ -11,6 +11,7 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer
 
 object ModConfiguredFeature {
+
     val CHERRY_BLOSSOM_TREE = FeatureUtils.register("cherry_blossom", Feature.TREE,
         TreeConfiguration.TreeConfigurationBuilder(
             BlockStateProvider.simple(BlockInit.CHERRY_BLOSSOM_LOG.get()),
@@ -18,4 +19,5 @@ object ModConfiguredFeature {
             BlockStateProvider.simple(BlockInit.CHERRY_BLOSSOM_LEAVES.get()),
             BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
             TwoLayersFeatureSize(1, 0, 2)).build())
+
 }
