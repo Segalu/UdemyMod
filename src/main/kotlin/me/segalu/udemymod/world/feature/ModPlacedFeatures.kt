@@ -1,9 +1,12 @@
 package me.segalu.udemymod.world.feature
 
 import me.segalu.udemymod.init.BlockInit
+import me.segalu.udemymod.world.feature.ModOrePlacement.commonOrePlacement
 import net.minecraft.data.worldgen.placement.PlacementUtils
 import net.minecraft.data.worldgen.placement.VegetationPlacements.treePlacement
+import net.minecraft.world.level.levelgen.VerticalAnchor
 import net.minecraft.world.level.levelgen.placement.BiomeFilter
+import net.minecraft.world.level.levelgen.placement.HeightRangePlacement
 import net.minecraft.world.level.levelgen.placement.InSquarePlacement
 import net.minecraft.world.level.levelgen.placement.RarityFilter
 
@@ -23,5 +26,14 @@ object ModPlacedFeatures {
         PlacementUtils.HEIGHTMAP,
         RarityFilter.onAverageOnceEvery(32),
         BiomeFilter.biome()
+    )
+
+    val COBALT_ORE_PLACED = PlacementUtils.register(
+        "cobalt_ore_placed",
+        ModConfiguredFeature.COBALT_ORE,
+        commonOrePlacement(
+            7,
+            HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80))
+        )
     )
 }

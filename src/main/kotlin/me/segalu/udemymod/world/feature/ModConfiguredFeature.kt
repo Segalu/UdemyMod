@@ -2,9 +2,12 @@ package me.segalu.udemymod.world.feature
 
 import me.segalu.udemymod.init.BlockInit
 import net.minecraft.data.worldgen.features.FeatureUtils
+import net.minecraft.data.worldgen.features.OreFeatures
 import net.minecraft.data.worldgen.placement.PlacementUtils
 import net.minecraft.util.valueproviders.ConstantInt
 import net.minecraft.world.level.levelgen.feature.Feature
+import net.minecraft.world.level.levelgen.feature.OreFeature
+import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration
@@ -37,6 +40,17 @@ object ModConfiguredFeature {
             )
         )
 
+    )
+
+    val OVERWORLD_COBALT_ORES = listOf(
+        OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, BlockInit.COBALT_ORE.get().defaultBlockState()),
+        OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, BlockInit.DEEPSLATE_COBALT_ORE.get().defaultBlockState())
+    )
+
+    val COBALT_ORE = FeatureUtils.register(
+        "cobalt_ore",
+        Feature.ORE,
+        OreConfiguration(OVERWORLD_COBALT_ORES, 9)
     )
 
 }
