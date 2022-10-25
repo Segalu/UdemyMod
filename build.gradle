@@ -8,9 +8,9 @@ buildscript {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
         classpath 'org.parchmentmc:librarian:1.+'
         // Make sure this version matches the one included in Kotlin for Forge
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.20'
         // OPTIONAL Gradle plugin for Kotlin Serialization
-        classpath 'org.jetbrains.kotlin:kotlin-serialization:1.7.10'
+        classpath 'org.jetbrains.kotlin:kotlin-serialization:1.7.20'
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
@@ -20,7 +20,7 @@ apply plugin: 'kotlinx-serialization'
 
 apply from: 'https://raw.githubusercontent.com/thedarkcolour/KotlinForForge/site/thedarkcolour/kotlinforforge/gradle/kff-3.7.1.gradle'
 
-version = '0.1.5-1.18.2'
+version = '1.0.0-1.18.2'
 group = 'me.segalu.udemymod'
 archivesBaseName = 'udemymod'
 
@@ -81,7 +81,7 @@ sourceSets.main.resources { srcDirs 'src/generated/resources/' }
 
 dependencies {
     // Use the latest version of Minecraft Forge
-    minecraft 'net.minecraftforge:forge:1.18.2-40.1.73'
+    minecraft 'net.minecraftforge:forge:1.18.2-40.1.79'
 }
 
 compileKotlin {

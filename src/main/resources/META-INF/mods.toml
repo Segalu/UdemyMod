@@ -17,7 +17,7 @@ Example mod that uses Kotlin for Forge adapted to Udemy Course by Kaupenjoe.
 [[dependencies.udemymod]]
     modId="forge"
     mandatory=true
-    versionRange="[39,)"
+    versionRange="[40,)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.udemymod]]

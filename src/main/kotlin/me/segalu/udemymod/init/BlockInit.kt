@@ -8,6 +8,7 @@ import me.segalu.udemymod.item.TooltipItem
 import me.segalu.udemymod.world.feature.tree.CherryBlossomTreeGrower
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
+import net.minecraft.util.valueproviders.UniformInt
 import net.minecraft.world.effect.MobEffects
 import net.minecraft.world.item.*
 import net.minecraft.world.level.BlockGetter
@@ -32,7 +33,7 @@ object BlockInit {
     }
 
     val COBALT_ORE = registerItemBlock("cobalt_ore") {
-        Block(BlockBehaviour.Properties.of(Material.METAL).strength(4F).requiresCorrectToolForDrops())
+        OreBlock(BlockBehaviour.Properties.of(Material.METAL).strength(4F).requiresCorrectToolForDrops(), UniformInt.of(3,7))
     }
 
     val RAW_COBALT_BLOCK = registerItemBlock("raw_cobalt_block") {
@@ -40,7 +41,7 @@ object BlockInit {
     }
 
     val DEEPSLATE_COBALT_ORE = registerItemBlock("deepslate_cobalt_ore") {
-        Block(BlockBehaviour.Properties.of(Material.METAL).strength(4F).requiresCorrectToolForDrops())
+        OreBlock(BlockBehaviour.Properties.of(Material.METAL).strength(4F).requiresCorrectToolForDrops(), UniformInt.of(3,7))
     }
 
     val COBALT_STAIRS = registerItemBlock("cobalt_stairs") {
