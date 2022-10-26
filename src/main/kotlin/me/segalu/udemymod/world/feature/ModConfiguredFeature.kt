@@ -1,5 +1,6 @@
 package me.segalu.udemymod.world.feature
 
+import me.segalu.udemymod.config.UdemyModCommonConfigs
 import me.segalu.udemymod.init.BlockInit
 import net.minecraft.data.worldgen.features.FeatureUtils
 import net.minecraft.data.worldgen.features.OreFeatures
@@ -50,7 +51,7 @@ object ModConfiguredFeature {
     val COBALT_ORE = FeatureUtils.register(
         "cobalt_ore",
         Feature.ORE,
-        OreConfiguration(OVERWORLD_COBALT_ORES, 9)
+        OreConfiguration(OVERWORLD_COBALT_ORES, UdemyModCommonConfigs.COBALT_ORE_VEIN_SIZE.get())
     )
 
 }

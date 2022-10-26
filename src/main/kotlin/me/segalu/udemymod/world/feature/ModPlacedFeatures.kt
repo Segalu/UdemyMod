@@ -1,5 +1,7 @@
 package me.segalu.udemymod.world.feature
 
+import me.segalu.udemymod.config.UdemyModClientConfigs
+import me.segalu.udemymod.config.UdemyModCommonConfigs
 import me.segalu.udemymod.init.BlockInit
 import me.segalu.udemymod.world.feature.ModOrePlacement.commonOrePlacement
 import net.minecraft.data.worldgen.placement.PlacementUtils
@@ -32,7 +34,7 @@ object ModPlacedFeatures {
         "cobalt_ore_placed",
         ModConfiguredFeature.COBALT_ORE,
         commonOrePlacement(
-            7,
+            UdemyModCommonConfigs.COBALT_ORE_VEINS_PER_CHUNK.get(),
             HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80))
         )
     )

@@ -1,11 +1,10 @@
 package me.segalu.udemymod.datagen.client.lang
 
 import me.segalu.udemymod.UdemyMod
-import me.segalu.udemymod.init.ModEnchantments
+import me.segalu.udemymod.init.EnchantmentsInit
 import me.segalu.udemymod.init.BlockInit
 import me.segalu.udemymod.init.ItemInit
 import net.minecraft.data.DataGenerator
-import net.minecraft.world.level.block.Block
 import net.minecraftforge.common.data.LanguageProvider
 
 class ModEnUsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "en_us") {
@@ -82,6 +81,6 @@ class ModEnUsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(BlockInit.CHERRY_BLOSSOM_LEAVES.get(), "Cherry Blossom Leaves")
 
         //Enchantments
-        add(ModEnchantments.LIGHTNING_STRIKER, "Lightning Striker")
+        add(EnchantmentsInit.LIGHTNING_STRIKER, "Lightning Striker")
     }
 }

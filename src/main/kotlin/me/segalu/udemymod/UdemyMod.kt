@@ -1,13 +1,14 @@
 package me.segalu.udemymod
 
 import me.segalu.udemymod.block.ModWoodTypes
+import me.segalu.udemymod.config.UdemyModClientConfigs
+import me.segalu.udemymod.config.UdemyModCommonConfigs
 import me.segalu.udemymod.init.*
 import me.segalu.udemymod.screen.CobaltBlasterScreen
 import net.minecraft.client.gui.screens.MenuScreens
 import net.minecraft.client.renderer.ItemBlockRenderTypes
 import net.minecraft.client.renderer.RenderType
 import net.minecraft.client.renderer.Sheets
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderer
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers
 import net.minecraft.client.renderer.blockentity.SignRenderer
 import net.minecraft.world.item.CreativeModeTab
@@ -18,7 +19,9 @@ import net.minecraft.world.level.block.FlowerPotBlock
 import net.minecraft.world.level.block.state.properties.WoodType
 import net.minecraftforge.api.distmarker.Dist
 import net.minecraftforge.api.distmarker.OnlyIn
+import net.minecraftforge.fml.ModLoadingContext
 import net.minecraftforge.fml.common.Mod
+import net.minecraftforge.fml.config.ModConfig
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent
 import org.apache.logging.log4j.Level
@@ -46,7 +49,7 @@ object UdemyMod {
         BlockInit.BLOCKS.register(MOD_BUS)
         ItemInit.ITEMS.register(MOD_BUS)
         SoundInit.SOUND_EVENTS.register(MOD_BUS)
-        ModEnchantments.ENCHANTMENTS.register(MOD_BUS)
+        EnchantmentsInit.ENCHANTMENTS.register(MOD_BUS)
         PaintingInit.PAINTING_MOTIVES.register(MOD_BUS)
         FluidInit.FLUIDS.register(MOD_BUS)
         BlockEntitiesInit.BLOCK_ENTITIES.register(MOD_BUS)
@@ -55,6 +58,9 @@ object UdemyMod {
 
         MOD_BUS.addListener(UdemyMod::onClientSetup)
         MOD_BUS.addListener(UdemyMod::onServerSetup)
+
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, UdemyModClientConfigs.SPEC, "$ID-client.toml")
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, UdemyModCommonConfigs.SPEC, "$ID-common.toml")
     }
 
     @OnlyIn(Dist.CLIENT)
