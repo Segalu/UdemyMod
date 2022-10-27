@@ -1,14 +1,13 @@
 package me.segalu.udemymod.datagen.client.lang
 
 import me.segalu.udemymod.UdemyMod
-import me.segalu.udemymod.init.EnchantmentsInit
 import me.segalu.udemymod.init.BlockInit
+import me.segalu.udemymod.init.EnchantmentsInit
 import me.segalu.udemymod.init.ItemInit
 import net.minecraft.data.DataGenerator
 import net.minecraftforge.common.data.LanguageProvider
 
-class ModEsEsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "es_es") {
-
+open class ModEsProvider(gen: DataGenerator, region: String) : LanguageProvider(gen, UdemyMod.ID, "es_$region") {
     override fun addTranslations() {
         //UI
         add("itemGroup.udemymod", "UdemyMod Tab")
@@ -79,8 +78,13 @@ class ModEsEsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(BlockInit.CHERRY_BLOSSOM_PLANKS.get(), "Madera de Cerezo")
         add(BlockInit.CHERRY_BLOSSOM_SAPLING.get(), "Retoño de Cerezo")
         add(BlockInit.CHERRY_BLOSSOM_LEAVES.get(), "Hojas de Cerezo")
+        add(BlockInit.WINTER_WINDOW.get(), "Ventana Invernal")
 
         //Enchantments
         add(EnchantmentsInit.LIGHTNING_STRIKER, "Golpea Truenos")
     }
 }
+
+class ModEsMxProvider(gen: DataGenerator) : ModEsProvider(gen, "mx")
+
+class ModEsEsProvider(gen: DataGenerator) : ModEsProvider(gen, "es")

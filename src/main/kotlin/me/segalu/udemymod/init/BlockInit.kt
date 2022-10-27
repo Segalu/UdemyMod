@@ -219,6 +219,10 @@ object BlockInit {
         SaplingBlock(CherryBlossomTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING))
     }
 
+    val WINTER_WINDOW = registerItemBlock("winter_window") {
+        GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS))
+    }
+
     private fun <T : Block> registerItemBlock(
         name: String,
         block: () -> T

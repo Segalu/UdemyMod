@@ -79,6 +79,7 @@ class ModEnUsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(BlockInit.CHERRY_BLOSSOM_PLANKS.get(), "Cherry Blossom Planks")
         add(BlockInit.CHERRY_BLOSSOM_SAPLING.get(), "Cherry Blossom Sapling")
         add(BlockInit.CHERRY_BLOSSOM_LEAVES.get(), "Cherry Blossom Leaves")
+        add(BlockInit.WINTER_WINDOW.get(), "Winter Window")
 
         //Enchantments
         add(EnchantmentsInit.LIGHTNING_STRIKER, "Lightning Striker")

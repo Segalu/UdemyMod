@@ -208,6 +208,7 @@ class ModBlockStateProvider(generator: DataGenerator?, helper: ExistingFileHelpe
                 blockTexture(BlockInit.CHERRY_BLOSSOM_SAPLING.get())
             )
         )
+        simpleBlock(BlockInit.WINTER_WINDOW.get())
     }
 
 }

@@ -127,6 +127,7 @@ class ModItemModelProvider(generator: DataGenerator?, helper: ExistingFileHelper
         simpleBlockItem(BlockInit.STRIPPED_CHERRY_BLOSSOM_LOG.get().asItem())
         simpleBlockItem(BlockInit.STRIPPED_CHERRY_BLOSSOM_WOOD.get().asItem())
         simpleBlockItem(BlockInit.CHERRY_BLOSSOM_PLANKS.get().asItem())
+        simpleBlockItem(BlockInit.WINTER_WINDOW.get().asItem())
 
         //Hand held
         handHeldItem(ItemInit.COBALT_SWORD)
