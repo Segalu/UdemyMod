@@ -112,4 +112,8 @@ object ItemInit {
             BlockInit.CHERRY_BLOSSOM_WALL_SIGN.get()
         )
     }
+
+    val MAGIC_DUST by ITEMS.registerObject("magic_dust") {
+        Item(Item.Properties().tab(UDEMYMOD_TAB))
+    }
 }

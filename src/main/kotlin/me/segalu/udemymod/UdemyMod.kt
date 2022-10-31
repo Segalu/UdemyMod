@@ -5,6 +5,7 @@ import me.segalu.udemymod.config.UdemyModClientConfigs
 import me.segalu.udemymod.config.UdemyModCommonConfigs
 import me.segalu.udemymod.init.*
 import me.segalu.udemymod.screen.CobaltBlasterScreen
+import me.segalu.udemymod.util.BetterBrewingRecipe
 import net.minecraft.client.gui.screens.MenuScreens
 import net.minecraft.client.renderer.ItemBlockRenderTypes
 import net.minecraft.client.renderer.RenderType
@@ -13,12 +14,14 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderers
 import net.minecraft.client.renderer.blockentity.SignRenderer
 import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.ItemStack
+import net.minecraft.world.item.alchemy.Potions
 import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.ComposterBlock
 import net.minecraft.world.level.block.FlowerPotBlock
 import net.minecraft.world.level.block.state.properties.WoodType
 import net.minecraftforge.api.distmarker.Dist
 import net.minecraftforge.api.distmarker.OnlyIn
+import net.minecraftforge.common.brewing.BrewingRecipeRegistry
 import net.minecraftforge.fml.ModLoadingContext
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.config.ModConfig
@@ -55,6 +58,8 @@ object UdemyMod {
         BlockEntitiesInit.BLOCK_ENTITIES.register(MOD_BUS)
         MenuInit.MENUS.register(MOD_BUS)
         RecipeInit.SERIALIZERS.register(MOD_BUS)
+        EffectInit.EFFECTS.register(MOD_BUS)
+        PotionInit.POTIONS.register(MOD_BUS)
 
         MOD_BUS.addListener(UdemyMod::onClientSetup)
         MOD_BUS.addListener(UdemyMod::onServerSetup)
@@ -109,6 +114,14 @@ object UdemyMod {
 
             BlockEntityRenderers.register(BlockEntitiesInit.SIGN_BLOCK_ENTITIES, ::SignRenderer)
             Sheets.addWoodType(ModWoodTypes.CHERRY_BLOSSOM)
+
+            BrewingRecipeRegistry.addRecipe(
+                BetterBrewingRecipe(
+                    Potions.AWKWARD,
+                    ItemInit.COBALT_INGOT,
+                    PotionInit.FREEZE_POTION
+                )
+            )
         }
     }
 }

@@ -3,15 +3,15 @@ package me.segalu.udemymod.datagen.client.lang
 import me.segalu.udemymod.UdemyMod
 import me.segalu.udemymod.init.EnchantmentsInit
 import me.segalu.udemymod.init.BlockInit
+import me.segalu.udemymod.init.EffectInit
 import me.segalu.udemymod.init.ItemInit
 import net.minecraft.data.DataGenerator
 import net.minecraftforge.common.data.LanguageProvider
 
 class ModEnUsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "en_us") {
-
     override fun addTranslations() {
         //UI
-        add("itemGroup.udemymod", "UdemyMod Tab")
+        add("itemGroupudemymod", "UdemyMod Tab")
         add("item.udemymod.dowsing_rod.no_valuables", "No valuable block found")
         add("tooltip.udemymod.dowsing_rod.shift", "Right click to find valuables")
         add("tooltip.udemymod.dowsing_rod", "Press §eSHIFT§r for info")
@@ -50,6 +50,7 @@ class ModEnUsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(ItemInit.COBALT_BOW, "Cobalt Bow")
         add(ItemInit.HONEY_BUCKET, "Honey Bucket")
         add(ItemInit.CHERRY_BLOSSOM_SIGN_ITEM, "Cherry Blossom Sign")
+        add(ItemInit.MAGIC_DUST, "Magic Dust")
 
         //Blocks
         add(BlockInit.COBALT_BLOCK.get(), "Cobalt Block")
@@ -83,5 +84,12 @@ class ModEnUsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
 
         //Enchantments
         add(EnchantmentsInit.LIGHTNING_STRIKER, "Lightning Striker")
+
+        //Effects & Potions
+        add(EffectInit.FREEZE, "Freeze")
+        add("item.minecraft.potion.effect.freeze_potion", "Freeze Potion")
+        add("item.minecraft.splash_potion.effect.freeze_potion", "Splash Freeze Potion")
+        add("item.minecraft.lingering_potion.effect.freeze_potion", "Linegering Freeze Potion")
     }
+    
 }

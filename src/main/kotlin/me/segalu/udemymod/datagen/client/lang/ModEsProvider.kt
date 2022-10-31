@@ -2,6 +2,7 @@ package me.segalu.udemymod.datagen.client.lang
 
 import me.segalu.udemymod.UdemyMod
 import me.segalu.udemymod.init.BlockInit
+import me.segalu.udemymod.init.EffectInit
 import me.segalu.udemymod.init.EnchantmentsInit
 import me.segalu.udemymod.init.ItemInit
 import net.minecraft.data.DataGenerator
@@ -48,6 +49,7 @@ open class ModEsProvider(gen: DataGenerator, region: String) : LanguageProvider(
         add(ItemInit.COBALT_BOW, "Arco de Cobalto")
         add(ItemInit.HONEY_BUCKET, "Cubeta de Miel")
         add(ItemInit.CHERRY_BLOSSOM_SIGN_ITEM, "Letrero de Cerezo")
+        add(ItemInit.MAGIC_DUST, "Polvo Magico")
 
 
         //Blocks
@@ -82,7 +84,15 @@ open class ModEsProvider(gen: DataGenerator, region: String) : LanguageProvider(
 
         //Enchantments
         add(EnchantmentsInit.LIGHTNING_STRIKER, "Golpea Truenos")
+
+        //Effects & Potions
+        add(EffectInit.FREEZE, "Congelar")
+        add("item.minecraft.potion.effect.freeze_potion", "Pocion de Congelamiento")
+        add("item.minecraft.splash_potion.effect.freeze_potion", "Pocion de Congelamiento Arrojadiza")
+        add("item.minecraft.lingering_potion.effect.freeze_potion", "Pocion de Congelamiento Persistente")
+
     }
+    
 }
 
 class ModEsMxProvider(gen: DataGenerator) : ModEsProvider(gen, "mx")

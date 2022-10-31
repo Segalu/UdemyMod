@@ -87,6 +87,7 @@ class ModItemModelProvider(generator: DataGenerator?, helper: ExistingFileHelper
         oneLayerItem(ItemInit.TURNIP_SEEDS)
         oneLayerItem(ItemInit.BAR_BRAWL_RECORD)
         oneLayerItem(ItemInit.CHERRY_BLOSSOM_SIGN_ITEM)
+        oneLayerItem(ItemInit.MAGIC_DUST)
 
         //Simple blocks
         simpleBlockItem(BlockInit.COBALT_BLOCK.get().asItem())
