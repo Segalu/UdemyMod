@@ -4,6 +4,7 @@ import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.blaze3d.vertex.VertexConsumer
 import me.segalu.udemymod.UdemyMod
 import me.segalu.udemymod.entity.RaccoonEntity
+import me.segalu.udemymod.entity.variant.RaccoonVariant
 import net.minecraft.client.renderer.MultiBufferSource
 import net.minecraft.client.renderer.RenderType
 import net.minecraft.client.renderer.entity.EntityRendererProvider
@@ -16,8 +17,16 @@ class RaccoonRenderer(renderManager: EntityRendererProvider.Context) :
         shadowRadius = 0.3f
     }
 
+    companion object {
+        val LOCATION_BY_VARIANT = mapOf(
+            RaccoonVariant.DEFAULT to ResourceLocation(UdemyMod.ID, "textures/entity/raccoon/raccoon.png"),
+            RaccoonVariant.DARK to ResourceLocation(UdemyMod.ID, "textures/entity/raccoon/raccoondark.png"),
+            RaccoonVariant.RED to ResourceLocation(UdemyMod.ID, "textures/entity/raccoon/redraccoon.png")
+        )
+    }
+
     override fun getTextureLocation(instance: RaccoonEntity): ResourceLocation {
-        return ResourceLocation(UdemyMod.ID, "textures/entity/raccoon/raccoon.png")
+        return LOCATION_BY_VARIANT[instance.getVariant()]!!
     }
 
     override fun getRenderType(

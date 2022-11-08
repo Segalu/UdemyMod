@@ -11,7 +11,7 @@ class RaccoonModel : AnimatedGeoModel<RaccoonEntity>() {
     }
 
     override fun getTextureLocation(`object`: RaccoonEntity): ResourceLocation {
-        return ResourceLocation(UdemyMod.ID, "textures/entity/raccoon/raccoon.png")
+        return RaccoonRenderer.LOCATION_BY_VARIANT[`object`.getVariant()]!!
     }
 
     override fun getAnimationFileLocation(animatable: RaccoonEntity): ResourceLocation {
