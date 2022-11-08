@@ -6,6 +6,7 @@ import me.segalu.udemymod.item.*
 import net.minecraft.client.renderer.item.ItemProperties
 import net.minecraft.world.entity.EquipmentSlot
 import net.minecraft.world.item.*
+import net.minecraftforge.common.ForgeSpawnEggItem
 import net.minecraftforge.registries.DeferredRegister
 import net.minecraftforge.registries.ForgeRegistries
 import thedarkcolour.kotlinforforge.forge.registerObject
@@ -116,4 +117,9 @@ object ItemInit {
     val MAGIC_DUST by ITEMS.registerObject("magic_dust") {
         Item(Item.Properties().tab(UDEMYMOD_TAB))
     }
+
+    val RACCOON_SPAWN_EGG by ITEMS.registerObject("raccoon_spawn_egg") {
+        ForgeSpawnEggItem( { EntityInit.RACCOON }, 0x948e8d, 0x3b3635, Item.Properties().tab(UDEMYMOD_TAB))
+    }
+
 }

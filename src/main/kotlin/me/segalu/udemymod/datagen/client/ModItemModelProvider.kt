@@ -3,6 +3,7 @@ package me.segalu.udemymod.datagen.client
 import me.segalu.udemymod.UdemyMod
 import me.segalu.udemymod.init.BlockInit
 import me.segalu.udemymod.init.ItemInit
+import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.block.model.ItemTransforms
 import net.minecraft.core.Direction
 import net.minecraft.data.DataGenerator
@@ -88,6 +89,7 @@ class ModItemModelProvider(generator: DataGenerator?, helper: ExistingFileHelper
         oneLayerItem(ItemInit.BAR_BRAWL_RECORD)
         oneLayerItem(ItemInit.CHERRY_BLOSSOM_SIGN_ITEM)
         oneLayerItem(ItemInit.MAGIC_DUST)
+        withExistingParent(ItemInit.RACCOON_SPAWN_EGG.registryName.toString(), mcLoc("$ITEM_FOLDER/template_spawn_egg"))
 
         //Simple blocks
         simpleBlockItem(BlockInit.COBALT_BLOCK.get().asItem())
@@ -185,6 +187,6 @@ class ModItemModelProvider(generator: DataGenerator?, helper: ExistingFileHelper
             BlockInit.CHERRY_BLOSSOM_SAPLING.get().asItem(),
             ResourceLocation(UdemyMod.ID, "$BLOCK_FOLDER/${BlockInit.CHERRY_BLOSSOM_SAPLING.get().asItem().registryName!!.path}")
         )
-
     }
+
 }

@@ -3,6 +3,7 @@ package me.segalu.udemymod
 import me.segalu.udemymod.block.ModWoodTypes
 import me.segalu.udemymod.config.UdemyModClientConfigs
 import me.segalu.udemymod.config.UdemyModCommonConfigs
+import me.segalu.udemymod.entity.client.RaccoonRenderer
 import me.segalu.udemymod.init.*
 import me.segalu.udemymod.screen.CobaltBlasterScreen
 import me.segalu.udemymod.util.BetterBrewingRecipe
@@ -12,6 +13,7 @@ import net.minecraft.client.renderer.RenderType
 import net.minecraft.client.renderer.Sheets
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers
 import net.minecraft.client.renderer.blockentity.SignRenderer
+import net.minecraft.client.renderer.entity.EntityRenderers
 import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.alchemy.Potions
@@ -21,6 +23,7 @@ import net.minecraft.world.level.block.FlowerPotBlock
 import net.minecraft.world.level.block.state.properties.WoodType
 import net.minecraftforge.api.distmarker.Dist
 import net.minecraftforge.api.distmarker.OnlyIn
+import net.minecraftforge.common.MinecraftForge
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry
 import net.minecraftforge.fml.ModLoadingContext
 import net.minecraftforge.fml.common.Mod
@@ -30,6 +33,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent
 import org.apache.logging.log4j.Level
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
+import software.bernie.geckolib3.GeckoLib
 import thedarkcolour.kotlinforforge.forge.MOD_BUS
 
 /**
@@ -60,12 +64,17 @@ object UdemyMod {
         RecipeInit.SERIALIZERS.register(MOD_BUS)
         EffectInit.EFFECTS.register(MOD_BUS)
         PotionInit.POTIONS.register(MOD_BUS)
+        EntityInit.ENTITIES.register(MOD_BUS)
 
         MOD_BUS.addListener(UdemyMod::onClientSetup)
         MOD_BUS.addListener(UdemyMod::onServerSetup)
 
+        GeckoLib.initialize()
+
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, UdemyModClientConfigs.SPEC, "$ID-client.toml")
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, UdemyModCommonConfigs.SPEC, "$ID-common.toml")
+
+        MinecraftForge.EVENT_BUS.register(this)
     }
 
     @OnlyIn(Dist.CLIENT)
@@ -100,6 +109,8 @@ object UdemyMod {
         MenuScreens.register(MenuInit.COBALT_BLASTER_MENU.get(), ::CobaltBlasterScreen)
 
         WoodType.register(ModWoodTypes.CHERRY_BLOSSOM)
+
+        EntityRenderers.register(EntityInit.RACCOON, ::RaccoonRenderer)
     }
 
     /**

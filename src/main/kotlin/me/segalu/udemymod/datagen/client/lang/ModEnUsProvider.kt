@@ -51,6 +51,7 @@ class ModEnUsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(ItemInit.HONEY_BUCKET, "Honey Bucket")
         add(ItemInit.CHERRY_BLOSSOM_SIGN_ITEM, "Cherry Blossom Sign")
         add(ItemInit.MAGIC_DUST, "Magic Dust")
+        add(ItemInit.RACCOON_SPAWN_EGG, "Raccoon Spawn Egg")
 
         //Blocks
         add(BlockInit.COBALT_BLOCK.get(), "Cobalt Block")

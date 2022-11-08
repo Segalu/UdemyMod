@@ -6,6 +6,7 @@ import me.segalu.udemymod.init.EffectInit
 import me.segalu.udemymod.init.EnchantmentsInit
 import me.segalu.udemymod.init.ItemInit
 import net.minecraft.data.DataGenerator
+import net.minecraft.world.item.Item
 import net.minecraftforge.common.data.LanguageProvider
 
 open class ModEsProvider(gen: DataGenerator, region: String) : LanguageProvider(gen, UdemyMod.ID, "es_$region") {
@@ -50,7 +51,7 @@ open class ModEsProvider(gen: DataGenerator, region: String) : LanguageProvider(
         add(ItemInit.HONEY_BUCKET, "Cubeta de Miel")
         add(ItemInit.CHERRY_BLOSSOM_SIGN_ITEM, "Letrero de Cerezo")
         add(ItemInit.MAGIC_DUST, "Polvo Magico")
-
+        add(ItemInit.RACCOON_SPAWN_EGG, "Huevo de Mapache")
 
         //Blocks
         add(BlockInit.COBALT_BLOCK.get(), "Bloque de Cobalto")
