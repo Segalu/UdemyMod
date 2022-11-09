@@ -1,10 +1,7 @@
 package me.segalu.udemymod.datagen.client.lang
 
 import me.segalu.udemymod.UdemyMod
-import me.segalu.udemymod.init.BlockInit
-import me.segalu.udemymod.init.EffectInit
-import me.segalu.udemymod.init.EnchantmentsInit
-import me.segalu.udemymod.init.ItemInit
+import me.segalu.udemymod.init.*
 import net.minecraft.data.DataGenerator
 import net.minecraft.world.item.Item
 import net.minecraftforge.common.data.LanguageProvider
@@ -92,6 +89,8 @@ open class ModEsProvider(gen: DataGenerator, region: String) : LanguageProvider(
         add("item.minecraft.splash_potion.effect.freeze_potion", "Pocion de Congelamiento Arrojadiza")
         add("item.minecraft.lingering_potion.effect.freeze_potion", "Pocion de Congelamiento Persistente")
 
+        //Entities
+        add(EntityInit.RACCOON, "Mapache")
     }
     
 }

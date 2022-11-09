@@ -1,6 +1,7 @@
 package me.segalu.udemymod.entity
 
 import me.segalu.udemymod.entity.variant.RaccoonVariant
+import me.segalu.udemymod.init.ItemInit
 import net.minecraft.core.BlockPos
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.network.syncher.EntityDataSerializers
@@ -9,20 +10,19 @@ import net.minecraft.server.level.ServerLevel
 import net.minecraft.sounds.SoundEvent
 import net.minecraft.sounds.SoundEvents
 import net.minecraft.world.DifficultyInstance
+import net.minecraft.world.InteractionHand
+import net.minecraft.world.InteractionResult
 import net.minecraft.world.damagesource.DamageSource
-import net.minecraft.world.entity.AgeableMob
-import net.minecraft.world.entity.EntityType
-import net.minecraft.world.entity.MobSpawnType
-import net.minecraft.world.entity.SpawnGroupData
+import net.minecraft.world.entity.*
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier
 import net.minecraft.world.entity.ai.attributes.Attributes
 import net.minecraft.world.entity.ai.goal.*
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal
-import net.minecraft.world.entity.animal.Animal
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.ServerLevelAccessor
 import net.minecraft.world.level.block.state.BlockState
+import net.minecraftforge.event.ForgeEventFactory
 import software.bernie.geckolib3.core.IAnimatable
 import software.bernie.geckolib3.core.PlayState
 import software.bernie.geckolib3.core.builder.AnimationBuilder
@@ -32,9 +32,10 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent
 import software.bernie.geckolib3.core.manager.AnimationData
 import software.bernie.geckolib3.core.manager.AnimationFactory
 import software.bernie.geckolib3.util.GeckoLibUtil.createFactory
+import kotlin.random.Random
 
-
-class RaccoonEntity(pEntityType: EntityType<out Animal>, pLevel: Level) : Animal(pEntityType, pLevel), IAnimatable {
+class RaccoonEntity(pEntityType: EntityType<out TamableAnimal>, pLevel: Level) : TamableAnimal(pEntityType, pLevel),
+    IAnimatable {
     private val factory = createFactory(this)
 
     companion object {
@@ -51,9 +52,9 @@ class RaccoonEntity(pEntityType: EntityType<out Animal>, pLevel: Level) : Animal
 
     override fun registerGoals() {
         goalSelector.addGoal(1, FloatGoal(this))
-//        goalSelector.addGoal(1, SitWhenOrderedToGoal(this))
+        goalSelector.addGoal(1, SitWhenOrderedToGoal(this))
         goalSelector.addGoal(2, PanicGoal(this, 1.250))
-//        goalSelector.addGoal(3, FollowOwnerGoal(this, 1.0, 10F, 2F, false))
+        goalSelector.addGoal(3, FollowOwnerGoal(this, 1.0, 10F, 2F, false))
         goalSelector.addGoal(3, LookAtPlayerGoal(this, Player::class.java, 8.0F))
         goalSelector.addGoal(4, WaterAvoidingRandomStrollGoal(this, 1.0))
         goalSelector.addGoal(5, RandomLookAroundGoal(this))
@@ -95,6 +96,17 @@ class RaccoonEntity(pEntityType: EntityType<out Animal>, pLevel: Level) : Animal
             )
             return PlayState.CONTINUE
         }
+
+        if (isInSittingPose) {
+            event.controller.setAnimation(
+                AnimationBuilder().addAnimation(
+                    "animation.raccoon.sitting",
+                    EDefaultLoopTypes.HOLD_ON_LAST_FRAME
+                )
+            )
+            return PlayState.CONTINUE
+        }
+
         event.controller.setAnimation(AnimationBuilder().addAnimation("animation.raccoon.idle", EDefaultLoopTypes.LOOP))
         return PlayState.CONTINUE
     }
@@ -141,6 +153,54 @@ class RaccoonEntity(pEntityType: EntityType<out Animal>, pLevel: Level) : Animal
     override fun defineSynchedData() {
         super.defineSynchedData()
         entityData.define(DATA_ID_TYPE_VARIANT, 0)
+    }
+
+    //    TAMEABLE
+    override fun mobInteract(pPlayer: Player, pHand: InteractionHand): InteractionResult {
+        val itemStack = pPlayer.getItemInHand(pHand)
+        val item = itemStack.item
+
+        val itemForTaming = ItemInit.TURNIP
+
+        if (item == itemForTaming && !isTame) {
+            if (level.isClientSide) {
+                return InteractionResult.CONSUME
+            } else {
+                if (!pPlayer.isCreative) {
+                    itemStack.shrink(1)
+                }
+
+                if (Random.nextInt(3) == 0 && !ForgeEventFactory.onAnimalTame(this, pPlayer)) {
+                    super.tame(pPlayer)
+                    navigation.recomputePath()
+                    target = null
+                    level.broadcastEntityEvent(this, 7.toByte())
+                    isOrderedToSit = true
+                } else level.broadcastEntityEvent(this, 6.toByte())
+
+                return InteractionResult.SUCCESS
+            }
+        }
+
+        if (isTame && !level.isClientSide && pHand == InteractionHand.MAIN_HAND) {
+            isOrderedToSit = !isOrderedToSit
+            return InteractionResult.SUCCESS
+        }
+
+        if (itemStack.item == itemForTaming) {
+            InteractionResult.PASS
+        }
+
+        return super.mobInteract(pPlayer, pHand)
+    }
+
+    override fun setTame(pTamed: Boolean) {
+        super.setTame(pTamed)
+        if (pTamed) {
+            getAttribute(Attributes.MAX_HEALTH)!!.baseValue = 60.0
+            getAttribute(Attributes.ATTACK_SPEED)!!.baseValue = 4.0
+            getAttribute(Attributes.MOVEMENT_SPEED)!!.baseValue = 0.5
+        }
     }
 
 }
