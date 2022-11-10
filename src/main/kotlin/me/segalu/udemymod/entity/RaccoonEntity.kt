@@ -39,13 +39,11 @@ class RaccoonEntity(pEntityType: EntityType<out TamableAnimal>, pLevel: Level) :
     private val factory = createFactory(this)
 
     companion object {
-        fun setAttributes(): AttributeSupplier {
-            return createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 20.0)
-                .add(Attributes.ATTACK_DAMAGE, 3.0)
-                .add(Attributes.ATTACK_SPEED, 2.0)
-                .add(Attributes.MOVEMENT_SPEED, 0.3).build()
-        }
+        fun setAttributes() = createMobAttributes()
+            .add(Attributes.MAX_HEALTH, 20.0)
+            .add(Attributes.ATTACK_DAMAGE, 3.0)
+            .add(Attributes.ATTACK_SPEED, 2.0)
+            .add(Attributes.MOVEMENT_SPEED, 0.3).build()
 
         val DATA_ID_TYPE_VARIANT = SynchedEntityData.defineId(RaccoonEntity::class.java, EntityDataSerializers.INT)
     }

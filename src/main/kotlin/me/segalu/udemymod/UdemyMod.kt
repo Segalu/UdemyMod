@@ -4,6 +4,7 @@ import me.segalu.udemymod.block.ModWoodTypes
 import me.segalu.udemymod.config.UdemyModClientConfigs
 import me.segalu.udemymod.config.UdemyModCommonConfigs
 import me.segalu.udemymod.entity.client.RaccoonRenderer
+import me.segalu.udemymod.entity.client.TigerRenderer
 import me.segalu.udemymod.init.*
 import me.segalu.udemymod.screen.CobaltBlasterScreen
 import me.segalu.udemymod.util.BetterBrewingRecipe
@@ -111,6 +112,7 @@ object UdemyMod {
         WoodType.register(ModWoodTypes.CHERRY_BLOSSOM)
 
         EntityRenderers.register(EntityInit.RACCOON, ::RaccoonRenderer)
+        EntityRenderers.register(EntityInit.TIGER, ::TigerRenderer)
     }
 
     /**

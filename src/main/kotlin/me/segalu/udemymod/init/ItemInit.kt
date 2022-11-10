@@ -122,4 +122,8 @@ object ItemInit {
         ForgeSpawnEggItem( { EntityInit.RACCOON }, 0x948e8d, 0x3b3635, Item.Properties().tab(UDEMYMOD_TAB))
     }
 
+    val TIGER_SPAWN_EGG by ITEMS.registerObject("tiger_spawn_egg") {
+        ForgeSpawnEggItem( { EntityInit.TIGER }, 0xfcb603, 0x242321, Item.Properties().tab(UDEMYMOD_TAB))
+    }
+
 }

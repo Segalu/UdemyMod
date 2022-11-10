@@ -49,6 +49,8 @@ open class ModEsProvider(gen: DataGenerator, region: String) : LanguageProvider(
         add(ItemInit.CHERRY_BLOSSOM_SIGN_ITEM, "Letrero de Cerezo")
         add(ItemInit.MAGIC_DUST, "Polvo Magico")
         add(ItemInit.RACCOON_SPAWN_EGG, "Huevo de Mapache")
+        add(ItemInit.TIGER_SPAWN_EGG, "Huevo de Tigre")
+
 
         //Blocks
         add(BlockInit.COBALT_BLOCK.get(), "Bloque de Cobalto")
@@ -91,6 +93,8 @@ open class ModEsProvider(gen: DataGenerator, region: String) : LanguageProvider(
 
         //Entities
         add(EntityInit.RACCOON, "Mapache")
+        add(EntityInit.TIGER, "Tigre")
+
     }
     
 }

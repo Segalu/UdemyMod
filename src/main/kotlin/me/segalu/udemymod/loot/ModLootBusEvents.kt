@@ -2,6 +2,7 @@ package me.segalu.udemymod.loot
 
 import me.segalu.udemymod.UdemyMod
 import me.segalu.udemymod.entity.RaccoonEntity
+import me.segalu.udemymod.entity.TigerEntity
 import me.segalu.udemymod.init.EntityInit
 import net.minecraft.resources.ResourceLocation
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer
@@ -34,6 +35,7 @@ object ModLootBusEvents {
     @SubscribeEvent
     fun entityAttributeEvent(event: EntityAttributeCreationEvent) {
         event.put(EntityInit.RACCOON, RaccoonEntity.setAttributes())
+        event.put(EntityInit.TIGER, TigerEntity.setAttributes())
     }
 
 }

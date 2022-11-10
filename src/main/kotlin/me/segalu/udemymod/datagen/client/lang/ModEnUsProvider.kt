@@ -49,6 +49,8 @@ class ModEnUsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
         add(ItemInit.CHERRY_BLOSSOM_SIGN_ITEM, "Cherry Blossom Sign")
         add(ItemInit.MAGIC_DUST, "Magic Dust")
         add(ItemInit.RACCOON_SPAWN_EGG, "Raccoon Spawn Egg")
+        add(ItemInit.TIGER_SPAWN_EGG, "Tiger Spawn Egg")
+
 
         //Blocks
         add(BlockInit.COBALT_BLOCK.get(), "Cobalt Block")
@@ -91,6 +93,7 @@ class ModEnUsProvider(gen: DataGenerator) : LanguageProvider(gen, UdemyMod.ID, "
 
         //Entities
         add(EntityInit.RACCOON, "Raccoon")
+        add(EntityInit.TIGER, "Tiger")
     }
     
 }
