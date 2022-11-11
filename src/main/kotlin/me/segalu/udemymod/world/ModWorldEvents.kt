@@ -1,6 +1,7 @@
 package me.segalu.udemymod.world
 
 import me.segalu.udemymod.UdemyMod
+import me.segalu.udemymod.world.gen.ModEntityGeneration
 import me.segalu.udemymod.world.gen.ModFlowerGeneration
 import me.segalu.udemymod.world.gen.ModOreGeneration
 import me.segalu.udemymod.world.gen.ModTreeGeneration
@@ -15,5 +16,6 @@ object ModWorldEvents {
         ModOreGeneration.generateOres(event)
         ModTreeGeneration.generateTrees(event)
         ModFlowerGeneration.generateFlowers(event)
+        ModEntityGeneration.onEntitySpawn(event)
     }
 }
