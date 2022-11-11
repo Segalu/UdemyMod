@@ -3,6 +3,7 @@ package me.segalu.udemymod
 import me.segalu.udemymod.block.ModWoodTypes
 import me.segalu.udemymod.config.UdemyModClientConfigs
 import me.segalu.udemymod.config.UdemyModCommonConfigs
+import me.segalu.udemymod.entity.client.ModBoatRenderer
 import me.segalu.udemymod.entity.client.RaccoonRenderer
 import me.segalu.udemymod.entity.client.TigerRenderer
 import me.segalu.udemymod.init.*
@@ -113,6 +114,7 @@ object UdemyMod {
 
         EntityRenderers.register(EntityInit.RACCOON, ::RaccoonRenderer)
         EntityRenderers.register(EntityInit.TIGER, ::TigerRenderer)
+        EntityRenderers.register(EntityInit.MOD_BOAT, ::ModBoatRenderer)
     }
 
     /**

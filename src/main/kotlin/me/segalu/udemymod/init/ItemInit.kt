@@ -2,6 +2,7 @@ package me.segalu.udemymod.init
 
 import me.segalu.udemymod.UdemyMod
 import me.segalu.udemymod.UdemyMod.UDEMYMOD_TAB
+import me.segalu.udemymod.entity.ModBoatEntity
 import me.segalu.udemymod.item.*
 import net.minecraft.client.renderer.item.ItemProperties
 import net.minecraft.world.entity.EquipmentSlot
@@ -124,6 +125,10 @@ object ItemInit {
 
     val TIGER_SPAWN_EGG by ITEMS.registerObject("tiger_spawn_egg") {
         ForgeSpawnEggItem( { EntityInit.TIGER }, 0xfcb603, 0x242321, Item.Properties().tab(UDEMYMOD_TAB))
+    }
+
+    val CHERRY_BLOSSOM_BOAT by ITEMS.registerObject("cherry_blossom_boat") {
+        ModBoatItem(ModBoatEntity.Type.CHERRY_BLOSSOM, Item.Properties().tab(UDEMYMOD_TAB))
     }
 
 }

@@ -1,6 +1,7 @@
 package me.segalu.udemymod.init
 
 import me.segalu.udemymod.UdemyMod
+import me.segalu.udemymod.entity.ModBoatEntity
 import me.segalu.udemymod.entity.RaccoonEntity
 import me.segalu.udemymod.entity.TigerEntity
 import net.minecraft.resources.ResourceLocation
@@ -23,6 +24,11 @@ object EntityInit {
         EntityType.Builder.of(::TigerEntity, MobCategory.CREATURE)
             .sized(1.5F, 1.5F)
             .build(ResourceLocation(UdemyMod.ID, "tiger").toString())
+    }
+
+    val MOD_BOAT by ENTITIES.registerObject("mod_boat") {
+        EntityType.Builder.of(::ModBoatEntity, MobCategory.MISC).sized(1.375F, 0.5625F)
+            .setCustomClientFactory { _, world -> ModBoatEntity(world, 0.0, 0.0, 0.0) }.build("mod_boat")
     }
 
 }

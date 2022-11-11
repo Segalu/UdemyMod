@@ -91,7 +91,7 @@ class ModItemModelProvider(generator: DataGenerator?, helper: ExistingFileHelper
         oneLayerItem(ItemInit.MAGIC_DUST)
         withExistingParent(ItemInit.RACCOON_SPAWN_EGG.registryName.toString(), mcLoc("$ITEM_FOLDER/template_spawn_egg"))
         withExistingParent(ItemInit.TIGER_SPAWN_EGG.registryName.toString(), mcLoc("$ITEM_FOLDER/template_spawn_egg"))
-
+        oneLayerItem(ItemInit.CHERRY_BLOSSOM_BOAT)
 
         //Simple blocks
         simpleBlockItem(BlockInit.COBALT_BLOCK.get().asItem())

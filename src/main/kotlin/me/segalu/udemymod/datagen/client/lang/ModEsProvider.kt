@@ -48,8 +48,9 @@ open class ModEsProvider(gen: DataGenerator, region: String) : LanguageProvider(
         add(ItemInit.HONEY_BUCKET, "Cubeta de Miel")
         add(ItemInit.CHERRY_BLOSSOM_SIGN_ITEM, "Letrero de Cerezo")
         add(ItemInit.MAGIC_DUST, "Polvo Magico")
-        add(ItemInit.RACCOON_SPAWN_EGG, "Huevo de Mapache")
-        add(ItemInit.TIGER_SPAWN_EGG, "Huevo de Tigre")
+        add(ItemInit.RACCOON_SPAWN_EGG, "Generar Mapache")
+        add(ItemInit.TIGER_SPAWN_EGG, "Generar Tigre")
+        add(ItemInit.CHERRY_BLOSSOM_BOAT, "Bote de Cerezo")
 
 
         //Blocks
