@@ -4,7 +4,10 @@ import me.segalu.udemymod.UdemyMod
 import me.segalu.udemymod.entity.RaccoonEntity
 import me.segalu.udemymod.entity.TigerEntity
 import me.segalu.udemymod.init.EntityInit
+import me.segalu.udemymod.recipe.CobaltBlasterRecipe
+import net.minecraft.core.Registry
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.world.item.crafting.RecipeSerializer
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer
 import net.minecraftforge.event.RegistryEvent
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent
@@ -36,6 +39,11 @@ object ModLootBusEvents {
     fun entityAttributeEvent(event: EntityAttributeCreationEvent) {
         event.put(EntityInit.RACCOON, RaccoonEntity.setAttributes())
         event.put(EntityInit.TIGER, TigerEntity.setAttributes())
+    }
+
+    @SubscribeEvent
+    fun registerRecipeTypes(event: RegistryEvent.Register<RecipeSerializer<*>>) {
+        Registry.register(Registry.RECIPE_TYPE, CobaltBlasterRecipe.Companion.Type.ID, CobaltBlasterRecipe.Companion.Type.INSTANCE)
     }
 
 }

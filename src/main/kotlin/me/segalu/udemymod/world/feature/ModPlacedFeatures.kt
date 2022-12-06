@@ -1,6 +1,5 @@
 package me.segalu.udemymod.world.feature
 
-import me.segalu.udemymod.config.UdemyModClientConfigs
 import me.segalu.udemymod.config.UdemyModCommonConfigs
 import me.segalu.udemymod.init.BlockInit
 import me.segalu.udemymod.world.feature.ModOrePlacement.commonOrePlacement
@@ -11,7 +10,6 @@ import net.minecraft.world.level.levelgen.placement.BiomeFilter
 import net.minecraft.world.level.levelgen.placement.HeightRangePlacement
 import net.minecraft.world.level.levelgen.placement.InSquarePlacement
 import net.minecraft.world.level.levelgen.placement.RarityFilter
-
 
 object ModPlacedFeatures {
 
@@ -38,4 +36,5 @@ object ModPlacedFeatures {
             HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80))
         )
     )
+
 }

@@ -67,6 +67,7 @@ object UdemyMod {
         EffectInit.EFFECTS.register(MOD_BUS)
         PotionInit.POTIONS.register(MOD_BUS)
         EntityInit.ENTITIES.register(MOD_BUS)
+        StructureInit.STRUCTURES.register(MOD_BUS)
 
         MOD_BUS.addListener(UdemyMod::onClientSetup)
         MOD_BUS.addListener(UdemyMod::onServerSetup)

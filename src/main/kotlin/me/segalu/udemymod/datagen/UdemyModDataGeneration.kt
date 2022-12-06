@@ -1,35 +1,21 @@
 package me.segalu.udemymod.datagen
 
-import kotlinx.serialization.builtins.serializer
 import me.segalu.udemymod.UdemyMod
 import me.segalu.udemymod.datagen.client.ModBlockStateProvider
 import me.segalu.udemymod.datagen.client.ModItemModelProvider
 import me.segalu.udemymod.datagen.client.lang.ModEnUsProvider
 import me.segalu.udemymod.datagen.client.lang.ModEsEsProvider
 import me.segalu.udemymod.datagen.client.lang.ModEsMxProvider
-import me.segalu.udemymod.datagen.client.lang.ModEsProvider
 import me.segalu.udemymod.datagen.server.*
 import net.minecraft.data.DataGenerator
-import net.minecraft.data.DataProvider
-import net.minecraft.data.HashCache
 import net.minecraftforge.common.data.ExistingFileHelper
-import net.minecraftforge.common.data.LanguageProvider
 import net.minecraftforge.eventbus.api.SubscribeEvent
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus
 import net.minecraftforge.forge.event.lifecycle.GatherDataEvent
-import org.apache.commons.lang3.text.translate.JavaUnicodeEscaper
-import java.beans.Encoder
-import java.io.File
-import java.io.IOException
-import java.nio.file.Files
-import java.nio.file.Path
-import kotlin.io.path.pathString
-
 
 @Mod.EventBusSubscriber(modid = UdemyMod.ID, bus = Bus.MOD)
 object UdemyModDataGeneration {
-
     @SubscribeEvent
     fun gatherData(event: GatherDataEvent) {
         val generator: DataGenerator = event.generator
@@ -60,9 +46,9 @@ object UdemyModDataGeneration {
             generator.addProvider(ModAdvancementProvider(generator, helper))
             generator.addProvider(ModGlobalLootModifierProvider(generator))
             generator.addProvider(minecraftFluidTags)
+            generator.addProvider(ModStructureBiomesTagProvider(generator, helper))
+            generator.addProvider(ModStructureConfiguredTagProvider(generator, helper))
         }
-
-//        File(generator.outputFolder.resolve("assets/" + UdemyMod.ID + "/lang/" + "es_es" + ".json").pathString).copyTo(File(generator.outputFolder.resolve("assets/" + UdemyMod.ID + "/lang/" + "es_mx" + ".json").pathString))
     }
 
 }
